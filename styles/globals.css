@@ -13,6 +13,7 @@
 	--background: black;
 	--foreground: white;
   }
+
 body{
 	letter-spacing: 0.1rem;
 	font-family:'monospace';

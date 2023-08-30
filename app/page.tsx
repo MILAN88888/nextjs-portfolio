@@ -4,10 +4,11 @@ import {Footer} from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-6">
 	  <Header />
       <div className="relative flex place-items-center">
         <Image
+		className='rounded-full'
           src="/images/milan.jpg"
           alt="@i-am-milan Image"
           width={180}
