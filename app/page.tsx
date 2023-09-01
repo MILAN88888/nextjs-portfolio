@@ -1,22 +1,5 @@
-import Image from 'next/image'
-import {Header} from '@/components/Header'
-import {Footer} from '@/components/Footer'
+import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-6">
-	  <Header />
-      <div className="relative flex place-items-center">
-        <Image
-		className='rounded-full'
-          src="/images/milan.jpg"
-          alt="@i-am-milan Image"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-	  <Footer />
-    </main>
-  )
+  return <div className="relative flex place-items-center">Home</div>;
 }
