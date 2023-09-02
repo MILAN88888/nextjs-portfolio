@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 export const Intro = () => {
   let [count, setCount] = useState(0);
   const [text] = useState([
-	"Build web apps with PHP and MVC.",
-	"Create web apps and APIs with Laravel.",
-	"Build SPAs with React.",
-	"Develop websites with Next.js."
+    "Build web apps with PHP and MVC.",
+    "Create web apps and APIs with Laravel.",
+    "Build SPAs with React.",
+    "Develop websites with Next.js."
   ]);
 
   useEffect(() => {
@@ -27,8 +27,9 @@ export const Intro = () => {
         <div className="py-5 md:py-10">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
             <p>
-              Hi, I&apos;m <mark>Milan</mark> a <mark>passionate</mark> <span className="text-green-800">software
-              developer</span> from Nepal.
+              Hi, I&apos;m <mark>Milan</mark> a <mark>passionate</mark>{" "}
+              <span className="text-green-800">software developer</span> from
+              Nepal.
             </p>
           </h1>
           <div className="mt-3 relative flex flex-col overflow-hidden">
@@ -47,7 +48,17 @@ export const Intro = () => {
                       : count === 3
                       ? "-300%"
                       : "0",
-                  left: "13px"
+                  left: "13px",
+                  color:
+                    count === 0
+                      ? "yellow"
+                      : count === 1
+                      ? "cyan"
+                      : count === 2
+                      ? "yellow"
+                      : count === 3
+                      ? "cyan"
+                      : "orage"
                 }}
               >
                 {text.map((element) => (
