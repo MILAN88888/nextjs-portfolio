@@ -30,3 +30,23 @@ mark{
 	background-color: inherit;
 	color:aqua
 }
+.about-container{
+	width: 800px;
+	margin: 60px;
+}
+.about-container p{
+	font-style: italic;
+}
+
+@media (max-width:756px) {
+	.about-container{
+		width: 350px;
+	}
+}
+@media (max-width:756px) {
+	.about-main{
+		margin-top: 10vh;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
