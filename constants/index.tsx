@@ -1,2 +1,3 @@
-export { SOCIAL_MEDIA } from './SocialMedia';
-export { MENU_OPTIONS } from './MenuOptions';
+export { SOCIAL_MEDIA } from "./SocialMedia";
+export { MENU_OPTIONS } from "./MenuOptions";
+export { PROJECT_LIST } from "./ProjectList";
