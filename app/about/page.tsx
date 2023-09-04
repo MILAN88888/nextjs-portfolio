@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   return (
     <>
       <div className="about-main flex items-center lg:flex lg:items-center lg:justify-between">
-		<div>
+        <div>
           <Image
             className="rounded-full"
             src="/images/milan.jpg"
@@ -46,17 +47,22 @@ const About = () => {
         <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block">
           Work Experience
         </div>
-          <div className="p-4 mt-6">
-            Intern PHP Developer - 15 July 2022 - 15 Oct 2022
-          </div>
-            <br />||
-          <div className="p-4">
-            Intern Plugin PHP Developer - 15 Jan 2023 - 15 Mar 2023
-          </div>
-            <br />||
-          <div className="p-4">
-            Plugin PHP Developer - 16 Mar 2023 - Present
-          </div>
+        <div className="p-4 mt-6">
+          Intern PHP Developer - 15 July 2022 - 15 Oct 2022
+        </div>
+        <br />
+        ||
+        <div className="p-4">
+          Intern Plugin PHP Developer - 15 Jan 2023 - 15 Mar 2023
+        </div>
+        <br />
+        ||
+        <div className="p-4">Plugin PHP Developer - 16 Mar 2023 - Present</div>
+      </div>
+      <div className="text-center mt-8 mb-8">
+        <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block">
+        	<Link href="/file/milan-cv.pdf">Download CV</Link>
+        </div>
       </div>
     </>
   );
