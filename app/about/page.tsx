@@ -17,29 +17,35 @@ const About = () => {
         </div>
         <div className="about-container">
           <p className="text-justify">
-            I am Milan Kumar Chaudhary, a recent graduate from Visvesvaraya
-            Technological University in Bangalore, Karnataka, with a degree in
-            Computer Science. During my years at the university, I developed a
-            profound passion for web programming, and I continuously sought
-            opportunities to learn and apply new concepts and techniques in this
-            field. My official journey into programming began in July 2022 when
-            I started working as an intern PHP developer.
+            I'm Milan Kumar Chaudhary, a recent Computer Science graduate from
+            Visvesvaraya Technological University in Bangalore, Karnataka.
+            During my time at university, I discovered my keen interest in web
+            programming. In July 2022, I took my first step into the world of
+            programming by joining an internship as a PHP developer. This
+            internship marked the beginning of my exciting journey in the
+            programming field.
           </p>
           <br />
           <p className="text-justify">
             {" "}
-            I thoroughly enjoy learning about technologies that pique my
-            interest, which is why I devoted a significant amount of time to
-            working with PHP. Additionally, I actively pursued projects in
-            Laravel, further honing my skills. One day, I decided to venture
-            into new territory, embarking on a journey to learn React. I was
-            thrilled to discover how quickly I could create websites with it and
-            how straightforward it was to maintain them. As a result, I rapidly
-            picked up Next.js and used it to build my own portfolio website.
+            I have a genuine passion for acquiring knowledge, especially when it
+            comes to new technologies, with a strong focus on PHP and Laravel.
+            These web development technologies have captured my attention, and
+            I've invested considerable time in mastering them.
+          </p>
+		  <br/>
+          <p className="text-justify">
+            {" "}
+            As of February 2023, I've taken my career to the next level and am
+            currently employed as a PHP developer at ThemeGrill. This transition
+            reflects my dedication and growth within the industry.
           </p>
           <br />
           <p className="text-justify">
-            Currently, I am employed as a PHP developer at ThemeGrill.
+            Furthermore, in my free time, I'm deeply interested in learning
+            and working with React. My
+            enthusiasm for React led me to develop my own portfolio in Next.js,
+            which has been an exciting project for me.
           </p>
         </div>
       </div>
@@ -61,7 +67,7 @@ const About = () => {
       </div>
       <div className="text-center mt-8 mb-8">
         <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block">
-        	<Link href="/file/milan-cv.pdf">Download CV</Link>
+          <Link href="/file/milan-cv.pdf">Download CV</Link>
         </div>
       </div>
     </>
