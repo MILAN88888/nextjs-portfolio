@@ -17,7 +17,7 @@ const About = () => {
         </div>
         <div className="about-container">
           <p className="text-justify">
-            I'm Milan Kumar Chaudhary, a recent Computer Science graduate from
+            I&#39;m Milan Kumar Chaudhary, a recent Computer Science graduate from
             Visvesvaraya Technological University in Bangalore, Karnataka.
             During my time at university, I discovered my keen interest in web
             programming. In July 2022, I took my first step into the world of
@@ -31,18 +31,18 @@ const About = () => {
             I have a genuine passion for acquiring knowledge, especially when it
             comes to new technologies, with a strong focus on PHP and Laravel.
             These web development technologies have captured my attention, and
-            I've invested considerable time in mastering them.
+            I&#39;ve invested considerable time in mastering them.
           </p>
 		  <br/>
           <p className="text-justify">
             {" "}
-            As of February 2023, I've taken my career to the next level and am
+            As of February 2023, I&#39;ve taken my career to the next level and am
             currently employed as a PHP developer at ThemeGrill. This transition
             reflects my dedication and growth within the industry.
           </p>
           <br />
           <p className="text-justify">
-            Furthermore, in my free time, I'm deeply interested in learning
+            Furthermore, in my free time, I&#39;m deeply interested in learning
             and working with React. My
             enthusiasm for React led me to develop my own portfolio in Next.js,
             which has been an exciting project for me.
