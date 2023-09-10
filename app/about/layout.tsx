@@ -1,4 +1,3 @@
-"use client";
 import { AppMetaData } from "@/components/AppMetaData";
 import { Metadata } from "next";
 
