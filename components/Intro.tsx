@@ -69,6 +69,28 @@ export const Intro = () => {
           </div>
         </div>
       </div>
+      <div className="text-center">
+        <h2 className="text-3xl mb-4 md:text-4xl lg:text-3xl font-bold lg:mb-10">My github stats:</h2>
+        <div className="flex flex-col">
+          <div className="flex flex-col gap-4 mb-4 lg:flex lg:flex-row lg:gap-4 lg:mb-4">
+            <img
+			className="w-96"
+              src="https://github-readme-stats.vercel.app/api/top-langs?username=milan88888&show_icons=true&locale=en&layout=compact"
+              alt=""
+            />
+            <img
+			className="w-96"
+              src="https://github-readme-stats.vercel.app/api?username=milan88888&show_icons=true&locale=en"
+              alt=""
+            />
+          </div>
+          <img
+		  className="w-96"
+            src="https://github-readme-streak-stats.herokuapp.com/?user=milan88888&"
+            alt=""
+          />
+        </div>
+      </div>
     </section>
   );
 };
