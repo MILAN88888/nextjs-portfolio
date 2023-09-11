@@ -51,14 +51,14 @@ export const Intro = () => {
                   left: "13px",
                   color:
                     count === 0
-                      ? "yellow"
+                      ? "#ec4899"
                       : count === 1
                       ? "cyan"
                       : count === 2
-                      ? "yellow"
+                      ? "#ec4899"
                       : count === 3
                       ? "cyan"
-                      : "orage"
+                      : "#ec4899"
                 }}
               >
                 {text.map((element) => (
