@@ -9,7 +9,7 @@ export const Menu = ({activeMenuItem, setActiveMenuItem}:any) => {
     setActiveMenuItem(item.id);
   };
   return (
-    <ul className="menu-container flex items-center gap-5">
+    <ul className="menu-container flex items-center gap-5 title">
       {MENU_OPTIONS.map((item) => (
         <li key={item.id}>
           <Link
