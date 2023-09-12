@@ -1,7 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export const Intro = () => {
+  const { theme, setTheme, systemTheme } = useTheme();
+  let gitTheme = theme === "light" ? "theme=react" : "";
   let [count, setCount] = useState(0);
   const [text] = useState([
     "Build web apps with PHP and MVC.",
@@ -23,12 +26,12 @@ export const Intro = () => {
   }, [count]);
   return (
     <section id="intro" className="max-w-6xl ml-8">
-      <div className="grid grid-cols md:grid-cols-[1fr_0.5fr] lg:grid-cols-[4fr_0.7fr] gap-4 items-center">
-        <div className="py-5 md:py-10">
+      <div className="grid grid-cols md:grid-cols-[1fr_0.5fr] lg:grid-cols-[4fr_0.7fr] gap-4 items-center intro-div">
+        <div className="py-5">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
-            <p>
-              Hi, I&apos;m <mark>Milan</mark> a <mark>passionate</mark>{" "}
-              <span className="text-green-800">software developer</span> from
+            <p className="leading-loose title">
+              Hi, I&apos;m <mark>Milan</mark> a passionate{" "}
+              <mark>software developer</mark> from
               Nepal.
             </p>
           </h1>
@@ -69,24 +72,26 @@ export const Intro = () => {
           </div>
         </div>
       </div>
-      <div className="text-center">
-        <h2 className="text-3xl mb-4 md:text-4xl lg:text-3xl font-bold lg:mb-10">My github stats:</h2>
+      <div className="text-center gitstats-container">
+        <h2 className="text-3xl mb-4 md:text-4xl lg:text-3xl font-bold lg:mb-10 title">
+          My github stats:
+        </h2>
         <div className="flex flex-col">
-          <div className="flex flex-col gap-4 mb-4 lg:flex lg:flex-row lg:gap-4 lg:mb-4">
+          <div className="flex flex-col gap-6 mb-4 lg:flex lg:flex-row lg:gap-4 lg:mb-4">
             <img
-			className="w-96"
-              src="https://github-readme-stats.vercel.app/api/top-langs?username=milan88888&show_icons=true&locale=en&layout=compact"
+              className="w-96"
+              src={`https://github-readme-stats.vercel.app/api/top-langs?username=milan88888&${gitTheme}&show_icons=true&locale=en&layout=compact`}
               alt=""
             />
             <img
-			className="w-96"
-              src="https://github-readme-stats.vercel.app/api?username=milan88888&show_icons=true&locale=en"
+              className="w-96"
+              src={`https://github-readme-stats.vercel.app/api?username=milan88888&${gitTheme}&show_icons=true&locale=en`}
               alt=""
             />
           </div>
           <img
-		  className="w-96"
-            src="https://github-readme-streak-stats.herokuapp.com/?user=milan88888&"
+            className="w-96"
+            src={`https://github-readme-streak-stats.herokuapp.com/?user=milan88888&${gitTheme}`}
             alt=""
           />
         </div>

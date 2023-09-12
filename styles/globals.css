@@ -54,3 +54,13 @@ mark{
 	overflow: hidden;
 	height: 300px;
 }
+.gitstats-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.intro-div{
+	display: flex;
+	justify-content: center;
+	height: 400px;
+}
