@@ -12,7 +12,7 @@ export const AppMetaData: Metadata = {
   },
   description: description,
   icons: {
-    icon: "/favicon.png"
+    icon: "/images/icon/milan.ico"
   },
   keywords: [
     "Milan Kumar Chaudhary",
