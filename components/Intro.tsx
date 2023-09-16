@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export const Intro = () => {
   const { theme, setTheme, systemTheme } = useTheme();
@@ -28,12 +29,20 @@ export const Intro = () => {
     <section id="intro" className="max-w-6xl ml-8">
       <div className="grid grid-cols md:grid-cols-[1fr_0.5fr] lg:grid-cols-[4fr_0.7fr] gap-4 items-center intro-div">
         <div className="py-5">
-          <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
+          <h1 className="sm:text-xl md:text-4xl xl:text-5xl font-bold flex">
             <p className="leading-loose title">
               Hi, I&apos;m <mark>Milan</mark> a passionate{" "}
-              <mark>software developer</mark> from
-              Nepal.
+              <mark>software developer</mark> from Nepal.
             </p>
+			<div>
+			<Image
+				src="/images/np_flag.gif"
+				alt="Nepal Flag Image"
+				width={180}
+				height={37}
+				priority
+				/>
+			</div>
           </h1>
           <div className="mt-3 relative flex flex-col overflow-hidden">
             <p className="text-[10px] md:text-[17px] text-2xl transform-none opacity-100">
@@ -70,6 +79,7 @@ export const Intro = () => {
               </span>
             </p>
           </div>
+
         </div>
       </div>
       <div className="text-center gitstats-container">
