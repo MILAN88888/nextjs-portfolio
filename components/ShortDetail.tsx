@@ -3,12 +3,7 @@ import React from "react";
 import { ExtraMediaConnect } from "@/components/ExtraMediaConnect";
 import {
   BsDownload,
-  BsFacebook,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter
 } from "react-icons/bs";
-import { FaHackerrank } from "react-icons/fa";
 import Link from "next/link";
 
 export const ShortDetail = () => {
@@ -25,7 +20,9 @@ export const ShortDetail = () => {
         <ul className="flex itmes-center gap-5">
           <li>
             <span className="bold text-white-500 dark:text-gray-500">
-              Sarawal-6, Nawalparasi
+              Sarawal-6, Nawalparasi<br/>
+			  chaudharymilan996@gmail.com<br/>
+			  +977-9807445408
             </span>
           </li>
         </ul>
