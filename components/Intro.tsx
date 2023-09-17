@@ -82,7 +82,7 @@ export const Intro = () => {
 
         </div>
       </div>
-      <div className="text-center gitstats-container">
+      <div className="max-w-6xl w-full items-center gitstats-container lg:mt-12">
         <h2 className="text-3xl mb-4 md:text-4xl lg:text-3xl font-bold lg:mb-10 title">
           My github stats:
         </h2>
