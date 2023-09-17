@@ -1,5 +1,6 @@
 import React from "react";
 import { MediaConnect } from "./MediaConnect";
+import { ExtraMediaConnect } from "./ExtraMediaConnect";
 
 export const Footer = () => {
   return (
@@ -12,6 +13,7 @@ export const Footer = () => {
         <div className="bottom-0 left-0 flex mt-4  w-full items-end justify-center dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none lg:float-right">
           <div className="flex items-center gap-5">
             <MediaConnect />
+			<ExtraMediaConnect/>
           </div>
         </div>
       </div>
