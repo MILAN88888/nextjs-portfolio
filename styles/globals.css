@@ -31,7 +31,7 @@ mark{
 	color:aqua
 }
 .about-container{
-	width: 800px;
+	width: auto;
 	margin: 60px;
 }
 .about-container p{
