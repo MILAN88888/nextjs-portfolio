@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ShortDetail } from "@/components/ShortDetail";
 import { WorkExp } from "@/components/WorkExp";
+import { Education } from "@/components/Education";
 
 const About = () => {
   return (
@@ -62,9 +63,14 @@ const About = () => {
           <WorkExp />
         </div>
       </div>
-      <div className="mt-8">
-        <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
-          Education
+      <div className="max-w-6xl flex mt-10 text-lg justify-between">
+        <div className="mt-8">
+          <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
+            Education
+          </div>
+          <div className="flex  lg:flex lg:justify-between">
+            <Education />
+          </div>
         </div>
       </div>
     </>
