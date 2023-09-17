@@ -13,7 +13,7 @@ export const WorkExp = () => {
           <div className="w-96">
             <h2>{item.position} </h2>
             <span>
-              <a href={item.linkorg} className="flex text-blue-500 underline">
+              <a href={item.linkorg} target="_blank" className="flex text-blue-500 underline">
                 {item.company}
                 <BiLinkExternal />
               </a>
@@ -22,7 +22,7 @@ export const WorkExp = () => {
               ({item.start} - {item.end})
             </span>
           </div>
-          <div className="w-auto flex flex-wrap lg:w-auto">
+          <div className="w-auto flex flex-wrap lg:w-1/2">
             <p className="text-sm">{item.description}</p>
             {typeof item.Link !== "undefined" && !!item.Link.length && (
               <div className="flex-center flex-wrap gap-4 text-sm">
