@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { ExtraMediaConnect } from "@/components/ExtraMediaConnect";
 import {
   BsDownload,
   BsFacebook,
@@ -30,52 +31,9 @@ export const ShortDetail = () => {
         </ul>
       </div>
       <span className="ml-12">Connect with me:</span>
-      <ul className="flex items-center gap-5 p-12">
-        <li key="facebook">
-          <a
-            href={""}
-            target="_blank"
-            aria-label="facebook"
-            title="facebook"
-            className="text-2xl"
-          >
-            <BsFacebook />
-          </a>
-        </li>
-        <li key="Instagram">
-          <a
-            href={""}
-            target="_blank"
-            aria-label="Instagram"
-            title="Instagram"
-            className="text-2xl"
-          >
-            <BsInstagram />
-          </a>
-        </li>
-        <li key="twitter">
-          <a
-            href={""}
-            target="_blank"
-            aria-label="twitter"
-            title="twitter"
-            className="text-2xl"
-          >
-            <BsTwitter />
-          </a>
-        </li>
-        <li key="Hackerrank">
-          <a
-            href={""}
-            target="_blank"
-            aria-label="Hackerrank"
-            title="Hackerrank"
-            className="text-2xl"
-          >
-            <FaHackerrank />
-          </a>
-        </li>
-      </ul>
+      <div className="ml-12 mt-6 mb-6">
+        <ExtraMediaConnect />
+      </div>
       <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title mx-12">
         <Link href="/file/milan-cv.pdf">
           <span className="flex">
