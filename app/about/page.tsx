@@ -9,7 +9,7 @@ import { MdSchool } from "react-icons/md";
 const About = () => {
   return (
     <>
-      <div className="about-main max-w-6xl flex items-center lg:flex lg:items-center gap-y-10 text-lg mt-6">
+      <div className="max-w-6xl flex items-center lg:flex lg:items-center gap-y-10 text-lg mt-6">
         <div>
           <div className="mb-6 flex flex-wrap gap-6">
             <Image
@@ -76,7 +76,7 @@ const About = () => {
               <MdSchool />
             </span>
           </div>
-          <div className="flex  lg:flex lg:justify-between">
+          <div className="flex flex-wrap lg:flex lg:justify-between">
             <Education />
           </div>
         </div>
