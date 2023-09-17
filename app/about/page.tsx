@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { ShortDetail } from "@/components/ShortDetail";
+import { WorkExp } from "@/components/WorkExp";
 
 const About = () => {
   return (
@@ -16,9 +17,9 @@ const About = () => {
               height={400}
               priority
             />
-			<div className="h-96 gap-6 lg:flex items-center">
-				<ShortDetail />
-			</div>
+            <div className="h-96 gap-6 lg:flex items-center">
+              <ShortDetail />
+            </div>
           </div>
           <h1 className="bold text-4xl underline mb-4 title">Bio</h1>
           <p className="text-justify">
@@ -53,21 +54,18 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="text-center mt-10 text-lg">
+      <div className="max-w-6xl flex mt-10 text-lg justify-between">
+        <div>
+          <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
+            Work Experience
+          </div>
+          <WorkExp />
+        </div>
+      </div>
+      <div className="mt-8">
         <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
-          Work Experience
+          Education
         </div>
-        <div className="p-4 mt-6">
-          Intern PHP Developer - 15 July 2022 - 15 Oct 2022
-        </div>
-        <br />
-        ||
-        <div className="p-4">
-          Intern Plugin PHP Developer - 15 Jan 2023 - 15 Mar 2023
-        </div>
-        <br />
-        ||
-        <div className="p-4">Plugin PHP Developer - 16 Mar 2023 - Present</div>
       </div>
     </>
   );
