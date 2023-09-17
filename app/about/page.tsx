@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ShortDetail } from "@/components/ShortDetail";
 import { WorkExp } from "@/components/WorkExp";
 import { Education } from "@/components/Education";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { MdSchool } from "react-icons/md";
 
 const About = () => {
   return (
@@ -58,7 +60,10 @@ const About = () => {
       <div className="max-w-6xl flex mt-10 text-lg justify-between">
         <div>
           <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
-            Work Experience
+            <span className="flex">
+              Work Experience
+              <HiOutlineOfficeBuilding />
+            </span>
           </div>
           <WorkExp />
         </div>
@@ -66,7 +71,10 @@ const About = () => {
       <div className="max-w-6xl flex mt-10 text-lg justify-between">
         <div className="mt-8">
           <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title">
-            Education
+            <span className="flex">
+              Education
+              <MdSchool />
+            </span>
           </div>
           <div className="flex  lg:flex lg:justify-between">
             <Education />
