@@ -32,11 +32,11 @@ export function ProjectItem() {
 
             <footer className="flex flex-col gap-10">
               {!!item.stack.length && (
-                <div className="flex-center flex-wrap gap-3">
+                <div className="flex-center flex-wrap gap-4">
                   {item.stack.map((tag: any) => (
                     <span
                       key={tag}
-                      className="px-2 text-sm leading-normal rounded bg-badge-light/50 dark:bg-badge-dark"
+                      className="mx-2 p-2 text-sm leading-normal rounded border-2 border-cyan-200"
                     >
                       {tag}
                     </span>
