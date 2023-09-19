@@ -26,9 +26,13 @@ body{
 .social-connect{
 	float: right;
 }
-mark{
+.mark-dark{
 	background-color: inherit;
 	color:aqua
+}
+.mark-light{
+	background-color: inherit;
+	color:#18e618;
 }
 .about-container{
 	width: auto;

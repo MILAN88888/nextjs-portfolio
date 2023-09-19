@@ -5,7 +5,8 @@ import Image from "next/image";
 
 export const Intro = () => {
   const { theme, setTheme, systemTheme } = useTheme();
-  let gitTheme = theme === "light" ? "theme=react" : "";
+  let gitTheme = theme === "dark" ? "" : "theme=react";
+  let mark_class = theme === "dark" ? "mark-dark" : "mark-light";
   let [count, setCount] = useState(0);
   const [text] = useState([
     "Build web apps with PHP and MVC.",
@@ -31,8 +32,8 @@ export const Intro = () => {
         <div className="py-5">
           <h1 className="sm:text-xl md:text-4xl xl:text-5xl font-bold flex">
             <p className="leading-loose title">
-              Hi, I&apos;m <mark>Milan</mark> a passionate{" "}
-              <mark>software developer</mark> from Nepal.
+              Hi, I&apos;m <mark className={mark_class}>Milan</mark> a passionate{" "}
+              <mark className={mark_class}>software developer</mark> from Nepal.
             </p>
 			<div>
 			<Image
