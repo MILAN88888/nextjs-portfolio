@@ -1,15 +1,12 @@
-'use client'
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { MediaConnect } from "./MediaConnect";
 import { Menu } from "./Menu";
 import Link from "next/link";
-interface MenuProps {
-	activeMenuItem: string | null;
-	setActiveMenuItem: (item: string | null) => void;
-  }
-export const Header = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState(null);
+
+export const Header:React.FC = () => {
+  const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
 
   const handleMilanLinkClick = () => {
     setActiveMenuItem(null);
@@ -27,7 +24,10 @@ export const Header = () => {
         </Link>
       </p>
       <div className="bottom-0 left-0 mb-6 flex  w-full items-end justify-center dark:from-black dark:via-black  md:auto md:flex md:items-end lg:static lg:h-auto lg:w-auto">
-        <Menu activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+        <Menu
+          activeMenuItem={activeMenuItem}
+          setActiveMenuItem={setActiveMenuItem}
+        />
       </div>
       <div className="bottom-0 left-0 flex  w-full items-end justify-center dark:from-black dark:via-black  md:mb-4 md:flex md:items-end lg:mb-4 lg:static lg:h-auto lg:w-auto">
         <div className="flex items-center gap-5">
