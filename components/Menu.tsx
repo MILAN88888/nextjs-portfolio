@@ -23,7 +23,7 @@ export const Menu = ({activeMenuItem, setActiveMenuItem}:any) => {
             }`}
             onClick={() => handleMenuItemClick(item)}
           >
-            <a>{item.name}</a>
+            {item.name}
           </Link>
         </li>
       ))}
