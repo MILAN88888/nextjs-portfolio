@@ -1,6 +1,6 @@
 import React from "react";
 import { TECH_LIST } from "@/constants";
-
+'use client';
 export const Tech = () => {
   return (
     <>

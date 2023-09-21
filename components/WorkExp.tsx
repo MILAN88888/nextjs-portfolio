@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { WORK_EXP } from "@/constants";
 import { BiLinkExternal } from "react-icons/bi";

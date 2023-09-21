@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { MediaConnect } from "./MediaConnect";
 import { ExtraMediaConnect } from "./ExtraMediaConnect";

@@ -1,4 +1,4 @@
-import { Suspense, useRef } from "react";
+'use client';
 import Link from "next/link";
 import Image from "next/image";
 import { VscSourceControl } from "react-icons/vsc";

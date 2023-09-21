@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import { EXTRA_SOCIAL_MEDIA } from "@/constants";
 
