@@ -4,7 +4,10 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { MediaConnect } from "./MediaConnect";
 import { Menu } from "./Menu";
 import Link from "next/link";
-
+interface MenuProps {
+	activeMenuItem: string | null;
+	setActiveMenuItem: (item: string | null) => void;
+  }
 export const Header = () => {
   const [activeMenuItem, setActiveMenuItem] = useState(null);
 
