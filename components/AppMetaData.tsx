@@ -3,9 +3,9 @@ const description =
   "Software developer from Nepal, Republic of, who loves to develop beautiful websites, single page applications, customer relationship management, Web developement, PHP web application, Laravel application, wordpress site or code from scratch using React and Next.js";
 import type { Metadata } from "next";
 
-const url = "https://milanc.netlify.app";
+const url = "https://milankumarchaudhary.com.np";
 export const AppMetaData: Metadata = {
-  metadataBase: new URL("https://milanc.netlify.app/"),
+  metadataBase: new URL("https://milankumarchaudhary.com.np"),
   title: {
     default: `Portfolio | ${author}`,
     template: `%s | ${author}`
@@ -15,9 +15,13 @@ export const AppMetaData: Metadata = {
     icon: "/images/icon/milan.ico"
   },
   keywords: [
+	"Milan",
+	"Milan Kumar",
     "Milan Kumar Chaudhary",
     "Milan Chaudhary",
     "Milan Chaudhary - software developer",
+    "Milan kumar Chaudhary - software developer",
+    "Milan - software developer",
     "Backend developer",
     "PHP developer",
     "Wordpress developer",
@@ -35,13 +39,13 @@ export const AppMetaData: Metadata = {
     siteName: `${author} | Portfolio`,
     images: [
       {
-        url: "https://milanc.netlify.app/screenshot.webp",
+        url: "https://milankumarchaudhary.com.np/screenshot.webp",
         width: 800,
         height: 600,
         alt: "My personal portfolio website"
       },
       {
-        url: "https://milanc.netlify.app/screenshot.webp",
+        url: "https://milankumarchaudhary.com.np/screenshot.webp",
         width: 1800,
         height: 1600,
         alt: "My personal portfolio website"
