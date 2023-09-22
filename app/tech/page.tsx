@@ -1,3 +1,5 @@
+'use client'
+
 import { Tech } from "@/components/Tech";
 
 const Projects = () => {
