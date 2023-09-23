@@ -27,7 +27,7 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col items-center justify-between p-6">
             <Header />
             <Suspense fallback={<Loading />}>{children}</Suspense>
-			<Footer />
+            <Footer />
           </main>
         </ThemeContext>
       </body>

@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import { ExtraMediaConnect } from "@/components/ExtraMediaConnect";
-import {
-  BsDownload,
-} from "react-icons/bs";
+import { BsDownload } from "react-icons/bs";
 import Link from "next/link";
 
-export const ShortDetail = () => {
+export const ShortDetail: React.FC = () => {
   return (
     <div>
       <div className="p-12">
@@ -20,9 +18,11 @@ export const ShortDetail = () => {
         <ul className="flex itmes-center gap-5">
           <li>
             <span className="bold text-white-500 dark:text-gray-500">
-              Sarawal-6, Nawalparasi<br/>
-			  chaudharymilan996@gmail.com<br/>
-			  +977-9807445408
+              Sarawal-6, Nawalparasi
+              <br />
+              chaudharymilan996@gmail.com
+              <br />
+              +977-9807445408
             </span>
           </li>
         </ul>
