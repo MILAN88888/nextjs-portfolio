@@ -2,7 +2,7 @@ import React from "react";
 import { EDU_EXP } from "@/constants";
 import { BiLinkExternal } from "react-icons/bi";
 
-export const Education = () => {
+export const Education: React.FC = () => {
   return (
     <>
       {EDU_EXP.map((item) => (
@@ -13,7 +13,11 @@ export const Education = () => {
           <div className="w-96">
             <h2>{item.position} </h2>
             <span>
-              <a href={item.linkorg} target="_blank" className="flex text-blue-500 underline">
+              <a
+                href={item.linkorg}
+                target="_blank"
+                className="flex text-blue-500 underline"
+              >
                 {item.from}
                 <BiLinkExternal />
               </a>

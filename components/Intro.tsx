@@ -3,10 +3,20 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
-export const Intro = () => {
+export const Intro: React.FC = () => {
   const { theme, setTheme, systemTheme } = useTheme();
-  let gitTheme = theme === "dark" ? "" : "theme=react";
-  let mark_class = theme === "dark" ? "mark-dark" : "mark-light";
+  const [gitTheme, setGitTheme] = useState<string>("theme=react");
+  const [highlighter, setHighlighter] = useState<string>("mark-dark");
+  useEffect(() => {
+    if (theme === "dark") {
+      setGitTheme("");
+      setHighlighter("mark-dark");
+    } else {
+      setGitTheme("theme=react");
+      setHighlighter("mark-light");
+    }
+  }, [theme]);
+
   let [count, setCount] = useState(0);
   const [text] = useState([
     "Build web apps with PHP and MVC.",
@@ -32,21 +42,22 @@ export const Intro = () => {
         <div className="py-5">
           <h1 className="sm:text-xl md:text-4xl xl:text-5xl font-bold flex">
             <p className="leading-loose title">
-              Hi, I&apos;m <mark className={mark_class}>Milan</mark> a passionate{" "}
-              <mark className={mark_class}>software developer</mark> from Nepal.
+              Hi, I&apos;m <span className={highlighter}>Milan</span> a
+              passionate <span className={highlighter}>software developer</span>{" "}
+              from Nepal.
             </p>
-			<div>
-			<Image
-				src="/images/np_flag.gif"
-				alt="Nepal Flag Image"
-				width={180}
-				height={37}
-				priority
-				/>
-			</div>
+            <div>
+              <Image
+                src="/images/np_flag.gif"
+                alt="Nepal Flag Image"
+                width={180}
+                height={37}
+                priority
+              />
+            </div>
           </h1>
           <div className="mt-3 relative flex flex-col overflow-hidden">
-            <p className="text-[10px] md:text-[17px] text-2xl transform-none opacity-100">
+            <p className="text-[14px] md:text-[17px] text-2xl transform-none opacity-100">
               I
               <span
                 className="absolute flex flex-col transition-all duration-500 ease-in-expo"
@@ -80,7 +91,6 @@ export const Intro = () => {
               </span>
             </p>
           </div>
-
         </div>
       </div>
       <div className="max-w-6xl w-full items-center gitstats-container lg:mt-12">
@@ -110,13 +120,17 @@ export const Intro = () => {
     </section>
   );
 };
-function TextElement({ element }: any) {
+interface TextElementProps {
+  element: string;
+}
+
+const TextElement: React.FC<TextElementProps> = ({ element }) => {
   const firstWord = <b>{element.split(" ").at(0)}</b>;
   const restWords = element.split(" ").slice(1).join(" ");
 
   return (
-    <span className="text-[10px] md:text-[17px] text-2xl">
+    <span className="text-[12px] md:text-[17px] text-2xl">
       {firstWord} {restWords}
     </span>
   );
-}
+};

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import React from "react";
 import { SOCIAL_MEDIA } from "@/constants";
 
-export const MediaConnect = () => {
+export const MediaConnect: React.FC = () => {
   return (
     <ul className="flex items-center gap-5">
       {SOCIAL_MEDIA.map((item) => (

@@ -1,6 +1,6 @@
 import React from "react";
 import { TECH_LIST } from "@/constants";
-export const Tech = () => {
+export const Tech: React.FC = () => {
   return (
     <>
       <p className="text-2xl mb-10 lg:text-2xl lg:mb-10">

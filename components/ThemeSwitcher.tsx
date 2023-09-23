@@ -1,9 +1,9 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher: React.FC = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [mounted, setMounted] = useState(false);
@@ -18,7 +18,7 @@ export const ThemeSwitcher = () => {
   }
 
   return (
-    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Theme Switcher">
       {currentTheme === "dark" ? <FaSun /> : <FaMoon />}
     </button>
   );

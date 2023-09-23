@@ -1,9 +1,9 @@
-'use client';
+"use client";
 import React from "react";
 import { WORK_EXP } from "@/constants";
 import { BiLinkExternal } from "react-icons/bi";
 
-export const WorkExp = () => {
+export const WorkExp: React.FC = () => {
   return (
     <>
       {WORK_EXP.map((item) => (
@@ -14,7 +14,11 @@ export const WorkExp = () => {
           <div className="w-96">
             <h2>{item.position} </h2>
             <span>
-              <a href={item.linkorg} target="_blank" className="flex text-blue-500 underline">
+              <a
+                href={item.linkorg}
+                target="_blank"
+                className="flex text-blue-500 underline"
+              >
                 {item.company}
                 <BiLinkExternal />
               </a>

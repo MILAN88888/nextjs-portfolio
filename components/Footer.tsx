@@ -1,9 +1,9 @@
-'use client';
+"use client";
 import React from "react";
 import { MediaConnect } from "./MediaConnect";
 import { ExtraMediaConnect } from "./ExtraMediaConnect";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <div className=" z-1 max-w-6xl w-full items-center footer-container">
       <hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-teal-700" />
@@ -14,7 +14,7 @@ export const Footer = () => {
         <div className="bottom-0 left-0 flex mt-4  w-full items-end justify-center dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none lg:float-right">
           <div className="flex items-center gap-5">
             <MediaConnect />
-			<ExtraMediaConnect/>
+            <ExtraMediaConnect />
           </div>
         </div>
       </div>

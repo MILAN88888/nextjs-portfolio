@@ -5,6 +5,8 @@ import { WorkExp } from "@/components/WorkExp";
 import { Education } from "@/components/Education";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { MdSchool } from "react-icons/md";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 const About = () => {
   return (
@@ -12,14 +14,16 @@ const About = () => {
       <div className="max-w-6xl flex items-center lg:flex lg:items-center gap-y-10 text-lg mt-6">
         <div>
           <div className="mb-6 flex flex-wrap gap-6">
+			<Suspense fallback={<Loading/>}>
             <Image
-              className="rounded-lg bg-red-400"
+              className="rounded-lg"
               src="/images/milan.jpg"
               alt="@i-am-milan Image"
               width={400}
               height={400}
               priority
             />
+			</Suspense>
             <div className="h-96 gap-6 lg:flex items-center">
               <ShortDetail />
             </div>
