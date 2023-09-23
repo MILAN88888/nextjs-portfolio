@@ -5,7 +5,7 @@ interface LoadingProps {
   message?: string;
 }
 
-const Loading: React.FC<LoadingProps> = ({ message }) => {
+const LoadingMessage: React.FC<LoadingProps> = ({ message }) => {
   return (
     <div className="h-full w-full flex-center flex-col gap-5">
       <Triangle
@@ -20,4 +20,4 @@ const Loading: React.FC<LoadingProps> = ({ message }) => {
   );
 };
 
-export default Loading;
+export default LoadingMessage;

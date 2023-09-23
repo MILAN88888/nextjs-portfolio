@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Loading from "@/components/Loading";
-import { BallTriangle } from "react-loader-spinner";
+import LoadingMessage from "@/components/Loading";
 
-const MyComponent: React.FC = () => {
+const Loading: React.FC = () => {
   return (
     <div>
-      <Loading message="Please wait..." />
+      <LoadingMessage message="Please wait..." />
     </div>
   );
 };
 
-export default MyComponent;
+export default Loading;
