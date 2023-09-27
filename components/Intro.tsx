@@ -5,17 +5,18 @@ import Image from "next/image";
 
 export const Intro: React.FC = () => {
   const { theme, setTheme, systemTheme } = useTheme();
-  const [gitTheme, setGitTheme] = useState<string>("theme=react");
+  const gitTheme = '';
+//   const [gitTheme, setGitTheme] = useState<string>("theme=react");
   const [highlighter, setHighlighter] = useState<string>("mark-dark");
-  useEffect(() => {
-    if (theme === "dark") {
-      setGitTheme("");
-      setHighlighter("mark-dark");
-    } else {
-      setGitTheme("theme=react");
-      setHighlighter("mark-light");
-    }
-  }, [theme]);
+//   useEffect(() => {
+//     if (theme === "dark") {
+//       setGitTheme("");
+//       setHighlighter("mark-dark");
+//     } else {
+//       setGitTheme("theme=react");
+//       setHighlighter("mark-light");
+//     }
+//   }, [theme]);
 
   let [count, setCount] = useState(0);
   const [text] = useState([
