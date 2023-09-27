@@ -23,7 +23,6 @@ export const Menu: React.FC<MenuProps> = ({ activeMenuItem, setActiveMenuItem })
               className={`text-2xl ${
                 activeMenuItem === item.id ? "text-teal-500 font-semibold" : ""
               }`}
-              onClick={() => handleMenuItemClick(item.id)}
             >
               {item.name}
             </a>

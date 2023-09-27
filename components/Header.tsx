@@ -17,7 +17,6 @@ export const Header:React.FC = () => {
         <Link href="./">
           <span
             className="font-bold text-4xl title"
-            onClick={handleMilanLinkClick}
           >
             @Milan
           </span>
