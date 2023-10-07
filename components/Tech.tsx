@@ -3,7 +3,7 @@ import { TECH_LIST } from "@/constants";
 export const Tech: React.FC = () => {
   return (
     <>
-      <p className="text-2xl mb-10 lg:text-2xl lg:mb-10">
+      <p className="text-2xl mb-10 lg:text-2xl lg:mb-10 title">
         I work with the following technologies and tools:
       </p>
       <div className="flex flex-col lg:flex lg:flex-row lg:gap-x-20">
@@ -11,7 +11,7 @@ export const Tech: React.FC = () => {
           return (
             <div
               key={tech.category}
-              className="flex flex-col gap-4 flex-1 mt-4 md:flex-auto"
+              className="flex flex-col gap-4 flex-1 mt-4 md:flex-auto title"
             >
               <h3 className="text-2xl font-bold">{tech.category}</h3>
               <div className="flex items-center flex-wrap gap-x-5 gap-y-8">
