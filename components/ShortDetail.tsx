@@ -6,39 +6,47 @@ import Link from "next/link";
 
 export const ShortDetail: React.FC = () => {
   return (
-    <div>
-      <div className="p-12">
-        <ul className="flex itmes-center gap-5">
-          <li>
-            <span className="text-2xl md:text-3xl lg:text-4xl title">
-              Milan Kumar Chaudhary
-            </span>
-          </li>
-        </ul>
-        <ul className="flex itmes-center gap-5">
-          <li>
-            <span className="bold text-white-500 dark:text-gray-500">
-              Sarawal-6, Nawalparasi
-              <br />
-              chaudharymilan996@gmail.com
-              <br />
-              +977-9807445408
-            </span>
-          </li>
-        </ul>
+    <div className="flex flex-col gap-6 p-8 rounded-2xl" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
+      <div>
+        <h2 className="text-2xl md:text-3xl font-bold title" style={{ color: "var(--foreground)" }}>
+          Milan Kumar Chaudhary
+        </h2>
+        <p className="text-sm mt-1" style={{ color: "var(--accent)" }}>
+          Software Developer
+        </p>
       </div>
-      <span className="ml-12">Connect with me:</span>
-      <div className="ml-12 mt-6 mb-6">
+
+      <div className="flex flex-col gap-1 text-sm" style={{ color: "var(--muted)" }}>
+        <span>Sarawal-6, Nawalparasi</span>
+        <a
+          href="mailto:chaudharymilan996@gmail.com"
+          className="transition-colors duration-150"
+          style={{ color: "var(--muted)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+        >
+          chaudharymilan996@gmail.com
+        </a>
+        <span>+977-9807445408</span>
+      </div>
+
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--muted)" }}>
+          Connect
+        </p>
         <ExtraMediaConnect />
       </div>
-      <div className="bg-teal-500 text-white py-2 px-4 rounded-lg font-bold text-2xl inline-block title mx-12">
-        <Link href="/file/milan-cv.pdf">
-          <span className="flex">
-            Download CV
-            <BsDownload />
-          </span>
-        </Link>
-      </div>
+
+      <Link
+        href="/file/milan-cv.pdf"
+        className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+        style={{ background: "var(--accent)", color: "#fff" }}
+        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--accent-hover)")}
+        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--accent)")}
+      >
+        <BsDownload />
+        Download CV
+      </Link>
     </div>
   );
 };

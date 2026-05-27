@@ -1,20 +1,21 @@
 "use client";
-
+import { Window } from "@/components/Window";
 import { ProjectItem } from "@/components/ProjectItem";
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <>
-      <div className="max-w-8xl w-full justify-center flex flex-wrap sm:pt-10 gap-5">
-        <p className="text-2xl mb-10 lg:text-2xl lg:mb-10 title">
-		Some of My Recent Project Works:
+    <div className="max-w-screen-xl mx-auto px-3 md:px-5 py-4 pb-10">
+      <Window title="~/projects.list">
+        <p className="section-label">Portfolio</p>
+        <h1 className="text-2xl md:text-3xl font-bold title mb-1.5" style={{ color: "var(--fg)" }}>
+          Recent Projects
+        </h1>
+        <p className="text-sm mb-6" style={{ color: "var(--muted)" }}>
+          A selection of things I&apos;ve designed and built.
         </p>
-      </div>
-      <div className="max-w-8xl w-full justify-center flex flex-wrap sm:pt-10 gap-5">
+        <div className="w-full h-px mb-8" style={{ background: "var(--border)" }} />
         <ProjectItem />
-      </div>
-    </>
+      </Window>
+    </div>
   );
-};
-
-export default Projects;
+}

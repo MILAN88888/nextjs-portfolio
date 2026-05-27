@@ -1,40 +1,90 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { MediaConnect } from "./MediaConnect";
-import { Menu } from "./Menu";
+import { MENU_OPTIONS } from "@/constants";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-export const Header:React.FC = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
+export const Header: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive]     = useState<string | null>(null);
+  const pathname                = usePathname();
 
-  const handleMilanLinkClick = () => {
-    setActiveMenuItem(null);
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const match = MENU_OPTIONS.find(m => m.url === pathname || pathname.startsWith(m.url.replace("/#", "/")));
+    setActive(match?.id ?? null);
+  }, [pathname]);
+
   return (
-    <div className="z-10 max-w-6xl w-full items-center justify-between md:flex lg:flex md:justify-between lg:justify-between">
-      <p className="left-0 top-0 flex w-full justify-center pb-6 pt-8 md:mb-10 lg:static lg:w-auto  lg:rounded-xl lg:mb-10">
-        <Link href="./">
+    /* visible only on mobile */
+    <header
+      className="md:hidden sticky top-0 z-50 w-full transition-all duration-300"
+      style={{
+        background: scrolled ? "color-mix(in srgb, var(--bg) 82%, transparent)" : "transparent",
+        backdropFilter: scrolled ? "blur(24px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
+        borderBottom: scrolled ? "1px solid var(--border)" : "none",
+      }}
+    >
+      <div className="w-full px-5 py-3 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" onClick={() => setActive(null)} className="flex items-center gap-2 group">
           <span
-            className="font-bold text-4xl title"
-            onClick={handleMilanLinkClick}
+            className="font-bold text-lg tracking-tight transition-opacity duration-200 group-hover:opacity-70"
+            style={{ color: "var(--fg)" }}
           >
-            @Milan
+            @milan
           </span>
+          <Image
+            src="/images/np_flag.gif"
+            alt="Nepal"
+            width={20}
+            height={12}
+            priority
+            className="rounded-sm"
+          />
         </Link>
-      </p>
-      <div className="bottom-0 left-0 mb-6 flex  w-full items-end justify-center dark:from-black dark:via-black  md:auto md:flex md:items-end lg:static lg:h-auto lg:w-auto">
-        <Menu
-          activeMenuItem={activeMenuItem}
-          setActiveMenuItem={setActiveMenuItem}
-        />
-      </div>
-      <div className="bottom-0 left-0 flex  w-full items-end justify-center dark:from-black dark:via-black  md:mb-4 md:flex md:items-end lg:mb-4 lg:static lg:h-auto lg:w-auto">
-        <div className="flex items-center gap-5">
-          <MediaConnect />
-          <ThemeSwitcher />
+
+        {/* Right: nav pills + theme */}
+        <div className="flex items-center gap-1">
+          <nav className="flex items-center">
+            {MENU_OPTIONS.map(item => {
+              const isActive = active === item.id;
+              return (
+                <Link
+                  key={item.id}
+                  href={item.url}
+                  onClick={() => setActive(item.id)}
+                  className="px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200"
+                  style={{
+                    color: isActive ? "var(--accent)" : "var(--muted)",
+                    background: isActive
+                      ? "color-mix(in srgb, var(--accent) 10%, transparent)"
+                      : "transparent",
+                  }}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
+          <div
+            className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200"
+            style={{ color: "var(--muted)" }}
+          >
+            <ThemeSwitcher />
+          </div>
         </div>
+
       </div>
-    </div>
+    </header>
   );
 };

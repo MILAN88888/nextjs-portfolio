@@ -1,0 +1,499 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img [ref=e6]
+        - generic [ref=e9]: milan
+        - generic [ref=e10]: "@"
+        - generic [ref=e11]: portfolio
+      - generic [ref=e12]:
+        - link "1:home" [ref=e13] [cursor=pointer]:
+          - /url: "#ws-1"
+        - link "2:work" [ref=e14] [cursor=pointer]:
+          - /url: "#ws-2"
+        - link "3:edu" [ref=e15] [cursor=pointer]:
+          - /url: "#ws-3"
+        - link "4:git" [ref=e16] [cursor=pointer]:
+          - /url: "#ws-4"
+        - link "5:term" [ref=e17] [cursor=pointer]:
+          - /url: "#ws-5"
+        - link "6:proj" [ref=e18] [cursor=pointer]:
+          - /url: "#ws-6"
+        - link "7:skills" [ref=e19] [cursor=pointer]:
+          - /url: "#ws-7"
+    - generic [ref=e20]:
+      - img [ref=e21]
+      - generic [ref=e23]: cpu 12%
+      - generic [ref=e24]: "|"
+      - generic [ref=e25]: mem 4.2G
+      - generic [ref=e26]: "|"
+      - generic [ref=e27]: ●
+      - generic [ref=e28]: available for work
+      - generic [ref=e29]: "|"
+  - generic [ref=e31]:
+    - main [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e47]: "milan@portfolio: ~/hero"
+              - generic [ref=e48]:
+                - generic [ref=e49]: ws:1
+                - generic [ref=e50]: tiled
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]: available_for_work = true
+                - paragraph [ref=e56]: ~/whoami
+                - heading "Milan Kumar Chaudhary" [level=1] [ref=e57]:
+                  - text: Milan Kumar
+                  - text: Chaudhary
+                - paragraph [ref=e58]: Full-stack developer. I build performant web apps with PHP, React & Next.js.
+                - generic [ref=e59]:
+                  - link "download_cv.sh" [ref=e60] [cursor=pointer]:
+                    - /url: /file/milan-cv.pdf
+                    - img [ref=e61]
+                    - text: download_cv.sh
+                  - link "open ./projects" [ref=e64] [cursor=pointer]:
+                    - /url: "#ws-6"
+                    - img [ref=e65]
+                    - text: open ./projects
+                - generic [ref=e67]:
+                  - link "GitHub" [ref=e68] [cursor=pointer]:
+                    - /url: https://github.com/MILAN88888
+                    - img [ref=e69]
+                  - link "LinkedIn" [ref=e71] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/in/milan-c
+                    - img [ref=e72]
+                  - link "Email" [ref=e76] [cursor=pointer]:
+                    - /url: mailto:chaudharymilan996@gmail.com
+                    - img [ref=e77]
+              - generic [ref=e80]:
+                - generic [ref=e81]: ~/neofetch
+                - generic [ref=e82]: ".--. milan@portfolio |o_o | --------------- |:_/ | OS ArchLinux x86_64 // \\ \\ WM Hyprland (| | ) Shell zsh 5.9 /'\\_ _/`\\ Editor neovim \\___)=(___/ Role Full-Stack Dev At ThemeGrill Loc Nawalparasi, NP"
+                - generic [ref=e83]:
+                  - generic [ref=e84]:
+                    - generic [ref=e85]: 3+
+                    - generic [ref=e86]: years coding
+                  - generic [ref=e87]:
+                    - generic [ref=e88]: 10+
+                    - generic [ref=e89]: projects
+                  - generic [ref=e90]:
+                    - generic [ref=e91]: 2+
+                    - generic [ref=e92]: at ThemeGrill
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - generic [ref=e110]:
+                  - img [ref=e112]
+                  - generic [ref=e115]: contact.yml
+                - generic [ref=e116]:
+                  - generic [ref=e117]: ws:1
+                  - generic [ref=e118]: tiled
+              - generic [ref=e120]:
+                - paragraph [ref=e121]: ~/contact.yml
+                - list [ref=e122]:
+                  - listitem [ref=e123]:
+                    - img [ref=e124]
+                    - generic [ref=e127]:
+                      - generic [ref=e128]: location
+                      - text: Sarawal-6, Nawalparasi
+                  - listitem [ref=e129]:
+                    - img [ref=e130]
+                    - generic [ref=e133]:
+                      - generic [ref=e134]: email
+                      - link "chaudharymilan996@gmail.com" [ref=e135] [cursor=pointer]:
+                        - /url: mailto:chaudharymilan996@gmail.com
+                  - listitem [ref=e136]:
+                    - img [ref=e137]
+                    - generic [ref=e139]:
+                      - generic [ref=e140]: phone
+                      - text: +977-9807445408
+                - generic [ref=e141]:
+                  - generic [ref=e142]: connect
+                  - generic [ref=e143]:
+                    - link [ref=e144] [cursor=pointer]:
+                      - /url: https://github.com/MILAN88888
+                      - img [ref=e145]
+                    - link [ref=e147] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/in/milan-c
+                      - img [ref=e148]
+                    - link [ref=e152] [cursor=pointer]:
+                      - /url: mailto:chaudharymilan996@gmail.com
+                      - img [ref=e153]
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - generic [ref=e163]:
+                  - img [ref=e165]
+                  - generic [ref=e168]: about.md
+                - generic [ref=e169]:
+                  - generic [ref=e170]: ws:1
+                  - generic [ref=e171]: tiled
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]: ~/about
+                  - generic [ref=e176]: $ cat readme.md
+                - heading "# Building things for the web" [level=2] [ref=e177]
+                - generic [ref=e178]:
+                  - paragraph [ref=e179]: I'm Milan Kumar Chaudhary, a CS graduate from Visvesvaraya Technological University, Bangalore. I started my programming journey as a PHP intern in July 2022 and haven't looked back.
+                  - paragraph [ref=e180]: At ThemeGrill I build and maintain WordPress themes and plugins, while continuously sharpening my skills in React, Next.js, and modern frontend tooling.
+                  - paragraph [ref=e181]: I love learning, open source, and shipping things that look great and work fast.
+                - generic [ref=e182]:
+                  - generic [ref=e183]: PHP
+                  - generic [ref=e184]: Laravel
+                  - generic [ref=e185]: React
+                  - generic [ref=e186]: Next.js
+                  - generic [ref=e187]: WordPress
+                  - generic [ref=e188]: TypeScript
+                  - generic [ref=e189]: TailwindCSS
+                  - generic [ref=e190]: MySQL
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - generic [ref=e199]:
+                - img [ref=e201]
+                - generic [ref=e204]: experience.log
+              - generic [ref=e205]:
+                - generic [ref=e206]: ws:2
+                - generic [ref=e207]: tiled
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - img [ref=e211]
+                - text: ~/work $ git log --oneline
+              - list [ref=e214]:
+                - listitem [ref=e215]:
+                  - generic [ref=e217]:
+                    - heading "Intern PHP Developer" [level=3] [ref=e218]
+                    - generic [ref=e219]: 15 July 2022 – 15 Oct 2022
+                  - link "@ Idea Foundation" [ref=e220] [cursor=pointer]:
+                    - /url: http://www.ideafoundation.co.in
+                    - text: "@ Idea Foundation"
+                    - img [ref=e221]
+                  - paragraph [ref=e225]: I worked as a backend developer on the Oxole project, an online book exchange platform. I implemented key features including user registration, book listing, se…
+                - listitem [ref=e226]:
+                  - generic [ref=e228]:
+                    - heading "Intern Plugin PHP Developer" [level=3] [ref=e229]
+                    - generic [ref=e230]: 15 Jan 2023 – 15 Mar 2023
+                  - link "@ ThemeGrill" [ref=e231] [cursor=pointer]:
+                    - /url: http://www.themegrill.com
+                    - text: "@ ThemeGrill"
+                    - img [ref=e232]
+                  - paragraph [ref=e236]: I learned WordPress plugin development, initially starting with the basics and then progressing to fix the issues on live User Registration plugin. This experie…
+                - listitem [ref=e237]:
+                  - generic [ref=e239]:
+                    - heading "Plugin PHP Developer" [level=3] [ref=e240]
+                    - generic [ref=e241]: 16 Mar 2023 – Present
+                  - link "@ ThemeGrill" [ref=e242] [cursor=pointer]:
+                    - /url: http://www.themegrill.com
+                    - text: "@ ThemeGrill"
+                    - img [ref=e243]
+                  - paragraph [ref=e247]: As a junior PHP developer, I've progressed from bug fixes to feature enhancements. I've worked on the User Registration plugin, adding hidden fields, privacy ta…
+                  - generic [ref=e248]:
+                    - generic [ref=e249]: User Registration Form
+                    - generic [ref=e250]: Everest Form
+          - generic [ref=e251]:
+            - generic [ref=e252]:
+              - generic [ref=e258]:
+                - img [ref=e260]
+                - generic [ref=e263]: education.log
+              - generic [ref=e264]:
+                - generic [ref=e265]: ws:3
+                - generic [ref=e266]: tiled
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - img [ref=e270]
+                - text: ~/edu $ ls -la degrees/
+              - list [ref=e273]:
+                - listitem [ref=e274]:
+                  - generic [ref=e276]:
+                    - heading "SLC" [level=3] [ref=e277]
+                    - generic [ref=e278]: Jun 2012 – Jun 2013
+                  - link "@ Adarsh English Boarding School" [ref=e279] [cursor=pointer]:
+                    - /url: ""
+                    - text: "@ Adarsh English Boarding School"
+                    - img [ref=e280]
+                - listitem [ref=e284]:
+                  - generic [ref=e286]:
+                    - heading "+2 (Science)" [level=3] [ref=e287]
+                    - generic [ref=e288]: 2013 – 2015
+                  - link "@ Tillottama Campus" [ref=e289] [cursor=pointer]:
+                    - /url: https://tilottama.edu.np/
+                    - text: "@ Tillottama Campus"
+                    - img [ref=e290]
+                - listitem [ref=e294]:
+                  - generic [ref=e296]:
+                    - heading "Bachelore (Computer Science and Engineering)" [level=3] [ref=e297]
+                    - generic [ref=e298]: Agust 2016 – Dec 2020
+                  - link "@ Sambhram Institute Of Technology" [ref=e299] [cursor=pointer]:
+                    - /url: https://sambhramit.com/
+                    - text: "@ Sambhram Institute Of Technology"
+                    - img [ref=e300]
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - generic [ref=e312]:
+                - img [ref=e314]
+                - generic [ref=e315]: github-stats.svg
+              - generic [ref=e316]:
+                - generic [ref=e317]: ws:4
+                - generic [ref=e318]: tiled
+            - generic [ref=e321]:
+              - img [ref=e322]
+              - text: ~/git $ gh api /users/milan88888/stats
+          - generic [ref=e324]:
+            - generic [ref=e325]:
+              - generic [ref=e331]:
+                - img [ref=e333]
+                - generic [ref=e335]: terminal
+              - generic [ref=e336]:
+                - generic [ref=e337]: ws:5
+                - generic [ref=e338]: tiled
+            - generic [ref=e340]:
+              - generic [ref=e341]:
+                - img [ref=e342]
+                - text: ~/terminal $ bash session.sh
+              - generic [ref=e344]:
+                - paragraph [ref=e346]: milan@portfolio:~$ whoami
+                - paragraph [ref=e348]: milan-kumar-chaudhary
+                - paragraph [ref=e350]: milan@portfolio:~$ cat skills.txt
+                - paragraph [ref=e352]: PHP · Laravel · WordPress · React · Next.js · TypeScript · MySQL · Git
+                - paragraph [ref=e354]: milan@portfolio:~$ echo $STATUS
+                - paragraph [ref=e356]: available_for_work=true
+                - paragraph [ref=e358]: milan@portfolio:~$ curl -s https://github.com/MILAN88888
+                - paragraph [ref=e360]: milan@portfolio:~$ curl -s https://linkedin.com/in/milan-c
+                - paragraph [ref=e362]: milan@portfolio:~$ _
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - generic [ref=e370]:
+              - img [ref=e372]
+              - generic [ref=e374]: projects.list
+            - generic [ref=e375]:
+              - generic [ref=e376]: ws:6
+              - generic [ref=e377]: tiled
+          - generic [ref=e379]:
+            - generic [ref=e380]:
+              - img [ref=e381]
+              - text: ~/projects $ ls -la
+            - generic [ref=e383]:
+              - generic [ref=e384]:
+                - generic [ref=e385]: "01"
+                - generic [ref=e386]:
+                  - generic [ref=e387]:
+                    - heading "Next Portfolio" [level=3] [ref=e388]
+                    - generic [ref=e389]:
+                      - generic [ref=e390]: Next
+                      - generic [ref=e391]: TypeScript
+                      - generic [ref=e392]: HTML
+                      - generic [ref=e393]: Tailwind
+                  - paragraph [ref=e394]: Recently, I've been learning React.js, which I find really exciting. I've also started learning Next.js, which is kind of like an extension of React.js. With what I've learned so far, I've created my own personal portfolio website using Next.js. I'm not done yet, though! I'm still working on it and adding new things to it whenever I have some free time.
+                  - generic [ref=e395]:
+                    - link "GitHub" [ref=e396] [cursor=pointer]:
+                      - /url: https://github.com/MILAN88888/nextjs-portfolio
+                      - img [ref=e397]
+                    - link "Live" [ref=e399] [cursor=pointer]:
+                      - /url: https://www.milanc.com.np/
+                      - img [ref=e400]
+                - img "Next Portfolio" [ref=e405]
+              - generic [ref=e406]:
+                - generic [ref=e407]: "02"
+                - generic [ref=e408]:
+                  - generic [ref=e409]:
+                    - heading "BookExchange" [level=3] [ref=e410]
+                    - generic [ref=e411]:
+                      - generic [ref=e412]: Laravel 8
+                      - generic [ref=e413]: Blade
+                      - generic [ref=e414]: HTML
+                      - generic [ref=e415]: CSS
+                  - paragraph [ref=e416]: While I was learning Laravel, I developed a web application called BookExchange. This platform allows users to perform various book-related actions, such as adding books to their collection, sharing their own books with others, requesting books from fellow users, and borrowing books from the community.
+                  - link "GitHub" [ref=e418] [cursor=pointer]:
+                    - /url: https://github.com/MILAN88888/Laravel-BookXchange
+                    - img [ref=e419]
+                - img "BookExchange" [ref=e422]
+              - generic [ref=e423]:
+                - generic [ref=e424]: "03"
+                - generic [ref=e425]:
+                  - generic [ref=e426]:
+                    - heading "React Portfolio" [level=3] [ref=e427]
+                    - generic [ref=e428]:
+                      - generic [ref=e429]: React
+                      - generic [ref=e430]: HTML
+                      - generic [ref=e431]: CSS
+                  - paragraph [ref=e432]: One day, I found out about React, which seemed interesting, so I started learning it. I got good at it and decided to make my portfolio using React. I made my portfolio using React successfully. Afterward, I learned about Next.js and started using it, but my journey into web development started with React.
+                  - generic [ref=e433]:
+                    - link "GitHub" [ref=e434] [cursor=pointer]:
+                      - /url: https://github.com/MILAN88888/techmkrr.github.io
+                      - img [ref=e435]
+                    - link "Live" [ref=e437] [cursor=pointer]:
+                      - /url: https://techmkr.netlify.app
+                      - img [ref=e438]
+                - img "React Portfolio" [ref=e443]
+              - generic [ref=e444]:
+                - generic [ref=e445]: "04"
+                - generic [ref=e446]:
+                  - generic [ref=e447]:
+                    - heading "Employee Management System" [level=3] [ref=e448]
+                    - generic [ref=e449]:
+                      - generic [ref=e450]: PHP
+                      - generic [ref=e451]: jQuery-Ajax
+                      - generic [ref=e452]: MYSQL
+                  - paragraph [ref=e453]: This is an Employee Management System project that I developed while learning AJAX. I completed this project as a practice exercise, and I utilized AJAX extensively to ensure that there was no need for page reloading. The project includes features such as user registration, login, employee listing, deletion, and updating, all of which are seamlessly handled through AJAX requests.
+                  - link "GitHub" [ref=e455] [cursor=pointer]:
+                    - /url: https://github.com/MILAN88888/EMS
+                    - img [ref=e456]
+                - img "Employee Management System" [ref=e459]
+              - generic [ref=e460]:
+                - generic [ref=e461]: "05"
+                - generic [ref=e462]:
+                  - generic [ref=e463]:
+                    - heading "Quotes, Alarm and Js Calculator" [level=3] [ref=e464]
+                    - generic [ref=e465]:
+                      - generic [ref=e466]: HTML
+                      - generic [ref=e467]: CSS
+                      - generic [ref=e468]: JavaScript
+                  - paragraph [ref=e469]: When I first began my journey into learning JavaScript, I embarked on two hands-on learning projects. The first project was an Add Todos list, and the second project was a JavaScript calculator.I also created repositories for these projects and hosted them online. You can find the code and view the projects using the following links.
+                  - generic [ref=e470]:
+                    - link "GitHub" [ref=e471] [cursor=pointer]:
+                      - /url: https://github.com/MILAN88888/Js_calculator
+                      - img [ref=e472]
+                    - link "Live" [ref=e474] [cursor=pointer]:
+                      - /url: https://milan88888.github.io/Js_calculator/index.html
+                      - img [ref=e475]
+                - img "Quotes, Alarm and Js Calculator" [ref=e480]
+              - generic [ref=e481]:
+                - generic [ref=e482]: "06"
+                - generic [ref=e483]:
+                  - generic [ref=e484]:
+                    - heading "Library Management System" [level=3] [ref=e485]
+                    - generic [ref=e486]:
+                      - generic [ref=e487]: HTML
+                      - generic [ref=e488]: CSS
+                      - generic [ref=e489]: PHP
+                      - generic [ref=e490]: MYSQL
+                  - paragraph [ref=e491]: During my 6th semester of Engineering, my friend Nikhil Basur and I collaborated on a Database Management System (DBMS) mini project. This project spanned a duration of six months. For this project, we utilized HTML, CSS, PHP, and MySQL technologies. We also made use of software tools like XAMPP for server hosting and the Sublime Text editor for coding.
+                - img "Library Management System" [ref=e493]
+        - generic [ref=e494]:
+          - generic [ref=e495]:
+            - generic [ref=e501]:
+              - img [ref=e503]
+              - generic [ref=e506]: skills.tui
+            - generic [ref=e507]:
+              - generic [ref=e508]: ws:7
+              - generic [ref=e509]: tiled
+          - generic [ref=e511]:
+            - generic [ref=e512]:
+              - img [ref=e513]
+              - text: ~/skills $ pacman -Qq | tools
+            - generic [ref=e516]:
+              - generic [ref=e517]:
+                - generic [ref=e518]:
+                  - generic [ref=e520]: Frontend
+                  - generic [ref=e522]: 7 tools
+                - generic [ref=e523]:
+                  - generic [ref=e524]:
+                    - img [ref=e526]
+                    - generic [ref=e528]: HTML
+                  - generic [ref=e529]:
+                    - img [ref=e531]
+                    - generic [ref=e533]: CSS
+                  - generic [ref=e534]:
+                    - img [ref=e536]
+                    - generic [ref=e538]: JavaScript
+                  - generic [ref=e539]:
+                    - img [ref=e541]
+                    - generic [ref=e543]: React
+                  - generic [ref=e544]:
+                    - img [ref=e546]
+                    - generic [ref=e549]: Next.js
+                  - generic [ref=e550]:
+                    - img [ref=e552]
+                    - generic [ref=e555]: Tailwind
+                  - generic [ref=e556]:
+                    - img [ref=e558]
+                    - generic [ref=e561]: Bootstrap
+              - generic [ref=e562]:
+                - generic [ref=e563]:
+                  - generic [ref=e565]: Backend
+                  - generic [ref=e567]: 3 tools
+                - generic [ref=e568]:
+                  - generic [ref=e569]:
+                    - img [ref=e571]
+                    - generic [ref=e573]: PHP
+                  - generic [ref=e574]:
+                    - img [ref=e576]
+                    - generic [ref=e578]: Laravel
+                  - generic [ref=e579]:
+                    - img [ref=e581]
+                    - generic [ref=e583]: MySQL
+              - generic [ref=e584]:
+                - generic [ref=e585]:
+                  - generic [ref=e587]: Other tools
+                  - generic [ref=e589]: 8 tools
+                - generic [ref=e590]:
+                  - generic [ref=e591]:
+                    - img [ref=e593]
+                    - generic [ref=e595]: WordPress
+                  - generic [ref=e596]:
+                    - img [ref=e598]
+                    - generic [ref=e600]: GitHub
+                  - generic [ref=e601]:
+                    - img [ref=e603]
+                    - generic [ref=e605]: GitLab
+                  - generic [ref=e606]:
+                    - img [ref=e608]
+                    - generic [ref=e610]: Git
+                  - generic [ref=e611]:
+                    - img [ref=e613]
+                    - generic [ref=e615]: VS Code
+                  - generic [ref=e616]:
+                    - img [ref=e618]
+                    - generic [ref=e620]: Postman
+                  - generic [ref=e621]:
+                    - img [ref=e623]
+                    - generic [ref=e625]: Jira
+                  - generic [ref=e626]:
+                    - img [ref=e628]
+                    - generic [ref=e630]: FileZilla
+        - generic [ref=e631]: $ echo "© 2026 milan kumar chaudhary — crafted with neovim & ☕"
+        - generic [ref=e632]:
+          - link "About" [ref=e633] [cursor=pointer]:
+            - /url: "#about"
+            - img [ref=e634]
+            - generic: About
+          - link "Work" [ref=e637] [cursor=pointer]:
+            - /url: "#ws-2"
+            - img [ref=e638]
+            - generic: Work
+          - link "Edu" [ref=e641] [cursor=pointer]:
+            - /url: "#ws-3"
+            - img [ref=e642]
+            - generic: Edu
+          - link "GitHub" [ref=e645] [cursor=pointer]:
+            - /url: "#ws-4"
+            - img [ref=e646]
+            - generic: GitHub
+          - link "Terminal" [ref=e647] [cursor=pointer]:
+            - /url: "#ws-5"
+            - img [ref=e648]
+            - generic: Terminal
+          - link "Projects" [ref=e650] [cursor=pointer]:
+            - /url: "#ws-6"
+            - img [ref=e651]
+            - generic: Projects
+          - link "Skills" [ref=e653] [cursor=pointer]:
+            - /url: "#ws-7"
+            - img [ref=e654]
+            - generic: Skills
+          - link "Contact" [ref=e657] [cursor=pointer]:
+            - /url: "#contact"
+            - img [ref=e658]
+            - generic: Contact
+    - contentinfo [ref=e662]:
+      - generic [ref=e663]:
+        - paragraph [ref=e664]: © 2026 @milan · Built with Next.js
+        - generic [ref=e665]:
+          - generic [ref=e666]: PHP
+          - generic [ref=e667]: React
+          - generic [ref=e668]: Next.js
+          - generic [ref=e669]: TypeScript
+  - alert [ref=e670]

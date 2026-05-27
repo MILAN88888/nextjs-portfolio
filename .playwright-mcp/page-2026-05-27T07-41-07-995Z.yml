@@ -1,0 +1,530 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e7]
+          - generic [ref=e10]: milan
+          - generic [ref=e11]: "@"
+          - generic [ref=e12]: portfolio
+        - generic [ref=e13]:
+          - link "1:home" [ref=e14] [cursor=pointer]:
+            - /url: "#ws-1"
+          - link "2:work" [ref=e15] [cursor=pointer]:
+            - /url: "#ws-2"
+          - link "3:edu" [ref=e16] [cursor=pointer]:
+            - /url: "#ws-3"
+          - link "4:git" [ref=e17] [cursor=pointer]:
+            - /url: "#ws-4"
+          - link "5:term" [ref=e18] [cursor=pointer]:
+            - /url: "#ws-5"
+          - link "6:proj" [ref=e19] [cursor=pointer]:
+            - /url: "#ws-6"
+          - link "7:skills" [ref=e20] [cursor=pointer]:
+            - /url: "#ws-7"
+      - generic [ref=e21]:
+        - img [ref=e22]
+        - generic [ref=e24]: cpu 12%
+        - generic [ref=e25]: "|"
+        - generic [ref=e26]: mem 4.2G
+        - generic [ref=e27]: "|"
+        - generic [ref=e28]: ●
+        - generic [ref=e29]: available for work
+      - generic [ref=e30]:
+        - img [ref=e31]
+        - img [ref=e35]
+        - img [ref=e39]
+        - generic [ref=e41]: Wed, May 27
+        - generic [ref=e42]: 01:26 PM
+    - main [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e52]:
+              - img [ref=e54]
+              - generic [ref=e58]: "milan@portfolio: ~/hero"
+            - generic [ref=e59]:
+              - generic [ref=e60]: ws:1
+              - generic [ref=e61]: tiled
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: available_for_work = true
+              - paragraph [ref=e67]: ~/whoami
+              - heading "Milan Kumar Chaudhary" [level=1] [ref=e68]:
+                - text: Milan Kumar
+                - text: Chaudhary
+              - paragraph [ref=e69]: Full-stack developer. I build performant web apps with PHP, React & Next.js.
+              - generic [ref=e70]:
+                - link "download_cv.sh" [ref=e71] [cursor=pointer]:
+                  - /url: "#contact"
+                  - img [ref=e72]
+                  - text: download_cv.sh
+                - link "open ./projects" [ref=e75] [cursor=pointer]:
+                  - /url: "#ws-2"
+                  - img [ref=e76]
+                  - text: open ./projects
+              - generic [ref=e78]:
+                - link "GitHub" [ref=e79] [cursor=pointer]:
+                  - /url: https://github.com
+                  - img [ref=e80]
+                - link "LinkedIn" [ref=e83] [cursor=pointer]:
+                  - /url: https://linkedin.com
+                  - img [ref=e84]
+                - link "Twitter" [ref=e88] [cursor=pointer]:
+                  - /url: https://twitter.com
+                  - img [ref=e89]
+                - link "Email" [ref=e91] [cursor=pointer]:
+                  - /url: mailto:chaudharymilan996@gmail.com
+                  - img [ref=e92]
+            - generic [ref=e95]:
+              - generic [ref=e96]: ~/neofetch
+              - generic [ref=e97]: ".--. milan@portfolio |o_o | --------------- |:_/ | OS ArchLinux x86_64 // \\ \\ WM Hyprland (| | ) Shell zsh 5.9 /'\\_ _/`\\ Editor neovim \\___)=(___/ Role Full-Stack Dev At ThemeGrill Loc Nawalparasi, NP"
+              - generic [ref=e98]:
+                - generic [ref=e99]:
+                  - generic [ref=e100]: 3+
+                  - generic [ref=e101]: years coding
+                - generic [ref=e102]:
+                  - generic [ref=e103]: 10+
+                  - generic [ref=e104]: projects
+                - generic [ref=e105]:
+                  - generic [ref=e106]: 2+
+                  - generic [ref=e107]: at ThemeGrill
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e125]:
+                - img [ref=e127]
+                - generic [ref=e130]: contact.yml
+              - generic [ref=e131]:
+                - generic [ref=e132]: ws:1
+                - generic [ref=e133]: tiled
+            - generic [ref=e135]:
+              - generic [ref=e136]: ~/contact.yml
+              - list [ref=e137]:
+                - listitem [ref=e138]:
+                  - img [ref=e139]
+                  - generic [ref=e142]:
+                    - generic [ref=e143]: location
+                    - text: Sarawal-6, Nawalparasi
+                - listitem [ref=e144]:
+                  - img [ref=e145]
+                  - generic [ref=e148]:
+                    - generic [ref=e149]: email
+                    - link "chaudharymilan996@gmail.com" [ref=e150] [cursor=pointer]:
+                      - /url: mailto:chaudharymilan996@gmail.com
+                - listitem [ref=e151]:
+                  - img [ref=e152]
+                  - generic [ref=e154]:
+                    - generic [ref=e155]: phone
+                    - text: +977-9807445408
+              - generic [ref=e156]:
+                - generic [ref=e157]: connect
+                - generic [ref=e158]:
+                  - link [ref=e159] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e160]
+                  - link [ref=e163] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e164]
+                  - link [ref=e168] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e169]
+                  - link [ref=e171] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e172]
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e182]:
+                - img [ref=e184]
+                - generic [ref=e187]: about.md
+              - generic [ref=e188]:
+                - generic [ref=e189]: ws:1
+                - generic [ref=e190]: tiled
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]: ~/about
+                - generic [ref=e195]: $ cat readme.md
+              - heading "# Building things for the web" [level=2] [ref=e196]
+              - generic [ref=e197]:
+                - paragraph [ref=e198]: I'm Milan Kumar Chaudhary, a CS graduate from Visvesvaraya Technological University, Bangalore. I started my programming journey as a PHP intern in July 2022 and haven't looked back.
+                - paragraph [ref=e199]: At ThemeGrill I build and maintain WordPress themes and plugins, while continuously sharpening my skills in React, Next.js, and modern frontend tooling.
+                - paragraph [ref=e200]: I love learning, open source, and shipping things that look great and work fast.
+              - generic [ref=e201]:
+                - generic [ref=e202]: PHP
+                - generic [ref=e203]: Laravel
+                - generic [ref=e204]: React
+                - generic [ref=e205]: Next.js
+                - generic [ref=e206]: WordPress
+                - generic [ref=e207]: TypeScript
+                - generic [ref=e208]: TailwindCSS
+                - generic [ref=e209]: MySQL
+      - generic [ref=e210]:
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e218]:
+              - img [ref=e220]
+              - generic [ref=e223]: experience.log
+            - generic [ref=e224]:
+              - generic [ref=e225]: ws:2
+              - generic [ref=e226]: tiled
+          - generic [ref=e228]:
+            - generic [ref=e229]:
+              - img [ref=e230]
+              - text: ~/work $ git log --oneline
+            - list [ref=e233]:
+              - listitem [ref=e234]:
+                - generic [ref=e236]:
+                  - heading "Plugin PHP Developer" [level=3] [ref=e237]
+                  - generic [ref=e238]: 16 Mar 2023 – Present
+                - link "@ ThemeGrill" [ref=e239] [cursor=pointer]:
+                  - /url: "#"
+                  - text: "@ ThemeGrill"
+                  - img [ref=e240]
+                - paragraph [ref=e244]: Progressed from bug fixes to feature work on User Registration & Everest Form plugins — lookup fields, file protection, slot booking, blacklist features.
+                - generic [ref=e245]:
+                  - generic [ref=e246]: User Registration Form
+                  - generic [ref=e247]: Everest Form
+              - listitem [ref=e248]:
+                - generic [ref=e250]:
+                  - heading "Intern Plugin PHP Developer" [level=3] [ref=e251]
+                  - generic [ref=e252]: 15 Jan 2023 – 15 Mar 2023
+                - link "@ ThemeGrill" [ref=e253] [cursor=pointer]:
+                  - /url: "#"
+                  - text: "@ ThemeGrill"
+                  - img [ref=e254]
+                - paragraph [ref=e258]: Learned WordPress plugin development, fixing live issues on the User Registration plugin and improving coding & communication skills.
+              - listitem [ref=e259]:
+                - generic [ref=e261]:
+                  - heading "Intern PHP Developer" [level=3] [ref=e262]
+                  - generic [ref=e263]: 15 Jul 2022 – 15 Oct 2022
+                - link "@ Idea Foundation" [ref=e264] [cursor=pointer]:
+                  - /url: "#"
+                  - text: "@ Idea Foundation"
+                  - img [ref=e265]
+                - paragraph [ref=e269]: "Backend developer on the Oxole book-exchange platform: registration, listing, search, exchange requests, profiles. Learned MVC, core PHP, jQuery/Ajax, Twig, SQL."
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e277]:
+              - img [ref=e279]
+              - generic [ref=e282]: education.log
+            - generic [ref=e283]:
+              - generic [ref=e284]: ws:3
+              - generic [ref=e285]: tiled
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - img [ref=e289]
+              - text: ~/education $ ls -la
+            - list [ref=e292]:
+              - listitem [ref=e293]:
+                - generic [ref=e295]:
+                  - heading "B.E. Computer Science" [level=3] [ref=e296]
+                  - generic [ref=e297]: Aug 2016 – Dec 2020
+                - link "@ Sambhram Institute of Technology" [ref=e298] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e299]:
+                - generic [ref=e301]:
+                  - heading "+2 (Science)" [level=3] [ref=e302]
+                  - generic [ref=e303]: 2013 – 2015
+                - link "@ Tillottama Campus" [ref=e304] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e305]:
+                - generic [ref=e307]:
+                  - heading "SLC" [level=3] [ref=e308]
+                  - generic [ref=e309]: Jun 2012 – Jun 2013
+                - link "@ Adarsh English Boarding School" [ref=e310] [cursor=pointer]:
+                  - /url: "#"
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e319]:
+              - img [ref=e321]
+              - generic [ref=e324]: gh-stats.tui
+            - generic [ref=e325]:
+              - generic [ref=e326]: ws:4
+              - generic [ref=e327]: tiled
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - img [ref=e331]
+              - text: ~/github $ gh stats --user milan
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]: 2,647
+                - generic [ref=e337]: Total Contributions
+                - generic [ref=e338]: Jul 15, 2022 – Present
+              - generic [ref=e339]:
+                - generic [ref=e340]: "2"
+                - generic [ref=e341]: Current Streak
+                - generic [ref=e342]: May 25 – May 26
+              - generic [ref=e343]:
+                - generic [ref=e344]: "82"
+                - generic [ref=e345]: Longest Streak
+                - generic [ref=e346]: Aug 2 – Oct 22, 2023
+            - generic [ref=e347]: top languages
+            - generic [ref=e354]:
+              - generic [ref=e355]:
+                - generic [ref=e357]: PHP
+                - generic [ref=e358]: 38%
+              - generic [ref=e359]:
+                - generic [ref=e361]: JavaScript
+                - generic [ref=e362]: 24%
+              - generic [ref=e363]:
+                - generic [ref=e365]: TypeScript
+                - generic [ref=e366]: 18%
+              - generic [ref=e367]:
+                - generic [ref=e369]: CSS
+                - generic [ref=e370]: 12%
+              - generic [ref=e371]:
+                - generic [ref=e373]: Other
+                - generic [ref=e374]: 8%
+            - generic [ref=e376]: contribution graph
+        - generic [ref=e560]:
+          - generic [ref=e561]:
+            - generic [ref=e567]:
+              - img [ref=e569]
+              - generic [ref=e571]: zsh — 80x24
+            - generic [ref=e572]:
+              - generic [ref=e573]: ws:5
+              - generic [ref=e574]: tiled
+          - generic [ref=e576]:
+            - generic [ref=e577]: milan@portfolio:~$ echo "Thanks for scrolling."
+            - generic [ref=e578]: Thanks for scrolling.
+            - generic [ref=e579]: milan@portfolio:~$ ls ~/links
+            - generic [ref=e580]: github linkedin twitter email resume.pdf
+            - generic [ref=e581]: milan@portfolio:~$ contact --hire-me
+            - generic [ref=e582]: » opening mailto:chaudharymilan996@gmail.com ...
+            - generic [ref=e583]:
+              - text: milan@portfolio:~$
+              - generic [ref=e584]: ▋
+      - generic [ref=e585]:
+        - generic [ref=e586]:
+          - generic [ref=e592]:
+            - img [ref=e594]
+            - generic [ref=e596]: projects.list
+          - generic [ref=e597]:
+            - generic [ref=e598]: ws:6
+            - generic [ref=e599]: tiled
+        - generic [ref=e601]:
+          - generic [ref=e602]:
+            - img [ref=e603]
+            - text: ~/projects $ ls --recent
+          - heading "# Recent Projects" [level=2] [ref=e605]
+          - paragraph [ref=e606]: A selection of things I've designed and built.
+          - list [ref=e607]:
+            - listitem [ref=e608]:
+              - generic [ref=e609]: "01"
+              - generic [ref=e610]:
+                - generic [ref=e611]:
+                  - heading "Next Portfolio" [level=3] [ref=e612]
+                  - generic [ref=e613]:
+                    - generic [ref=e614]: Next
+                    - generic [ref=e615]: TypeScript
+                    - generic [ref=e616]: HTML
+                    - generic [ref=e617]: Tailwind
+                - paragraph [ref=e618]: Personal portfolio rebuilt in Next.js + TypeScript while learning the App Router. Focus on performance, SEO, and a clean responsive layout.
+                - generic [ref=e619]:
+                  - link "Repo" [ref=e620] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e621]
+                  - link "Live" [ref=e625] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e626]
+            - listitem [ref=e636]:
+              - generic [ref=e637]: "02"
+              - generic [ref=e638]:
+                - generic [ref=e639]:
+                  - heading "BookExchange" [level=3] [ref=e640]
+                  - generic [ref=e641]:
+                    - generic [ref=e642]: Laravel 8
+                    - generic [ref=e643]: Blade
+                    - generic [ref=e644]: HTML
+                    - generic [ref=e645]: CSS
+                - paragraph [ref=e646]: Laravel app where users can add books, search the catalogue and request exchanges. Built end-to-end while learning Laravel and Blade.
+                - link "Repo" [ref=e648] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e649]
+            - listitem [ref=e659]:
+              - generic [ref=e660]: "03"
+              - generic [ref=e661]:
+                - generic [ref=e662]:
+                  - heading "React Portfolio" [level=3] [ref=e663]
+                  - generic [ref=e664]:
+                    - generic [ref=e665]: React
+                    - generic [ref=e666]: HTML
+                    - generic [ref=e667]: CSS
+                - paragraph [ref=e668]: First portfolio in React — component-based architecture, routing and an interactive timeline of work and learning.
+                - generic [ref=e669]:
+                  - link "Repo" [ref=e670] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e671]
+                  - link "Live" [ref=e675] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e676]
+            - listitem [ref=e686]:
+              - generic [ref=e687]: "04"
+              - generic [ref=e688]:
+                - generic [ref=e689]:
+                  - heading "Employee Management System" [level=3] [ref=e690]
+                  - generic [ref=e691]:
+                    - generic [ref=e692]: PHP
+                    - generic [ref=e693]: jQuery-Ajax
+                    - generic [ref=e694]: MYSQL
+                - paragraph [ref=e695]: AJAX-driven employee CRUD app built to practice jQuery & PHP — search, edit and delete without page reloads.
+                - link "Repo" [ref=e697] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e698]
+            - listitem [ref=e708]:
+              - generic [ref=e709]: "05"
+              - generic [ref=e710]:
+                - generic [ref=e711]:
+                  - heading "Quotes, Alarm & JS Calculator" [level=3] [ref=e712]
+                  - generic [ref=e713]:
+                    - generic [ref=e714]: HTML
+                    - generic [ref=e715]: CSS
+                    - generic [ref=e716]: JavaScript
+                - paragraph [ref=e717]: A trio of vanilla JS mini-apps from my early JS days — todos, a working alarm, and a fully functional calculator.
+                - generic [ref=e718]:
+                  - link "Repo" [ref=e719] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e720]
+                  - link "Live" [ref=e724] [cursor=pointer]:
+                    - /url: "#"
+                    - img [ref=e725]
+            - listitem [ref=e735]:
+              - generic [ref=e736]: "06"
+              - generic [ref=e737]:
+                - generic [ref=e738]:
+                  - heading "Library Management System" [level=3] [ref=e739]
+                  - generic [ref=e740]:
+                    - generic [ref=e741]: HTML
+                    - generic [ref=e742]: CSS
+                    - generic [ref=e743]: PHP
+                    - generic [ref=e744]: MYSQL
+                - paragraph [ref=e745]: 6th-semester DBMS mini project — issue/return books, manage members, and run reports. Built with a friend over six months.
+                - link "Repo" [ref=e747] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e748]
+      - generic [ref=e758]:
+        - generic [ref=e759]:
+          - generic [ref=e765]:
+            - img [ref=e767]
+            - generic [ref=e771]: skills.tui
+          - generic [ref=e772]:
+            - generic [ref=e773]: ws:7
+            - generic [ref=e774]: tiled
+        - generic [ref=e776]:
+          - generic [ref=e777]:
+            - img [ref=e778]
+            - text: ~/skills $ pacman -Qq | tools
+          - heading "# Tools & Technologies" [level=2] [ref=e782]
+          - paragraph [ref=e783]: Technologies I use regularly to design and build things.
+          - generic [ref=e784]:
+            - generic [ref=e785]:
+              - generic [ref=e786]:
+                - generic [ref=e788]: Frontend
+                - generic [ref=e790]: 7 tools
+              - generic [ref=e791]:
+                - generic [ref=e792]:
+                  - generic [ref=e793]: HT
+                  - generic [ref=e794]: HTML
+                - generic [ref=e795]:
+                  - generic [ref=e796]: CS
+                  - generic [ref=e797]: CSS
+                - generic [ref=e798]:
+                  - generic [ref=e799]: JA
+                  - generic [ref=e800]: JavaScript
+                - generic [ref=e801]:
+                  - generic [ref=e802]: RE
+                  - generic [ref=e803]: React
+                - generic [ref=e804]:
+                  - generic [ref=e805]: NE
+                  - generic [ref=e806]: Next.js
+                - generic [ref=e807]:
+                  - generic [ref=e808]: TA
+                  - generic [ref=e809]: Tailwind
+                - generic [ref=e810]:
+                  - generic [ref=e811]: BO
+                  - generic [ref=e812]: Bootstrap
+            - generic [ref=e813]:
+              - generic [ref=e814]:
+                - generic [ref=e816]: Backend
+                - generic [ref=e818]: 3 tools
+              - generic [ref=e819]:
+                - generic [ref=e820]:
+                  - generic [ref=e821]: PH
+                  - generic [ref=e822]: PHP
+                - generic [ref=e823]:
+                  - generic [ref=e824]: LA
+                  - generic [ref=e825]: Laravel
+                - generic [ref=e826]:
+                  - generic [ref=e827]: MY
+                  - generic [ref=e828]: MySQL
+            - generic [ref=e829]:
+              - generic [ref=e830]:
+                - generic [ref=e832]: Other Tools
+                - generic [ref=e834]: 8 tools
+              - generic [ref=e835]:
+                - generic [ref=e836]:
+                  - generic [ref=e837]: WO
+                  - generic [ref=e838]: WordPress
+                - generic [ref=e839]:
+                  - generic [ref=e840]: GI
+                  - generic [ref=e841]: GitHub
+                - generic [ref=e842]:
+                  - generic [ref=e843]: GI
+                  - generic [ref=e844]: GitLab
+                - generic [ref=e845]:
+                  - generic [ref=e846]: GI
+                  - generic [ref=e847]: Git
+                - generic [ref=e848]:
+                  - generic [ref=e849]: VS
+                  - generic [ref=e850]: VS Code
+                - generic [ref=e851]:
+                  - generic [ref=e852]: PO
+                  - generic [ref=e853]: Postman
+                - generic [ref=e854]:
+                  - generic [ref=e855]: JI
+                  - generic [ref=e856]: Jira
+                - generic [ref=e857]:
+                  - generic [ref=e858]: FI
+                  - generic [ref=e859]: FileZilla
+      - generic [ref=e860]: $ echo "© 2026 milan kumar chaudhary — crafted with neovim & ☕"
+    - generic [ref=e861]:
+      - link "About" [ref=e862] [cursor=pointer]:
+        - /url: "#about"
+        - img [ref=e863]
+        - generic [ref=e866]: About
+      - link "Work" [ref=e867] [cursor=pointer]:
+        - /url: "#ws-2"
+        - img [ref=e868]
+        - generic [ref=e871]: Work
+      - link "Education" [ref=e872] [cursor=pointer]:
+        - /url: "#ws-3"
+        - img [ref=e873]
+        - generic [ref=e876]: Education
+      - link "Projects" [ref=e877] [cursor=pointer]:
+        - /url: "#ws-6"
+        - img [ref=e878]
+        - generic [ref=e880]: Projects
+      - link "Skills" [ref=e881] [cursor=pointer]:
+        - /url: "#ws-7"
+        - img [ref=e882]
+        - generic [ref=e886]: Skills
+      - link "GitHub" [ref=e887] [cursor=pointer]:
+        - /url: "#ws-4"
+        - img [ref=e888]
+        - generic [ref=e891]: GitHub
+      - link "Terminal" [ref=e892] [cursor=pointer]:
+        - /url: "#ws-5"
+        - img [ref=e893]
+        - generic [ref=e895]: Terminal
+      - link "Contact" [ref=e896] [cursor=pointer]:
+        - /url: "#contact"
+        - img [ref=e897]
+        - generic [ref=e900]: Contact
+  - complementary "Edit with Lovable" [ref=e901]:
+    - link "Edit with Lovable" [ref=e902] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/8fa2e48e-5d5e-41c8-a1cc-9133f518325e?utm_source=lovable-badge
+      - generic [ref=e903]: Edit with
+      - img [ref=e904]
+    - button "Dismiss" [ref=e909] [cursor=pointer]:
+      - img [ref=e910]
