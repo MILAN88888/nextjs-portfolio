@@ -1,4 +1,11 @@
  == Changelog ==
 
+ = 2.0.0 - 2026-09-04
+ * Rebuilt as a single static page on a token-based design system, two themes from one token set.
+ * Repositioned around AI platform work: new AI Platform section carrying the ThemeGrill AI Cloud case study and how agents are used day to day.
+ * Hero leads with four verifiable figures and links the CV.
+ * Projects, experience and skills rewritten around checkable impact; each project states my part in it.
+ * Metadata, keywords and Person JSON-LD updated to match.
+
  = 1.0.0 - 2023-09-11
  * Initial Release

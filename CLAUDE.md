@@ -19,7 +19,7 @@ Node >= 20 (`.nvmrc` pins 20). There is no test suite, so `npm run build` + `npm
 
 Next.js 13.4 **App Router** portfolio for Milan Chaudhary (milanc.com.np). A **single static page** — `/` — assembled from section components. TypeScript strict, Tailwind, no backend, no client-side data fetching.
 
-`app/page.tsx` is a thin server component that composes `components/sections/*` in order. Almost everything is a server component; the only client components are `SiteHeader`, `ThemeToggle`, `ThemeContext`, `ui/Reveal` and `app/error.tsx` (which React requires to be one).
+`app/page.tsx` is a thin server component that composes `components/sections/*` in order: `Hero`, `About`, `AiWork`, `Projects`, `Skills`, `Experience`, `Education`, `Contact`. Almost everything is a server component; the only client components are `SiteHeader`, `ThemeToggle`, `ThemeContext`, `ui/Reveal` and `app/error.tsx` (which React requires to be one).
 
 No component renders an image — `next/image` is unused, and the only assets the page references are the favicon and OG `screenshot.webp` declared in `app/metadata.ts`. `public/images/` still holds pre-redesign project shots that nothing imports. Icons are exclusively Feather via `react-icons/fi`; don't mix in a second icon set.
 
@@ -57,13 +57,22 @@ Tailwind opacity modifiers do **not** work on these tokens (`bg-accent/10` produ
 Components render; `constants/` supplies. `constants/index.tsx` is the barrel (`@/constants`), and `constants/types.ts` types every shape.
 
 - `Profile.tsx` — the single source for name, role, tagline, contact details, CV path and `siteUrl`. `app/metadata.ts`, `app/sitemap.ts` and `app/robots.ts` all read `siteUrl` from here, which is what keeps the domain from drifting. Import it as `@/constants/Profile` in those files, not through the barrel, to keep `react-icons` out of their module graph.
-- `Sections.tsx` — the section registry (`id`, `num`, `label`, `title`). **This one array drives the desktop nav, the mobile nav, the scroll-spy, and every section's `01 — ABOUT` kicker and heading** — section headings are not written in the section components. Adding a section means adding an entry here *and* rendering it in `app/page.tsx`; the nav then follows automatically. `getSection()` throws on an unknown id, so a mismatch fails the build rather than rendering a broken nav. `SECTION_KICKERS` overrides the kicker where it should differ from the nav label (`Projects` → `FEATURED PROJECTS`).
+- `Sections.tsx` — the section registry (`id`, `num`, `label`, `navLabel?`, `title`). **This one array drives the desktop nav, the mobile nav, the scroll-spy, and every section's `01 — ABOUT` kicker and heading** — section headings are not written in the section components. Adding a section means adding an entry here *and* rendering it in `app/page.tsx`; the nav then follows automatically. `getSection()` throws on an unknown id, so a mismatch fails the build rather than rendering a broken nav. `SECTION_KICKERS` overrides the kicker where it should differ from the nav label (`Projects` → `FEATURED PROJECTS`), and `navLabel` shortens a label for the header only (`AI Platform` → `AI`).
+
+  There are seven sections, which is what the header can hold: the desktop nav appears at `lg`, not `md` — seven labels plus the wordmark and header actions measured 895px, so at 768px the bar overflowed. An eighth section means shortening labels with `navLabel`, not lowering that breakpoint.
+
+- `AiWork.tsx` — `CASE_STUDIES` (problem, approach, the numbered decisions, outcomes, stack, `internalNote`) and `AGENTIC_PRACTICE`. This is the page's deepest content and the reason the AI section exists: a reviewer should see the engineering calls, not a stack list.
 - `ProjectList.tsx`, `WorkExp.tsx`, `EduExp.tsx`, `TechList.tsx`, `SocialMedia.tsx` — the content lists. `Job.period` and `School.period` are free text (`"Mar 2023 — Present"`), not parsed dates.
 - `EXPERIENCE_YEARS` in `Profile.tsx` is **derived** from `CAREER_START` (15 July 2022) at build time, not hardcoded — the previous design carried a stale "3+ years" for three years. Don't replace it with a literal.
+- `HERO_STATS` is the hero proof strip. **Every figure needs a `note` that makes it checkable** (which install base, measured how) — a bare number with no baseline is the thing hiring reviewers discount first. Keep the four labels short enough to hold one line at `lg`; they sit in a four-column grid and a wrapped label misaligns the notes beneath it.
+- `PROFILE.installBase` is the single source for the combined WordPress.org install figure, quoted in the hero, the bio and the experience summary. Re-check it against the plugin API before changing any of them:
+  `curl -s "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=everest-forms"`
+- `Project.role` ("my part") is not optional in spirit: these are team products, and presenting one as solo work is the fastest way to lose a reviewer. `Project.internal` renders a "Closed source" note instead of a dead Code link.
+- Skills group **capabilities, not tool badges** — "LLM gateway design", "Rate & budget control", not a list of model names. Listing AI products as skills reads as unverified.
 
 ### Component layers
 
-- **`components/ui/`** — primitives, imported via `@/components/ui`. `Section` (kicker + heading + anchor), `Container`, `Card`, `Tag`, `Button`, `IconLink`, `TextLink`, `Reveal`. Reach for these before writing new markup.
+- **`components/ui/`** — primitives, imported via `@/components/ui`. `Section` (kicker + heading + anchor), `Container`, `Card`, `Tag`, `Stat`, `Button`, `IconLink`, `TextLink`, `Reveal`. Reach for these before writing new markup.
   - `Section` renders a **full-bleed** `<section>` (so the top divider and the hero grid reach the viewport edges) and wraps its body in `Container`. `main` deliberately applies no max-width — anything rendered outside a `Section` must bring its own `Container`.
   - `Tag` has two variants: `mono` (outlined pill, project stacks) and `solid` (filled chip, skills grid).
 - **`components/sections/`** — one component per page section, imported via `@/components/sections`.
@@ -93,9 +102,11 @@ Anchor offsets come from `scroll-padding-top` on `html`, derived from the `--hea
 
 Beyond `build` and `lint`, the checks that actually catch regressions here:
 
-- **Screenshot both themes.** Light-mode token bugs are invisible in dark mode. Toggle the theme and compare at 390px / 768px / 1440px.
-- **Re-check contrast after any color change.** Sample every `--text-*` and hue token against `--bg` and `--surface` in both themes; the canvas `fillStyle` trick converts `oklch()` to RGB for a WCAG ratio.
+- **Screenshot both themes.** Light-mode token bugs are invisible in dark mode. Toggle the theme (`localStorage.setItem('theme','light')` then reload) and compare at 360px / 390px / 768px / 1024px / 1440px. 768 and 1024 both matter now that the nav switches at `lg`.
+- **Scroll the whole page before a full-page screenshot.** `IntersectionObserver` never fires for sections a stitched capture didn't actually scroll through, so `.reveal` content photographs as blank space. Step down the page first, then assert nothing is left hidden:
+  `[...document.querySelectorAll('.reveal')].filter(e => e.dataset.revealed !== 'true').length` must be `0`.
+- **Re-check contrast after any color change.** Sample every `--text-*` and accent token against `--bg`, `--surface` and `--surface-raised` in both themes. The canvas `fillStyle` trick does **not** work here — Chrome leaves `oklch()` unparsed and it silently returns ratios near 1.0. Convert OKLCh to sRGB in the page instead (OKLab → LMS → linear sRGB, then the WCAG formula). Current floor is 4.62:1 (`--text-faint` on `--surface-raised`, dark); light-mode `--accent` on `--surface-raised` is 4.81:1, so it has the least room to move.
 - **Test with reduced motion on.** Confirm all `.reveal` elements report `opacity: 1` without scrolling.
 - **Tab through the page.** First Tab must reveal the skip link; every visible link and button needs a ring.
 
-`changelog.txt` follows `= X.Y.Z - YYYY-MM-DD` / `* entry`; bump `version` in `package.json` alongside it. The two are currently out of step — `package.json` says `0.1.0` while the last changelog entry is `1.0.0 - 2023-09-11`, and the redesign has no entry at all — so pick both numbers deliberately at the next release rather than incrementing whatever is there.
+`changelog.txt` follows `= X.Y.Z - YYYY-MM-DD` / `* entry`; bump `version` in `package.json` alongside it. Both now read `2.0.0` (2026-09-04, the redesign plus the AI platform repositioning) after sitting out of step for two years — keep them in step.
