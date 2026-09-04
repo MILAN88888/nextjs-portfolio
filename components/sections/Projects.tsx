@@ -1,4 +1,4 @@
-import { FiArrowUpRight, FiCode, FiExternalLink } from "react-icons/fi";
+import { FiArrowUpRight, FiCode, FiExternalLink, FiLock } from "react-icons/fi";
 import { Section, Card, Tag, TextLink, Reveal } from "@/components/ui";
 import { PROFILE, PROJECT_LIST } from "@/constants";
 
@@ -13,9 +13,23 @@ export const Projects = () => (
                 {project.title}
               </h3>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
+              {project.metric && (
+                <p className="mt-2 font-mono text-[0.69rem] leading-relaxed text-accent">
+                  {project.metric}
+                </p>
+              )}
+
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                 {project.description}
               </p>
+
+              {project.role && (
+                <p className="mt-4 flex-1 text-xs leading-relaxed text-ink-faint">
+                  <span className="font-mono uppercase tracking-[0.14em]">My part</span>
+                  {" — "}
+                  {project.role}
+                </p>
+              )}
 
               <ul className="mt-5 flex flex-wrap gap-1.5">
                 {project.stack.map(tech => (
@@ -25,24 +39,30 @@ export const Projects = () => (
                 ))}
               </ul>
 
-              {(project.repoUrl || project.liveUrl) && (
-                <div className="mt-5 flex flex-wrap gap-4 border-t border-line pt-4">
-                  {project.repoUrl && (
-                    <TextLink href={project.repoUrl}>
-                      <FiCode size={13} aria-hidden="true" />
-                      Code
-                      <span className="sr-only"> for {project.title}</span>
-                    </TextLink>
-                  )}
-                  {project.liveUrl && (
-                    <TextLink href={project.liveUrl}>
-                      <FiExternalLink size={13} aria-hidden="true" />
-                      Live
-                      <span className="sr-only"> {project.title}</span>
-                    </TextLink>
-                  )}
-                </div>
-              )}
+              <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-line pt-4">
+                {project.repoUrl && (
+                  <TextLink href={project.repoUrl}>
+                    <FiCode size={13} aria-hidden="true" />
+                    Code
+                    <span className="sr-only"> for {project.title}</span>
+                  </TextLink>
+                )}
+
+                {project.liveUrl && (
+                  <TextLink href={project.liveUrl}>
+                    <FiExternalLink size={13} aria-hidden="true" />
+                    Live
+                    <span className="sr-only"> {project.title}</span>
+                  </TextLink>
+                )}
+
+                {project.internal && (
+                  <span className="inline-flex items-center gap-1.5 font-mono text-xs text-ink-faint">
+                    <FiLock size={12} aria-hidden="true" />
+                    Closed source
+                  </span>
+                )}
+              </div>
             </Card>
           </Reveal>
         </li>

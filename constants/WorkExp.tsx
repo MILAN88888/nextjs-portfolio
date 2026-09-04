@@ -8,19 +8,19 @@ export const WORK_EXP: Job[] = [
     companyUrl: "https://themegrill.com",
     period: "Mar 2023 — Present",
     summary:
-      "Building and maintaining WordPress and WooCommerce products used across a large production install base.",
+      "Product engineering on WordPress plugins with a combined 140,000+ active installations — and, since 2026, the AI platform those products call.",
     highlights: [
-      "Ship features across PHP back-ends and React-based admin interfaces for User Registration & Membership and Everest Forms",
-      "Work on transactional email delivery in Smart SMTP and on WooCommerce account and registration extensions",
-      "Maintain backwards compatibility and performance for sites already running these plugins",
-      "Use AI assistants (ChatGPT, Claude, DeepSeek) for prompt-driven scaffolding, refactors, test cases and faster root-cause analysis",
+      "Designed and built ThemeGrill AI Cloud: a FastAPI gateway in front of a LiteLLM router, on Docker with Postgres and Redis, that registers sites, verifies licences and enforces per-site rate and spend limits before a request reaches a model provider",
+      "Shipped AI form generation end to end — the gateway, the per-product prompt modules, and the WordPress side that stores credentials, calls the API and turns model JSON into a working form",
+      "Ship PHP and React features in Everest Forms and User Registration & Membership: builder field types, membership plans, payment flows, Gutenberg blocks and admin interfaces",
+      "Hold the line on backwards compatibility and performance for sites already running these plugins — old PHP versions, unknown themes, no migration path",
+      "Work agentically: Claude Code with Playwright over MCP to verify a fix in a live WordPress install, and my own skills encoding the suite's coding standards and debug triage",
     ],
     links: [
-      { title: "User Registration",         url: "https://wordpress.org/plugins/user-registration/" },
-      { title: "Everest Forms",             url: "https://wordpress.org/plugins/everest-forms/" },
-      { title: "Smart SMTP",                url: "https://wordpress.org/plugins/smart-smtp/" },
-      { title: "Customize My Account Page", url: "https://wordpress.org/plugins/customize-my-account-page/" },
-      { title: "Registration Form Fields",  url: "https://woocommerce.com/products/registration-form-fields/" },
+      { title: "Everest Forms",              url: "https://wordpress.org/plugins/everest-forms/" },
+      { title: "User Registration",           url: "https://wordpress.org/plugins/user-registration/" },
+      { title: "SmartSMTP",                   url: "https://wordpress.org/plugins/smart-smtp/" },
+      { title: "Registration Form Fields",    url: "https://woocommerce.com/products/registration-form-fields/" },
     ],
   },
   {
@@ -29,10 +29,10 @@ export const WORK_EXP: Job[] = [
     company: "ThemeGrill Pvt Ltd",
     companyUrl: "https://themegrill.com",
     period: "Jan 2023 — Mar 2023",
-    summary: "Learned WordPress plugin development from the ground up.",
+    summary: "Learned WordPress plugin development on a product already in production.",
     highlights: [
-      "Started with plugin fundamentals, then moved on to fixing issues on the live User Registration plugin",
-      "Sharpened both coding practice and day-to-day team communication",
+      "Started on plugin fundamentals, then moved to fixing real issues in the live User Registration plugin",
+      "Learned to read a codebase written by other people before changing it",
     ],
   },
   {
@@ -43,8 +43,8 @@ export const WORK_EXP: Job[] = [
     period: "Jul 2022 — Oct 2022",
     summary: "Backend developer on Oxole, an online book-exchange platform.",
     highlights: [
-      "Implemented user registration, book listing, search, exchange requests and user profiles",
-      "Worked in MVC with core PHP, jQuery/Ajax, Twig templates and SQL queries",
+      "Built user registration, book listings, search, exchange requests and profiles",
+      "Worked in MVC with core PHP, jQuery and Ajax, Twig templates and hand-written SQL",
     ],
   },
 ];
