@@ -3,7 +3,7 @@ import { TECH_LIST } from "@/constants";
 
 export const Skills = () => (
   <Section id="skills">
-    <div className="grid gap-5 md:grid-cols-2">
+    <div className="grid items-start gap-5 md:grid-cols-2">
       {TECH_LIST.map((group, i) => (
         <Reveal key={group.category} delay={(i % 2) * 80} className="flex">
           <Card className="w-full p-5">

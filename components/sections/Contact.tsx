@@ -6,7 +6,7 @@ export const Contact = () => (
   <Section id="contact">
     <Reveal>
       <p className="max-w-2xl leading-relaxed text-ink-muted">
-        {PROFILE.availabilityNote} — roles or collaborations. The fastest way to
+        Open to {PROFILE.openTo} — roles or collaborations. The fastest way to
         reach me is email; I answer within a day.
       </p>
     </Reveal>

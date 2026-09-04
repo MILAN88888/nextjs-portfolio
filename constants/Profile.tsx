@@ -16,7 +16,9 @@ export const PROFILE = {
     "I build AI gateways, and the WordPress products that call them — on an install base of 140,000+ sites.",
   intro:
     "Software engineer in Nepal, building at ThemeGrill. I designed and shipped the multi-tenant AI gateway that powers AI form generation in Everest Forms — FastAPI, LiteLLM, Postgres and Redis behind Docker — and I write the PHP and React features in plugins that run on other people's production sites. Agents do the mechanical work in my day; the engineering calls stay mine.",
-  availabilityNote: "Open to AI platform, backend and full-stack work",
+  availabilityNote: "Open to AI platform & backend work",
+  /** Longer form, for Contact and the About facts. */
+  openTo: "AI platform, backend and full-stack work",
   availableForWork: true,
 
   /** Combined WordPress.org active installs of the plugins I ship features in. */
@@ -61,17 +63,17 @@ export const HERO_STATS: Stat[] = [
   },
   {
     value: "90,000",
-    label: "Sites reached by the AI gateway",
+    label: "On the AI gateway",
     note: "Everest Forms, where AI form generation runs through the platform I built",
   },
   {
     value: "< 1¢",
-    label: "Cost per AI generation",
+    label: "Per AI generation",
     note: "Measured on live traffic, capped per site by budget and rate limits",
   },
   {
     value: `${EXPERIENCE_YEARS}+ yrs`,
-    label: "Shipping production code",
+    label: "Years shipping",
     note: "PHP, Python and TypeScript, since July 2022",
   },
 ];
