@@ -1,5 +1,5 @@
 export * from "./types";
-export { PROFILE, HERO_META, HERO_STATS, BIO, ABOUT_FACTS, EXPERIENCE_YEARS } from "./Profile";
+export { PROFILE, HERO_STATS, BIO, ABOUT_FACTS, EXPERIENCE_YEARS } from "./Profile";
 export { SECTIONS, SECTION_KICKERS, getSection } from "./Sections";
 export { CASE_STUDIES, AGENTIC_PRACTICE } from "./AiWork";
 export { SOCIAL_MEDIA } from "./SocialMedia";

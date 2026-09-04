@@ -76,13 +76,6 @@ export const HERO_STATS: Stat[] = [
   },
 ];
 
-/** Hero meta row, under the call-to-action buttons. */
-export const HERO_META: { label: string; value: string; href?: string }[] = [
-  { label: "Based in",  value: `${PROFILE.location} · ${PROFILE.timezone}` },
-  { label: "Currently", value: PROFILE.company },
-  { label: "Website",   value: PROFILE.siteLabel, href: PROFILE.siteUrl },
-];
-
 /** About section body copy. */
 export const BIO: string[] = [
   "I write software other people depend on. At ThemeGrill I ship features in WordPress plugins with a combined 140,000+ active installations, which sets the standard for every change: it has to survive old PHP versions, somebody else's theme, and sites that will never be migrated.",

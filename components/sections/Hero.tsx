@@ -1,11 +1,6 @@
-import { FiArrowUpRight, FiGithub, FiGlobe, FiLinkedin, FiMapPin } from "react-icons/fi";
-import { Button, Container, Reveal } from "@/components/ui";
-import { HERO_META, PROFILE } from "@/constants";
-
-const META_ICONS: Record<string, JSX.Element> = {
-  "Based in": <FiMapPin size={13} aria-hidden="true" />,
-  Website: <FiGlobe size={13} aria-hidden="true" />,
-};
+import { FiArrowUpRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
+import { Button, Container, Reveal, Stat } from "@/components/ui";
+import { HERO_STATS, PROFILE } from "@/constants";
 
 export const Hero = () => (
   <section id="top" aria-labelledby="hero-heading" className="relative">
@@ -33,7 +28,7 @@ export const Hero = () => (
       </Reveal>
 
       <Reveal delay={140}>
-        <p className="mt-5 max-w-2xl text-h4 text-ink-muted">{PROFILE.subtitle}</p>
+        <p className="mt-5 max-w-3xl text-h4 text-ink-muted">{PROFILE.subtitle}</p>
       </Reveal>
 
       <Reveal delay={200}>
@@ -42,37 +37,28 @@ export const Hero = () => (
 
       <Reveal delay={260}>
         <div className="mt-9 flex flex-wrap items-center gap-3">
-          <Button href="#projects">
-            View projects <FiArrowUpRight aria-hidden="true" />
+          <Button href="#ai">
+            See the AI platform work <FiArrowUpRight aria-hidden="true" />
+          </Button>
+          <Button href={PROFILE.cvPath} variant="secondary" download>
+            <FiDownload aria-hidden="true" /> Download CV
           </Button>
           <Button href={PROFILE.githubUrl} variant="secondary">
             <FiGithub aria-hidden="true" /> GitHub
           </Button>
-          <Button href="https://www.linkedin.com/in/milan-c" variant="secondary">
+          <Button href={PROFILE.linkedinUrl} variant="secondary">
             <FiLinkedin aria-hidden="true" /> LinkedIn
           </Button>
         </div>
       </Reveal>
 
       <Reveal delay={320}>
-        <dl className="mt-16 grid gap-8 border-t border-line pt-8 sm:grid-cols-3">
-          {HERO_META.map(item => (
-            <div key={item.label}>
-              <dt className="font-mono text-xs uppercase tracking-[0.18em] text-ink-faint">
-                {item.label}
-              </dt>
-              <dd className="mt-2 flex items-center gap-2 text-ink">
-                <span className="text-accent">{META_ICONS[item.label]}</span>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className="transition-colors hover:text-accent"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  item.value
-                )}
+        <dl className="mt-16 grid gap-8 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-4">
+          {HERO_STATS.map(stat => (
+            <div key={stat.label}>
+              <dt className="sr-only">{stat.label}</dt>
+              <dd>
+                <Stat {...stat} />
               </dd>
             </div>
           ))}
