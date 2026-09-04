@@ -1,3 +1,5 @@
+import type { Stat } from "./types";
+
 /**
  * Every fact about Milan that the UI renders. Contact details, the CV path
  * and the site URL live here only — nothing downstream should hardcode them.
@@ -7,23 +9,31 @@ export const PROFILE = {
   fullName: "Milan Kumar Chaudhary",
   handle: "milan",
   role: "Software Engineer",
+  /** Discipline line for metadata and the footer — narrower than the job title. */
+  focus: "AI platform & WordPress product engineering",
   /** Sits directly under the name in the hero. */
-  subtitle: "Software Engineer · WordPress products, PHP and AI-assisted engineering.",
+  subtitle:
+    "I build AI gateways, and the WordPress products that call them — on an install base of 140,000+ sites.",
   intro:
-    "Software engineer based in Nepal, building WordPress products at ThemeGrill. I work across PHP and modern JavaScript — plugin architecture, REST APIs and React interfaces — and lean on AI-assisted workflows to move from problem to shipped fix faster.",
-  availabilityNote: "Open to interesting work and collaborations",
+    "Software engineer in Nepal, building at ThemeGrill. I designed and shipped the multi-tenant AI gateway that powers AI form generation in Everest Forms — FastAPI, LiteLLM, Postgres and Redis behind Docker — and I write the PHP and React features in plugins that run on other people's production sites. Agents do the mechanical work in my day; the engineering calls stay mine.",
+  availabilityNote: "Open to AI platform, backend and full-stack work",
   availableForWork: true,
+
+  /** Combined WordPress.org active installs of the plugins I ship features in. */
+  installBase: "140,000+",
 
   company: "ThemeGrill Pvt Ltd",
   companyUrl: "https://themegrill.com",
   location: "Nepal",
   fullLocation: "Sarawal-6, Nawalparasi, Nepal",
+  timezone: "UTC+5:45",
   email: "chaudharymilan996@gmail.com",
   phone: "+977-9807445408",
   cvPath: "/file/milan-cv.pdf",
   siteUrl: "https://milanc.com.np",
   siteLabel: "milanc.com.np",
   githubUrl: "https://github.com/MILAN88888",
+  linkedinUrl: "https://www.linkedin.com/in/milan-c",
   reposUrl: "https://github.com/MILAN88888?tab=repositories",
 } as const;
 
@@ -38,25 +48,55 @@ export const EXPERIENCE_YEARS = Math.floor(
   (Date.now() - CAREER_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000),
 );
 
+/**
+ * The hero proof strip. Every figure is either checkable on WordPress.org or
+ * measured from live traffic — a number without its context is a red flag,
+ * so each one carries the note that qualifies it.
+ */
+export const HERO_STATS: Stat[] = [
+  {
+    value: PROFILE.installBase,
+    label: "Active installs",
+    note: "Combined WordPress.org install base of the plugins I ship features in",
+  },
+  {
+    value: "90,000",
+    label: "Sites reached by the AI gateway",
+    note: "Everest Forms, where AI form generation runs through the platform I built",
+  },
+  {
+    value: "< 1¢",
+    label: "Cost per AI generation",
+    note: "Measured on live traffic, capped per site by budget and rate limits",
+  },
+  {
+    value: `${EXPERIENCE_YEARS}+ yrs`,
+    label: "Shipping production code",
+    note: "PHP, Python and TypeScript, since July 2022",
+  },
+];
+
 /** Hero meta row, under the call-to-action buttons. */
 export const HERO_META: { label: string; value: string; href?: string }[] = [
-  { label: "Based in",  value: PROFILE.location },
+  { label: "Based in",  value: `${PROFILE.location} · ${PROFILE.timezone}` },
   { label: "Currently", value: PROFILE.company },
   { label: "Website",   value: PROFILE.siteLabel, href: PROFILE.siteUrl },
 ];
 
 /** About section body copy. */
 export const BIO: string[] = [
-  "I started out writing PHP for small business sites and grew into building WordPress plugins and themes used by thousands of sites. That work taught me to care about the unglamorous parts of software: backwards compatibility, performance budgets, and code other people can read.",
-  "These days I split my time between server-side PHP and TypeScript on the front end. I like reducing a messy requirement to a small, obvious piece of code — and I like shipping.",
-  "I also work AI into the day-to-day: using ChatGPT, Claude and DeepSeek as pair programmers for scaffolding, refactors, test cases and code review, and as a fast way to reason through unfamiliar bugs. The judgement stays mine — AI shortens the loop between a problem and a verified fix.",
+  "I write software other people depend on. At ThemeGrill I ship features in WordPress plugins with a combined 140,000+ active installations, which sets the standard for every change: it has to survive old PHP versions, somebody else's theme, and sites that will never be migrated.",
+  "In 2026 I moved from using AI to building the platform that serves it. Our plugins needed AI features, and shipping a provider key inside a plugin is not an option — it leaks the first time someone downloads the folder, and every site spends against one unbounded budget. So I built a gateway: sites prove they own their domain, get a scoped token, and each request clears licence checks, rate limits and spend caps before a model ever sees it.",
+  "I'm comfortable in the layer most product developers hand off. Docker, Postgres and Redis, Nginx reverse proxies, TLS and DNS, Tailscale between machines, and routing through modem and mobile IPs when a job needs a real path out. Being able to stand the infrastructure up myself is what makes the AI work shippable instead of a demo.",
+  "Day to day I work with agents rather than around them: Claude Code driving Playwright through MCP to prove a fix in a live WordPress install, and my own skills encoding the suite's coding standards and triage steps. They are fast at what was never the interesting part. Deciding what to build, and whether the answer is actually correct, doesn't delegate.",
 ];
 
 /** Fact card beside the About copy. */
 export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Experience", value: `${EXPERIENCE_YEARS}+ years, since July 2022` },
-  { label: "Currently", value: "Engineer at ThemeGrill Pvt Ltd" },
-  { label: "Based in",  value: "Nepal · remote-friendly" },
-  { label: "Focus",     value: "WordPress products, PHP, React & TypeScript" },
-  { label: "Also into", value: "AI-assisted development, tooling and CI automation" },
+  { label: "Currently",  value: "Software Engineer at ThemeGrill Pvt Ltd" },
+  { label: "Focus",      value: "AI platform engineering · WordPress products" },
+  { label: "Core stack", value: "Python · PHP · TypeScript · Postgres · Docker" },
+  { label: "Based in",   value: `Nepal · remote-friendly, ${PROFILE.timezone}` },
+  { label: "Open to",    value: "AI platform, backend and full-stack roles" },
 ];
