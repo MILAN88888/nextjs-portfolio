@@ -3,8 +3,12 @@ import { PROFILE, SOCIAL_MEDIA } from "@/constants";
 export const SiteFooter = () => (
   <footer className="border-t border-line">
     <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row md:px-8">
-      <p className="text-sm text-ink-faint">
+      <p className="text-center text-sm text-ink-faint sm:text-left">
         &copy; {new Date().getFullYear()} {PROFILE.name}
+        <span className="mx-2 text-line-strong" aria-hidden="true">
+          /
+        </span>
+        {PROFILE.focus}
       </p>
 
       <ul className="flex items-center gap-6">

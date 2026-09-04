@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PROFILE } from "@/constants/Profile";
 
 const description =
-  "Portfolio of Milan Chaudhary, a software engineer in Nepal building WordPress products, PHP back-ends and React front-ends.";
+  "Milan Chaudhary — software engineer in Nepal. I build multi-tenant AI gateways and the WordPress products that call them, on plugins with 140,000+ active installs.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(PROFILE.siteUrl),
@@ -18,9 +18,14 @@ export const siteMetadata: Metadata = {
     "Milan Chaudhary",
     "Milan Kumar Chaudhary",
     "software engineer Nepal",
+    "AI platform engineer",
+    "LLM gateway",
+    "LiteLLM",
+    "FastAPI developer",
+    "MCP",
+    "agentic AI workflows",
     "WordPress plugin developer",
     "PHP developer",
-    "Laravel developer",
     "React developer",
     "Next.js developer",
     "ThemeGrill",
@@ -69,6 +74,25 @@ export const personJsonLd = {
   alternateName: PROFILE.name,
   url: PROFILE.siteUrl,
   jobTitle: PROFILE.role,
+  description,
+  knowsAbout: [
+    "AI gateway architecture",
+    "LLM cost and rate limiting",
+    "Multi-tenant API design",
+    "FastAPI",
+    "LiteLLM",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "WordPress plugin development",
+    "WooCommerce",
+    "Gutenberg blocks",
+    "PHP",
+    "Python",
+    "TypeScript",
+    "React",
+    "Next.js",
+  ],
   email: `mailto:${PROFILE.email}`,
   worksFor: { "@type": "Organization", name: PROFILE.company, url: PROFILE.companyUrl },
   address: { "@type": "PostalAddress", addressCountry: "NP", addressLocality: "Nawalparasi" },
