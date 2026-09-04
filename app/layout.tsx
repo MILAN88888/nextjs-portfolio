@@ -1,43 +1,58 @@
 import "@/styles/globals.css";
-import { Suspense } from "react";
-import { Inter } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ThemeContext } from "@/components/ThemeContext";
-import { TopBar } from "@/components/TopBar";
-import { Footer } from "@/components/Footer";
-import { AppMetaData } from "@/components/AppMetaData";
-import Loading from "./loading";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { siteMetadata, personJsonLd } from "./metadata";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
-export const metadata: any = { ...AppMetaData };
+const display = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata = siteMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={inter.className}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${sans.variable} ${display.variable} ${mono.variable}`}
+    >
+      <body>
         <ThemeContext>
-          <TopBar />
-          <div className="desktop-bg">
-            <div className="desktop-grid" aria-hidden="true" />
-            <div className="relative z-10 flex flex-col min-h-screen">
-              <main className="flex-1">
-                <Suspense fallback={<Loading />}>{children}</Suspense>
-              </main>
-              <div className="flex justify-center px-4">
-                <Footer />
-              </div>
-            </div>
+          <a href="#main" className="skip-link">
+            Skip to content
+          </a>
+
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+
+            <SiteFooter />
           </div>
         </ThemeContext>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </body>
     </html>
   );

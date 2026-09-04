@@ -1,11 +1,9 @@
 "use client";
-import React from "react";
+import type { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
 
-export const ThemeContext = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
-      {children}
-    </ThemeProvider>
-  );
-};
+export const ThemeContext = ({ children }: { children: ReactNode }) => (
+  <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+    {children}
+  </ThemeProvider>
+);

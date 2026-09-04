@@ -1,8 +1,71 @@
-export const PROJECT_LIST = [
-	{ id: "1", description: "Recently, I've been learning React.js, which I find really exciting. I've also started learning Next.js, which is kind of like an extension of React.js. With what I've learned so far, I've created my own personal portfolio website using Next.js. I'm not done yet, though! I'm still working on it and adding new things to it whenever I have some free time.", images: "/images/project/nextjsportfolio.png",liveUrl:"https://www.milanc.com.np/", repoUrl:"https://github.com/MILAN88888/nextjs-portfolio",stack:['Next', 'TypeScript','HTML','Tailwind', ], title:'Next Portfolio' },
-	{ id: "2", description: "While I was learning Laravel, I developed a web application called BookExchange. This platform allows users to perform various book-related actions, such as adding books to their collection, sharing their own books with others, requesting books from fellow users, and borrowing books from the community.", images: "/images/project/bookexchange.png",liveUrl:"", repoUrl:"https://github.com/MILAN88888/Laravel-BookXchange",stack:['Laravel 8', 'Blade', 'HTML', 'CSS'], title:'BookExchange' },
-	{ id: "3", description: "One day, I found out about React, which seemed interesting, so I started learning it. I got good at it and decided to make my portfolio using React. I made my portfolio using React successfully. Afterward, I learned about Next.js and started using it, but my journey into web development started with React.", images: "/images/project/reactportfolio.png",liveUrl:"https://techmkr.netlify.app", repoUrl:"https://github.com/MILAN88888/techmkrr.github.io",stack:['React','HTML','CSS'], title:'React Portfolio' },
-	{ id: "4", description: "This is an Employee Management System project that I developed while learning AJAX. I completed this project as a practice exercise, and I utilized AJAX extensively to ensure that there was no need for page reloading. The project includes features such as user registration, login, employee listing, deletion, and updating, all of which are seamlessly handled through AJAX requests.", images: "/images/project/ems.png",liveUrl:"", repoUrl:"https://github.com/MILAN88888/EMS",stack:['PHP','jQuery-Ajax', 'MYSQL'], title:'Employee Management System' },
-	{ id: "4", description: "When I first began my journey into learning JavaScript, I embarked on two hands-on learning projects. The first project was an Add Todos list, and the second project was a JavaScript calculator.I also created repositories for these projects and hosted them online. You can find the code and view the projects using the following links.", images: "/images/project/calculator.png",liveUrl:"https://milan88888.github.io/Js_calculator/index.html", repoUrl:"https://github.com/MILAN88888/Js_calculator",stack:['HTML','CSS', 'JavaScript'], title:'Quotes, Alarm and Js Calculator' },
-	{ id: "4", description: "During my 6th semester of Engineering, my friend Nikhil Basur and I collaborated on a Database Management System (DBMS) mini project. This project spanned a duration of six months. For this project, we utilized HTML, CSS, PHP, and MySQL technologies. We also made use of software tools like XAMPP for server hosting and the Sublime Text editor for coding.", images: "/images/project/libraryms.png",liveUrl:"", repoUrl:"",stack:['HTML','CSS','PHP', 'MYSQL'], title:'Library Management System' },
+import type { Project } from "./types";
+
+export const PROJECT_LIST: Project[] = [
+  {
+    id: "user-registration",
+    title: "User Registration & Membership",
+    description:
+      "ThemeGrill's registration and membership plugin for WordPress: drag-and-drop form builder, custom fields, roles and the full email lifecycle, handled server-side in PHP.",
+    stack: ["WordPress", "PHP", "Plugin"],
+    repoUrl: "https://github.com/wpeverest/user-registration",
+    liveUrl: "https://wordpress.org/plugins/user-registration/",
+  },
+  {
+    id: "everest-forms",
+    title: "Everest Forms",
+    description:
+      "A form builder plugin with a React-powered builder, extensible field API and integrations — used on a large install base where backwards compatibility matters.",
+    stack: ["WordPress", "React", "PHP"],
+    repoUrl: "https://github.com/wpeverest/everest-forms",
+    liveUrl: "https://wordpress.org/plugins/everest-forms/",
+  },
+  {
+    id: "smart-smtp",
+    title: "Smart SMTP",
+    description:
+      "Reliable transactional email for WordPress: SMTP configuration, mailer routing and delivery logging with clear failure reporting.",
+    stack: ["WordPress", "PHP", "Email"],
+    liveUrl: "https://wordpress.org/plugins/smart-smtp/",
+  },
+  {
+    id: "customize-my-account",
+    title: "Customize My Account Page",
+    description:
+      "WooCommerce extension that lets store owners restructure the My Account area — custom endpoints, sections and templates without touching theme code.",
+    stack: ["WooCommerce", "PHP", "Extension"],
+    liveUrl: "https://wordpress.org/plugins/customize-my-account-page/",
+  },
+  {
+    id: "registration-form-fields",
+    title: "Registration Form Fields for WooCommerce",
+    description:
+      "A commercial WooCommerce extension adding validated custom fields to checkout and registration, with admin-side field management.",
+    stack: ["WooCommerce", "PHP", "Commercial"],
+    liveUrl: "https://woocommerce.com/products/registration-form-fields/",
+  },
+  {
+    id: "personal-portfolio",
+    title: "Personal Portfolio",
+    description:
+      "A Next.js + TypeScript portfolio and writing space, built for speed with static rendering and a hand-rolled design system.",
+    stack: ["Next.js", "TypeScript", "React"],
+    repoUrl: "https://github.com/MILAN88888/nextjs-portfolio",
+    liveUrl: "https://milanc.com.np/",
+  },
+  {
+    id: "bookxchange",
+    title: "BookXchange",
+    description:
+      "A Laravel marketplace for students to trade textbooks — listings, search, and messaging, with a responsive front-end interface.",
+    stack: ["Laravel", "PHP", "MySQL"],
+    repoUrl: "https://github.com/MILAN88888/Laravel-BookXchange",
+  },
+  {
+    id: "js-calculator",
+    title: "JS Calculator",
+    description:
+      "A small, dependency-free calculator focused on keyboard support and clean state handling in vanilla JavaScript.",
+    stack: ["JavaScript", "HTML", "CSS"],
+    repoUrl: "https://github.com/MILAN88888/Js_calculator",
+  },
 ];
