@@ -59,7 +59,7 @@ export const SiteHeader = () => {
           <span className="text-accent">.</span>
         </a>
 
-        <nav aria-label="Sections" className="hidden md:block">
+        <nav aria-label="Sections" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {SECTIONS.map(section => {
               const isActive = activeId === section.id;
@@ -68,13 +68,13 @@ export const SiteHeader = () => {
                   <a
                     href={`#${section.id}`}
                     aria-current={isActive ? "true" : undefined}
-                    className={`rounded-full px-3.5 py-2 text-sm transition-colors duration-200 ${
+                    className={`rounded-full px-3 py-2 text-sm transition-colors duration-200 ${
                       isActive
                         ? "text-accent"
                         : "text-ink-muted hover:text-ink"
                     }`}
                   >
-                    {section.label}
+                    {section.navLabel ?? section.label}
                   </a>
                 </li>
               );
@@ -100,7 +100,7 @@ export const SiteHeader = () => {
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="inline-grid h-9 w-9 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:text-ink md:hidden"
+            className="inline-grid h-9 w-9 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:text-ink lg:hidden"
           >
             {menuOpen ? <FiX size={16} /> : <FiMenu size={16} />}
           </button>
@@ -111,7 +111,7 @@ export const SiteHeader = () => {
         id="mobile-nav"
         aria-label="Sections"
         hidden={!menuOpen}
-        className="border-t border-line bg-bg md:hidden"
+        className="border-t border-line bg-bg lg:hidden"
       >
         <ul className="mx-auto max-w-content px-5 py-3">
           {SECTIONS.map(section => (
@@ -125,7 +125,7 @@ export const SiteHeader = () => {
                 }`}
               >
                 <span className="font-mono text-xs text-ink-faint">{section.num}</span>
-                {section.label}
+                {section.navLabel ?? section.label}
               </a>
             </li>
           ))}

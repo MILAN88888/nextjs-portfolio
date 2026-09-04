@@ -1,6 +1,7 @@
 import {
   Hero,
   About,
+  AiWork,
   Projects,
   Skills,
   Experience,
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <AiWork />
       <Projects />
       <Skills />
       <Experience />
