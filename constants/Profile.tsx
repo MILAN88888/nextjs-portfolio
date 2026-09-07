@@ -16,9 +16,9 @@ export const PROFILE = {
     "I build WordPress products used on 150,000+ sites — plugins, Gutenberg blocks, and the backend platform behind their AI features.",
   intro:
     "Software engineer in Nepal. Four years across PHP plugin architecture, React in the block editor and Python on the back end — including the AI gateway I designed and built to serve products with a six-figure install base. I ship my own plugin too, and run the Docker, Linux and networking layer underneath. Agents do the mechanical work in my day; the engineering calls stay mine.",
-  availabilityNote: "Open to AI platform & backend work",
+  availabilityNote: "Open to backend, platform & AI work",
   /** Longer form, for Contact and the About facts. */
-  openTo: "AI platform, backend and full-stack work",
+  openTo: "backend, AI platform and full-stack work",
   availableForWork: true,
 
   /** Combined WordPress.org active installs of the plugins I ship features in. */

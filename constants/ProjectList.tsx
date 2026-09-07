@@ -36,7 +36,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Custom Code Snippets Manager",
     metric: "My own plugin — designed, built and shipped solo",
     description:
-      "Run PHP, JavaScript, CSS and HTML snippets in WordPress without touching a theme file. CodeMirror editor, syntax checked on both sides of the wire — PHP on the server, JS in the browser — per-snippet scopes, JSON import and export, and a safety model that catches a fatal from a user's PHP and deactivates that snippet instead of letting it take the site down.",
+      "Run PHP, JavaScript, CSS and HTML snippets in WordPress without touching a theme file: CodeMirror editor, syntax checked on the server and in the browser, per-snippet scopes, JSON import and export. A fatal from a user's PHP is caught and that snippet deactivated, so a bad snippet can't take the site down.",
     role: "Everything: architecture, admin interface, the safety model and the build pipeline",
     stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
     note: "Pre-release — not yet in the plugin directory",

@@ -37,8 +37,8 @@ export const Hero = () => (
 
       <Reveal delay={260}>
         <div className="mt-9 flex flex-wrap items-center gap-3">
-          <Button href="#ai">
-            See the AI platform work <FiArrowUpRight aria-hidden="true" />
+          <Button href="#projects">
+            View my work <FiArrowUpRight aria-hidden="true" />
           </Button>
           <Button href={PROFILE.cvPath} variant="secondary" download>
             <FiDownload aria-hidden="true" /> Download CV
