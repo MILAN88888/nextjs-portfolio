@@ -13,6 +13,8 @@ npm run lint    # next lint (eslint-config-next / core-web-vitals)
 
 Node >= 20 (`.nvmrc` pins 20). There is no test suite, so `npm run build` + `npm run lint` are the verification gate.
 
+**Never run `npm run build` while `npm run dev` is running** — they share `.next/`, and the build replaces the chunks the dev server is serving, so the running page starts returning 500s for its own `webpack.js` and `layout.css` (which looks exactly like a hydration bug: every `.reveal` stays hidden). Stop dev first, or `rm -rf .next` and restart it afterwards.
+
 **`next/font` fetches DM Sans, Space Grotesk and JetBrains Mono from Google at build time**, so `npm run build` fails without network access. If a sandbox blocks `fonts.gstatic.com`, the build must run unsandboxed.
 
 ## Architecture
@@ -65,9 +67,12 @@ Components render; `constants/` supplies. `constants/index.tsx` is the barrel (`
 - `ProjectList.tsx`, `WorkExp.tsx`, `EduExp.tsx`, `TechList.tsx`, `SocialMedia.tsx` — the content lists. `Job.period` and `School.period` are free text (`"Mar 2023 — Present"`), not parsed dates.
 - `EXPERIENCE_YEARS` in `Profile.tsx` is **derived** from `CAREER_START` (15 July 2022) at build time, not hardcoded — the previous design carried a stale "3+ years" for three years. Don't replace it with a literal.
 - `HERO_STATS` is the hero proof strip. **Every figure needs a `note` that makes it checkable** (which install base, measured how) — a bare number with no baseline is the thing hiring reviewers discount first. Keep the four labels short enough to hold one line at `lg`; they sit in a four-column grid and a wrapped label misaligns the notes beneath it.
-- `PROFILE.installBase` is the single source for the combined WordPress.org install figure, quoted in the hero, the bio and the experience summary. Re-check it against the plugin API before changing any of them:
+- `PROFILE.installBase` is the single source for the combined WordPress.org install figure — currently `150,000+` (Everest Forms 90,000, User Registration 50,000, BlockArt 10,000, Magazine Blocks 6,000, SmartSMTP 2,000, Customize My Account 400). It is quoted in the hero, the bio and the experience summary, so re-check it against the plugin API before changing any of them:
   `curl -s "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=everest-forms"`
-- `Project.role` ("my part") is not optional in spirit: these are team products, and presenting one as solo work is the fastest way to lose a reviewer. `Project.internal` renders a "Closed source" note instead of a dead Code link.
+- `Project.role` ("my part") is not optional in spirit: most of these are team products, and presenting one as solo work is the fastest way to lose a reviewer. `Project.internal` renders a "Closed source" note instead of a dead Code link; `Project.note` renders free text there instead, for a product that has neither yet (the snippet plugin is pre-release).
+- **Keep one product in the grid that is Milan's own.** A page made entirely of an employer's plugins doesn't answer what he builds on his own account, which is why Custom Code Snippets Manager sits third, ahead of larger install numbers. Its repo (`MILAN88888/snippet-master`) is private and it is not in the plugin directory yet — when either changes, swap the `note` for real links.
+- **The AI gateway belongs in the AI section, not everywhere.** It earns one mention in the hero subtitle, one stat, one bio paragraph and one experience bullet; the depth lives in `AiWork.tsx`. If a copy change adds a second mention to any of those, cut it — one system carrying every line of the page was the previous defect.
+- **Employer framing:** the work is Milan's, the employer is context. `ThemeGrill` appears only in the two experience entries, `PROFILE.company` and the About facts — never in the hero, the bio or the case study heading.
 - Skills group **capabilities, not tool badges** — "LLM gateway design", "Rate & budget control", not a list of model names. Listing AI products as skills reads as unverified.
 
 ### Component layers

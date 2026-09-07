@@ -1,5 +1,14 @@
  == Changelog ==
 
+ = 2.1.0 - 2026-09-07
+ * Added - BlockArt Blocks and Magazine Blocks to the projects, with the block editor work stated per plugin.
+ * Added - Custom Code Snippets Manager, the plugin I own outright, third in the grid.
+ * Added - Project note field, for a product with neither a public repo nor a directory listing yet.
+ * Changed - Rebalanced the copy so the AI gateway appears once per section instead of carrying the hero, the stats and the bio.
+ * Changed - Case study and hero now centre my part rather than the employer's product name.
+ * Changed - Install base to 150,000+ across seven products; hero CTA opens the projects grid.
+ * Removed - Customize My Account Page from the projects grid.
+
  = 2.0.0 - 2026-09-04
  * Rebuilt as a single static page on a token-based design system, two themes from one token set.
  * Repositioned around AI platform work: new AI Platform section carrying the ThemeGrill AI Cloud case study and how agents are used day to day.
