@@ -9,8 +9,10 @@ export interface Project {
   role?: string;
   repoUrl?: string;
   liveUrl?: string;
-  /** No public repository — internal or commercial. Renders a note instead of a Code link. */
+  /** No public repository — internal or commercial. Renders a "Closed source" note. */
   internal?: boolean;
+  /** Free-text status note for the links row, where neither a repo nor a live URL applies yet. */
+  note?: string;
 }
 
 export interface Job {

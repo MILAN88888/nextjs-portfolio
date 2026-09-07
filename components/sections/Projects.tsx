@@ -62,6 +62,10 @@ export const Projects = () => (
                     Closed source
                   </span>
                 )}
+
+                {project.note && (
+                  <span className="font-mono text-xs text-ink-faint">{project.note}</span>
+                )}
               </div>
             </Card>
           </Reveal>

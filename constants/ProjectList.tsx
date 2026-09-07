@@ -1,10 +1,12 @@
 import type { Project } from "./types";
 
 /**
- * Products first, ordered by install base. Install counts and ratings are
+ * Ordered by install base, with one exception: the plugin I own outright sits
+ * third, because "what has he built on his own account" is the question a
+ * page full of employer products doesn't answer. Install counts and ratings are
  * checkable on WordPress.org; `role` says what my part was, because these are
- * team products and presenting one as solo work is the fastest way to lose a
- * reviewer's trust. The AI gateway is not here — it has its own section.
+ * team products and presenting one as solo work loses a reviewer's trust. The
+ * AI gateway is not here — it has its own section.
  */
 export const PROJECT_LIST: Project[] = [
   {
@@ -30,6 +32,36 @@ export const PROJECT_LIST: Project[] = [
     liveUrl: "https://wordpress.org/plugins/user-registration/",
   },
   {
+    id: "snippets-manager",
+    title: "Custom Code Snippets Manager",
+    metric: "My own plugin — designed, built and shipped solo",
+    description:
+      "Run PHP, JavaScript, CSS and HTML snippets in WordPress without touching a theme file. CodeMirror editor, syntax checked on both sides of the wire — PHP on the server, JS in the browser — per-snippet scopes, JSON import and export, and a safety model that catches a fatal from a user's PHP and deactivates that snippet instead of letting it take the site down.",
+    role: "Everything: architecture, admin interface, the safety model and the build pipeline",
+    stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
+    note: "Pre-release — not yet in the plugin directory",
+  },
+  {
+    id: "blockart",
+    title: "BlockArt Blocks",
+    metric: "10,000+ active installs · 98/100 from 16 reviews",
+    description:
+      "A Gutenberg block library with a section and template library on top — blocks whose settings have to keep rendering identically on pages built years before the current version.",
+    role: "Fixed a vulnerability in the counter block, and added theme-palette support to the colour picker",
+    stack: ["WordPress", "React", "Gutenberg", "PHP"],
+    liveUrl: "https://wordpress.org/plugins/blockart-blocks/",
+  },
+  {
+    id: "magazine-blocks",
+    title: "Magazine Blocks",
+    metric: "6,000 active installs · 98/100 from 9 reviews",
+    description:
+      "A magazine and news site builder: post grids, sliders, tickers and an advertisement system, all as blocks driven by WP_Query behind the editor.",
+    role: "Block features across free and pro, editor capability checks, and cutting the 1.8 release",
+    stack: ["WordPress", "React", "Gutenberg", "PHP"],
+    liveUrl: "https://wordpress.org/plugins/magazine-blocks/",
+  },
+  {
     id: "smart-smtp",
     title: "SmartSMTP",
     metric: "2,000 active installs",
@@ -49,16 +81,6 @@ export const PROJECT_LIST: Project[] = [
     stack: ["WooCommerce", "PHP", "Commercial"],
     liveUrl: "https://woocommerce.com/products/registration-form-fields/",
     internal: true,
-  },
-  {
-    id: "customize-my-account",
-    title: "Customize My Account Page",
-    metric: "400 active installs · WooCommerce",
-    description:
-      "Lets store owners restructure the WooCommerce My Account area — custom endpoints, sections and templates — without a child theme or a line of PHP.",
-    role: "Endpoint and template handling",
-    stack: ["WooCommerce", "PHP", "Extension"],
-    liveUrl: "https://wordpress.org/plugins/customize-my-account-page/",
   },
   {
     id: "personal-portfolio",
