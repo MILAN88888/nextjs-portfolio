@@ -1,25 +1,29 @@
  == Changelog ==
 
+ = 2.3.0 - 2026-09-07
+ * Added - Customize My Account Page for WooCommerce back to the projects, with the 158 commits of work behind it named.
+ * Changed - Every "My part" line rewritten from the commit history: SmartSMTP built out through its first releases, the file-upload field in Registration Form Fields, content drip and payment add-ons in User Registration.
+ * Changed - Hero intro and About no longer say the same thing; About carries the constraints, ownership and week-to-week work instead.
+ * Changed - The featured gateway card reads as prose; the bullet list is gone.
+ * Changed - The ThemeGrill internship is now part of the Software Engineer entry rather than a separate role.
+
  = 2.2.0 - 2026-09-07
- * Changed - The AI gateway is now the one featured project at the top of the grid, full width with its decisions, instead of a section of its own.
- * Changed - Hero stats drop the cost-per-generation figure for a review-weighted average rating, so no hero figure leans on AI.
+ * Changed - The AI gateway is now the one featured project at the top of the grid instead of a section of its own.
+ * Changed - Hero stats drop the cost-per-generation figure for a review-weighted average rating.
  * Changed - Copy no longer calls my own plugin shipped — it is built and pre-release until it is in the directory.
  * Removed - The separate AI Platform section; the page is back to six sections.
 
  = 2.1.0 - 2026-09-07
  * Added - BlockArt Blocks and Magazine Blocks to the projects, with the block editor work stated per plugin.
- * Added - Custom Code Snippets Manager, the plugin I own outright, third in the grid.
- * Added - Project note field, for a product with neither a public repo nor a directory listing yet.
- * Changed - Rebalanced the copy so the AI gateway appears once per section instead of carrying the hero, the stats and the bio.
- * Changed - Case study and hero now centre my part rather than the employer's product name.
- * Changed - Install base to 150,000+ across seven products; hero CTA opens the projects grid.
- * Removed - Customize My Account Page from the projects grid.
+ * Added - Custom Code Snippets Manager, the plugin I own outright.
+ * Changed - Rebalanced the copy so the AI gateway appears once per section.
+ * Changed - Install base to 150,000+; hero CTA opens the projects grid.
 
  = 2.0.0 - 2026-09-04
  * Rebuilt as a single static page on a token-based design system, two themes from one token set.
- * Repositioned around AI platform work: the gateway case study and how agents are used day to day.
- * Hero leads with four verifiable figures and links the CV.
- * Projects, experience and skills rewritten around checkable impact; each project states my part in it.
+ * Repositioned around AI platform work, with the gateway written up as a case study.
+ * Hero leads with verifiable figures and links the CV.
+ * Projects, experience and skills rewritten around checkable impact.
  * Metadata, keywords and Person JSON-LD updated to match.
 
  = 1.0.0 - 2023-09-11
