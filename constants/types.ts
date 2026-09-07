@@ -9,10 +9,8 @@ export interface Project {
   role?: string;
   repoUrl?: string;
   liveUrl?: string;
-  /** Renders full width at the top of the grid, with `highlights` shown. */
+  /** Renders full width at the top of the grid. */
   featured?: boolean;
-  /** The engineering calls worth reading. Featured cards only. */
-  highlights?: string[];
   /** No public repository — internal or commercial. Renders a "Closed source" note. */
   internal?: boolean;
   /** Free-text status note for the links row, where neither a repo nor a live URL applies yet. */

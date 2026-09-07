@@ -1,13 +1,14 @@
 import type { Project } from "./types";
 
 /**
- * The gateway leads as the one `featured` entry — full width, with the
- * decisions worth reading — then products by install base, except the plugin I
- * own outright, which sits high because "what has he built on his own account"
- * is the question a page full of employer products doesn't answer. Install
- * counts and ratings are checkable on WordPress.org; `role` says what my part
- * was, because most of these are team products and presenting one as solo work
- * loses a reviewer's trust.
+ * The gateway leads as the one `featured` entry, then the two flagship plugins,
+ * then the two products that are mine — SmartSMTP, which I built out, and the
+ * snippet plugin I maintain on my own account. Install counts and ratings are
+ * checkable on WordPress.org.
+ *
+ * `role` is written from the commit history, not from memory: what I actually
+ * built, named specifically enough that a reviewer could go and look. Most of
+ * these are team products, and presenting one as solo work loses their trust.
  */
 export const PROJECT_LIST: Project[] = [
   {
@@ -16,16 +17,8 @@ export const PROJECT_LIST: Project[] = [
     featured: true,
     metric: "Serves AI form generation to a 90,000-install plugin",
     description:
-      "A provider key shipped inside a plugin leaks the first time somebody downloads the folder, and it puts every site on one unbounded budget. So the plugins call a gateway instead: FastAPI in front of a LiteLLM router, on Docker with Postgres and Redis. A site proves it owns its domain, gets a scoped token, and every request clears licence, rate and spend limits before a model sees it.",
-    role: "My design and my code, at both ends — the gateway, the per-product prompt modules, and the WordPress side that stores credentials and turns model JSON into a working form",
-    highlights: [
-      "Registration is a callback, not a claim: the gateway fetches a one-time token back over the site's own REST route before issuing credentials, so nobody can register a domain they don't own",
-      "Site tokens are 256-bit and stored only as a hash, inside a 90-day window that slides on use — a leaked token dies of disuse, and the plugin re-registers on a 401 without an admin ever seeing an error",
-      "Three independent limits: per-IP counters in Redis so they hold across workers, a per-token daily cap, and per-site rate and spend ceilings on the router's virtual keys",
-      "Plugins ask for an alias, not a model name, so changing provider is a server config change instead of a release to tens of thousands of sites",
-      "Model output is shape-checked against the product's field schema before WordPress touches it, and the prompts live in versioned per-product modules — reviewed and rolled back like any other code path",
-      "Unit cost measured per request on live traffic, and one 2 vCPU / 4 GB box sized for 1,000+ registered sites",
-    ],
+      "A provider key shipped inside a plugin leaks the first time somebody downloads the folder, and it puts every site on one unbounded budget. So the plugins call a gateway instead — FastAPI in front of a LiteLLM router, on Docker with Postgres and Redis. A site proves it owns its domain before it is issued a token; that token is stored only as a hash and expires if it goes unused; and every request clears licence, rate and spend limits before a model sees it. What comes back is checked against the product's own field schema before WordPress touches it, and because plugins ask for an alias rather than a model name, changing provider is a config change on the server instead of a release to tens of thousands of sites.",
+    role: "My design and my code at both ends — the gateway, the per-product prompt modules, and the WordPress side that stores credentials and turns model JSON into a working form",
     stack: ["Python", "FastAPI", "LiteLLM", "PostgreSQL", "Redis", "Docker", "PHP"],
     note: "Closed source — built for my employer; the feature it powers ships in Everest Forms",
   },
@@ -35,7 +28,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "90,000 active installs · 98/100 from 375 reviews",
     description:
       "A form builder for WordPress: drag-and-drop fields, payment and quiz forms, and an add-on API a whole pro tier hangs off. The React builder talks to a PHP field API that has to keep accepting forms built years ago.",
-    role: "Field types and admin features across free and pro, plus the AI form generation integration end to end",
+    role: "Field types — the divider field, lookup field styling, range slider and single-item support in calculations — admin features across free and pro, and the AI form generation integration end to end",
     stack: ["WordPress", "PHP", "React", "AI"],
     repoUrl: "https://github.com/wpeverest/everest-forms",
     liveUrl: "https://wordpress.org/plugins/everest-forms/",
@@ -46,10 +39,20 @@ export const PROJECT_LIST: Project[] = [
     metric: "50,000+ active installs · 96/100 from 828 reviews",
     description:
       "Registration, login and membership for WordPress: a form builder for custom fields and roles, content restriction, tiered plans, and a payment system with Stripe, PayPal and bank transfer — plus the whole account email lifecycle.",
-    role: "Features across the form builder, membership plans, payment flows and the email lifecycle",
+    role: "Membership upgrade flows, the content-drip module, LMS compatibility in content restriction, and the payment add-ons — Authorize.Net webhook signature verification, Mollie renewal retries, Stripe payment details",
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
+  },
+  {
+    id: "smart-smtp",
+    title: "SmartSMTP",
+    metric: "2,000 active installs · over 90% of its commits are mine",
+    description:
+      "Transactional email for WordPress that fails loudly instead of silently. A primary connection with a fallback behind it, provider setup for the common mailers, a test-mail flow that works before anything is configured, and a delivery log a site owner can actually read.",
+    role: "Built it out through its first releases: the connection and fallback model, provider setup, test mail, attachment handling, delivery logging and the User Registration hand-off",
+    stack: ["WordPress", "PHP", "React", "Email"],
+    liveUrl: "https://wordpress.org/plugins/smart-smtp/",
   },
   {
     id: "snippets-manager",
@@ -82,24 +85,25 @@ export const PROJECT_LIST: Project[] = [
     liveUrl: "https://wordpress.org/plugins/magazine-blocks/",
   },
   {
-    id: "smart-smtp",
-    title: "SmartSMTP",
-    metric: "2,000 active installs",
-    description:
-      "Transactional email for WordPress that fails loudly instead of silently: SMTP configuration, mailer routing and delivery logging, so a site owner can tell whether the mail left the server.",
-    role: "Mailer routing, delivery logging and failure reporting",
-    stack: ["WordPress", "PHP", "Email"],
-    liveUrl: "https://wordpress.org/plugins/smart-smtp/",
-  },
-  {
     id: "registration-form-fields",
     title: "Registration Form Fields for WooCommerce",
     metric: "Commercial extension, sold on WooCommerce.com",
     description:
-      "Adds validated custom fields to WooCommerce checkout and registration, with admin-side field management — the kind of extension that has to behave on stores it has never seen.",
-    role: "Field validation and the admin field manager",
-    stack: ["WooCommerce", "PHP", "Commercial"],
+      "A drag-and-drop builder for the WooCommerce registration form — custom fields, validation and admin-side management, on stores it has never seen.",
+    role: "Built the file-upload field end to end (checkout, dashboard and multi-file), the phone-field component and first/last-name smart tags, plus PHP 8 compatibility and the email-template fixes",
+    stack: ["WooCommerce", "PHP", "React", "Commercial"],
     liveUrl: "https://woocommerce.com/products/registration-form-fields/",
+    internal: true,
+  },
+  {
+    id: "customize-my-account",
+    title: "Customize My Account Page for WooCommerce",
+    metric: "Commercial on WooCommerce.com · free edition on WordPress.org",
+    description:
+      "Rebuilds the WooCommerce My Account area without a child theme: custom endpoints, tabs and groups, navigation layouts, and a customizer that previews every control as you change it.",
+    role: "The colour-palette manager (create, save, reorder, delete), navigation layout and menu-position controls, live previews for every control, legacy-style support, unsaved-change tracking, and the 2.0.1 release",
+    stack: ["WooCommerce", "PHP", "React", "Commercial"],
+    liveUrl: "https://woocommerce.com/products/customize-my-account-page-for-woocommerce/",
     internal: true,
   },
   {

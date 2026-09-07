@@ -1,4 +1,4 @@
-import { FiArrowUpRight, FiCheck, FiCode, FiExternalLink, FiLock } from "react-icons/fi";
+import { FiArrowUpRight, FiCode, FiExternalLink, FiLock } from "react-icons/fi";
 import { Section, Card, Tag, TextLink, Reveal } from "@/components/ui";
 import { PROFILE, PROJECT_LIST } from "@/constants";
 import type { Project } from "@/constants";
@@ -56,38 +56,25 @@ const Links = ({ project }: { project: Project }) => (
   </div>
 );
 
-/** Full-width card: the same content, plus the decisions worth reading. */
+/** Full-width card, prose rather than a bullet list. */
 const FeaturedProject = ({ project }: { project: Project }) => (
   <li className="flex sm:col-span-2 lg:col-span-3">
     <Reveal className="flex w-full">
       <Card className="w-full p-5 md:p-6">
-        <div className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:gap-10">
-          <div>
-            <h3 className="font-display text-h4 font-semibold text-ink">{project.title}</h3>
+        <h3 className="font-display text-h4 font-semibold text-ink">{project.title}</h3>
 
-            {project.metric && <Metric>{project.metric}</Metric>}
+        {project.metric && <Metric>{project.metric}</Metric>}
 
-            <p className="mt-4 leading-relaxed text-ink-muted">{project.description}</p>
+        <p className="mt-4 max-w-[68ch] leading-relaxed text-ink-muted">
+          {project.description}
+        </p>
 
-            {project.role && <MyPart className="mt-4">{project.role}</MyPart>}
-          </div>
+        {project.role && <MyPart className="mt-5 max-w-[68ch]">{project.role}</MyPart>}
 
-          <div className="flex flex-col gap-6 border-t border-line pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
-            <StackTags stack={project.stack} />
-            <Links project={project} />
-          </div>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
+          <StackTags stack={project.stack} />
+          <Links project={project} />
         </div>
-
-        {project.highlights && project.highlights.length > 0 && (
-          <ul className="mt-8 grid gap-3 border-t border-line pt-6 md:grid-cols-2 md:gap-x-8">
-            {project.highlights.map(item => (
-              <li key={item.slice(0, 32)} className="flex gap-3">
-                <FiCheck size={15} aria-hidden="true" className="mt-0.5 shrink-0 text-accent" />
-                <span className="text-sm leading-relaxed text-ink-muted">{item}</span>
-              </li>
-            ))}
-          </ul>
-        )}
       </Card>
     </Reveal>
   </li>
