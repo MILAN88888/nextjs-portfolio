@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PROFILE } from "@/constants/Profile";
 
 const description =
-  "Milan Chaudhary — software engineer in Nepal. I build multi-tenant AI gateways and the WordPress products that call them, on plugins with 140,000+ active installs.";
+  "Milan Chaudhary — software engineer in Nepal. I build WordPress plugins and Gutenberg blocks used on 150,000+ sites, and the backend platform behind their AI features.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(PROFILE.siteUrl),
@@ -25,6 +25,7 @@ export const siteMetadata: Metadata = {
     "MCP",
     "agentic AI workflows",
     "WordPress plugin developer",
+    "Gutenberg block developer",
     "PHP developer",
     "React developer",
     "Next.js developer",

@@ -13,16 +13,16 @@ export const PROFILE = {
   focus: "AI platform & WordPress product engineering",
   /** Sits directly under the name in the hero. */
   subtitle:
-    "I build AI gateways, and the WordPress products that call them — on an install base of 140,000+ sites.",
+    "I build WordPress products used on 150,000+ sites — plugins, Gutenberg blocks, and the backend platform behind their AI features.",
   intro:
-    "Software engineer in Nepal, building at ThemeGrill. I designed and shipped the multi-tenant AI gateway that powers AI form generation in Everest Forms — FastAPI, LiteLLM, Postgres and Redis behind Docker — and I write the PHP and React features in plugins that run on other people's production sites. Agents do the mechanical work in my day; the engineering calls stay mine.",
+    "Software engineer in Nepal. Four years across PHP plugin architecture, React in the block editor and Python on the back end — including the AI gateway I designed and built to serve products with a six-figure install base. I ship my own plugin too, and run the Docker, Linux and networking layer underneath. Agents do the mechanical work in my day; the engineering calls stay mine.",
   availabilityNote: "Open to AI platform & backend work",
   /** Longer form, for Contact and the About facts. */
   openTo: "AI platform, backend and full-stack work",
   availableForWork: true,
 
   /** Combined WordPress.org active installs of the plugins I ship features in. */
-  installBase: "140,000+",
+  installBase: "150,000+",
 
   company: "ThemeGrill Pvt Ltd",
   companyUrl: "https://themegrill.com",
@@ -62,14 +62,14 @@ export const HERO_STATS: Stat[] = [
     note: "Combined WordPress.org install base of the plugins I ship features in",
   },
   {
-    value: "90,000",
-    label: "On the AI gateway",
-    note: "Everest Forms, where AI form generation runs through the platform I built",
+    value: "7",
+    label: "Products shipped",
+    note: "Form builders, membership, block libraries and email delivery — free, pro and commercial",
   },
   {
     value: "< 1¢",
     label: "Per AI generation",
-    note: "Measured on live traffic, capped per site by budget and rate limits",
+    note: "Measured on live traffic through the gateway I built, capped per site",
   },
   {
     value: `${EXPERIENCE_YEARS}+ yrs`,
@@ -80,18 +80,19 @@ export const HERO_STATS: Stat[] = [
 
 /** About section body copy. */
 export const BIO: string[] = [
-  "I write software other people depend on. At ThemeGrill I ship features in WordPress plugins with a combined 140,000+ active installations, which sets the standard for every change: it has to survive old PHP versions, somebody else's theme, and sites that will never be migrated.",
-  "In 2026 I moved from using AI to building the platform that serves it. Our plugins needed AI features, and shipping a provider key inside a plugin is not an option — it leaks the first time someone downloads the folder, and every site spends against one unbounded budget. So I built a gateway: sites prove they own their domain, get a scoped token, and each request clears licence checks, rate limits and spend caps before a model ever sees it.",
-  "I'm comfortable in the layer most product developers hand off. Docker, Postgres and Redis, Nginx reverse proxies, TLS and DNS, Tailscale between machines, and routing through modem and mobile IPs when a job needs a real path out. Being able to stand the infrastructure up myself is what makes the AI work shippable instead of a demo.",
-  "Day to day I work with agents rather than around them: Claude Code driving Playwright through MCP to prove a fix in a live WordPress install, and my own skills encoding the suite's coding standards and triage steps. They are fast at what was never the interesting part. Deciding what to build, and whether the answer is actually correct, doesn't delegate.",
+  "I write software other people depend on. The plugins I ship features in have a combined 150,000+ active installations, which sets the standard for every change: it has to survive old PHP versions, somebody else's theme, and sites that will never be migrated.",
+  "Much of that work is in the block editor — React blocks in BlockArt and Magazine Blocks, where a setting has to keep working on a page somebody built two years ago, and a missing capability check is the difference between a feature and a vulnerability. I've shipped both, and fixed one.",
+  "I also build things I own end to end. Custom Code Snippets Manager is mine: a snippet runner with a CodeMirror editor, syntax checking on both sides of the wire, and a safety model that catches a fatal from a user's PHP and deactivates the snippet instead of taking the site down.",
+  "In 2026 I moved from using AI to building the platform that serves it. Shipping a provider key inside a plugin leaks it on the first download, so I designed and built a gateway instead: sites prove they own their domain, get a scoped token, and every request clears licence, rate and spend limits before a model sees it. Underneath it I run the layer most product developers hand off — Docker, Postgres and Redis, Nginx reverse proxies, TLS and DNS, Tailscale, and routing through modem and mobile IPs when a job needs a real path out.",
+  "Day to day I work with agents rather than around them: Claude Code driving Playwright through MCP to prove a fix in a live WordPress install, and my own skills encoding coding standards and triage steps. They are fast at what was never the interesting part. Deciding what to build, and whether the answer is actually correct, doesn't delegate.",
 ];
 
 /** Fact card beside the About copy. */
 export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Experience", value: `${EXPERIENCE_YEARS}+ years, since July 2022` },
   { label: "Currently",  value: "Software Engineer at ThemeGrill Pvt Ltd" },
-  { label: "Focus",      value: "AI platform engineering · WordPress products" },
-  { label: "Core stack", value: "Python · PHP · TypeScript · Postgres · Docker" },
+  { label: "Focus",      value: "WordPress products · block editor · backend platform" },
+  { label: "Core stack", value: "PHP · Python · TypeScript · React · Docker" },
   { label: "Based in",   value: `Nepal · remote-friendly, ${PROFILE.timezone}` },
   { label: "Open to",    value: "AI platform, backend and full-stack roles" },
 ];
