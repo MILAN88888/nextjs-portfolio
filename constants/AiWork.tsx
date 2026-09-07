@@ -9,7 +9,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "themegrill-ai-cloud",
     title: "A multi-tenant AI gateway for WordPress plugins",
-    context: "ThemeGrill AI Cloud · 2026 · I designed it, wrote it, and shipped it",
+    context: "AI gateway · 2026 · my design, my code, in production",
     problem:
       "Everest Forms needed AI form generation for an install base of 90,000 sites. A provider key shipped inside a plugin leaks the first time somebody downloads the folder, and it puts every site on one unbounded budget — one abusive install can spend the whole company's quota. Per-site keys were not an option either: site owners will not create an OpenAI account to use a form builder.",
     approach:
@@ -59,7 +59,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "WordPress",
     ],
     internalNote:
-      "Internal ThemeGrill infrastructure, so there is no public repository — but the feature it powers is public, and shipping in Everest Forms.",
+      "Built for my employer, so the repository stays private. The feature it powers is public and shipping in Everest Forms.",
     links: [{ title: "Everest Forms on WordPress.org", url: "https://wordpress.org/plugins/everest-forms/" }],
   },
 ];

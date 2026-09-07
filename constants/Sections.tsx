@@ -9,7 +9,7 @@ import type { SectionMeta } from "./types";
 export const SECTIONS: SectionMeta[] = [
   { id: "about",      num: "01", label: "About",       title: "Product engineering, with the platform underneath." },
   { id: "ai",         num: "02", label: "AI Platform", navLabel: "AI", title: "The AI platform I built, and how I work with agents." },
-  { id: "projects",   num: "03", label: "Projects",    title: "Products I ship, and the install base behind them." },
+  { id: "projects",   num: "03", label: "Projects",    title: "What I ship, and what I own." },
   { id: "skills",     num: "04", label: "Skills",      title: "The toolkit I reach for." },
   { id: "experience", num: "05", label: "Experience",  title: "Where I've been building." },
   { id: "education",  num: "06", label: "Education",   title: "Where I studied." },
