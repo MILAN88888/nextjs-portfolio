@@ -1,14 +1,34 @@
 import type { Project } from "./types";
 
 /**
- * Ordered by install base, with one exception: the plugin I own outright sits
- * third, because "what has he built on his own account" is the question a
- * page full of employer products doesn't answer. Install counts and ratings are
- * checkable on WordPress.org; `role` says what my part was, because these are
- * team products and presenting one as solo work loses a reviewer's trust. The
- * AI gateway is not here — it has its own section.
+ * The gateway leads as the one `featured` entry — full width, with the
+ * decisions worth reading — then products by install base, except the plugin I
+ * own outright, which sits high because "what has he built on his own account"
+ * is the question a page full of employer products doesn't answer. Install
+ * counts and ratings are checkable on WordPress.org; `role` says what my part
+ * was, because most of these are team products and presenting one as solo work
+ * loses a reviewer's trust.
  */
 export const PROJECT_LIST: Project[] = [
+  {
+    id: "ai-gateway",
+    title: "Multi-tenant AI gateway",
+    featured: true,
+    metric: "Serves AI form generation to a 90,000-install plugin",
+    description:
+      "A provider key shipped inside a plugin leaks the first time somebody downloads the folder, and it puts every site on one unbounded budget. So the plugins call a gateway instead: FastAPI in front of a LiteLLM router, on Docker with Postgres and Redis. A site proves it owns its domain, gets a scoped token, and every request clears licence, rate and spend limits before a model sees it.",
+    role: "My design and my code, at both ends — the gateway, the per-product prompt modules, and the WordPress side that stores credentials and turns model JSON into a working form",
+    highlights: [
+      "Registration is a callback, not a claim: the gateway fetches a one-time token back over the site's own REST route before issuing credentials, so nobody can register a domain they don't own",
+      "Site tokens are 256-bit and stored only as a hash, inside a 90-day window that slides on use — a leaked token dies of disuse, and the plugin re-registers on a 401 without an admin ever seeing an error",
+      "Three independent limits: per-IP counters in Redis so they hold across workers, a per-token daily cap, and per-site rate and spend ceilings on the router's virtual keys",
+      "Plugins ask for an alias, not a model name, so changing provider is a server config change instead of a release to tens of thousands of sites",
+      "Model output is shape-checked against the product's field schema before WordPress touches it, and the prompts live in versioned per-product modules — reviewed and rolled back like any other code path",
+      "Unit cost measured per request on live traffic, and one 2 vCPU / 4 GB box sized for 1,000+ registered sites",
+    ],
+    stack: ["Python", "FastAPI", "LiteLLM", "PostgreSQL", "Redis", "Docker", "PHP"],
+    note: "Closed source — built for my employer; the feature it powers ships in Everest Forms",
+  },
   {
     id: "everest-forms",
     title: "Everest Forms",
@@ -34,7 +54,7 @@ export const PROJECT_LIST: Project[] = [
   {
     id: "snippets-manager",
     title: "Custom Code Snippets Manager",
-    metric: "My own plugin — designed, built and shipped solo",
+    metric: "My own plugin — designed and built solo",
     description:
       "Run PHP, JavaScript, CSS and HTML snippets in WordPress without touching a theme file: CodeMirror editor, syntax checked on the server and in the browser, per-snippet scopes, JSON import and export. A fatal from a user's PHP is caught and that snippet deactivated, so a bad snippet can't take the site down.",
     role: "Everything: architecture, admin interface, the safety model and the build pipeline",

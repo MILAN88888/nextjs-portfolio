@@ -9,6 +9,10 @@ export interface Project {
   role?: string;
   repoUrl?: string;
   liveUrl?: string;
+  /** Renders full width at the top of the grid, with `highlights` shown. */
+  featured?: boolean;
+  /** The engineering calls worth reading. Featured cards only. */
+  highlights?: string[];
   /** No public repository — internal or commercial. Renders a "Closed source" note. */
   internal?: boolean;
   /** Free-text status note for the links row, where neither a repo nor a live URL applies yet. */
@@ -63,21 +67,4 @@ export interface Stat {
   value: string;
   label: string;
   note?: string;
-}
-
-/** One piece of work explained the way a reviewer reads it: problem, calls made, outcome. */
-export interface CaseStudy {
-  id: string;
-  title: string;
-  /** Where and when, and what my part in it was. */
-  context: string;
-  problem: string;
-  approach: string;
-  /** The engineering calls. This is the part a senior reviewer actually reads. */
-  decisions: { title: string; body: string }[];
-  outcomes: string[];
-  stack: string[];
-  /** Shown in place of a repository link when the code isn't public. */
-  internalNote?: string;
-  links?: { title: string; url: string }[];
 }

@@ -1,5 +1,11 @@
  == Changelog ==
 
+ = 2.2.0 - 2026-09-07
+ * Changed - The AI gateway is now the one featured project at the top of the grid, full width with its decisions, instead of a section of its own.
+ * Changed - Hero stats drop the cost-per-generation figure for a review-weighted average rating, so no hero figure leans on AI.
+ * Changed - Copy no longer calls my own plugin shipped — it is built and pre-release until it is in the directory.
+ * Removed - The separate AI Platform section; the page is back to six sections.
+
  = 2.1.0 - 2026-09-07
  * Added - BlockArt Blocks and Magazine Blocks to the projects, with the block editor work stated per plugin.
  * Added - Custom Code Snippets Manager, the plugin I own outright, third in the grid.
@@ -11,7 +17,7 @@
 
  = 2.0.0 - 2026-09-04
  * Rebuilt as a single static page on a token-based design system, two themes from one token set.
- * Repositioned around AI platform work: new AI Platform section carrying the ThemeGrill AI Cloud case study and how agents are used day to day.
+ * Repositioned around AI platform work: the gateway case study and how agents are used day to day.
  * Hero leads with four verifiable figures and links the CV.
  * Projects, experience and skills rewritten around checkable impact; each project states my part in it.
  * Metadata, keywords and Person JSON-LD updated to match.

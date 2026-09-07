@@ -7,18 +7,16 @@ import type { SectionMeta } from "./types";
  * follows automatically.
  */
 export const SECTIONS: SectionMeta[] = [
-  { id: "about",      num: "01", label: "About",       title: "Product engineering, with the platform underneath." },
-  { id: "ai",         num: "02", label: "AI Platform", navLabel: "AI", title: "The AI platform I built, and how I work with agents." },
-  { id: "projects",   num: "03", label: "Projects",    title: "What I ship, and what I own." },
-  { id: "skills",     num: "04", label: "Skills",      title: "The toolkit I reach for." },
-  { id: "experience", num: "05", label: "Experience",  title: "Where I've been building." },
-  { id: "education",  num: "06", label: "Education",   title: "Where I studied." },
-  { id: "contact",    num: "07", label: "Contact",     title: "Have a role, a product, or a hard problem? Let's talk." },
+  { id: "about",      num: "01", label: "About",      title: "Product engineering, with the platform underneath." },
+  { id: "projects",   num: "02", label: "Projects",   title: "What I ship, and what I own." },
+  { id: "skills",     num: "03", label: "Skills",     title: "The toolkit I reach for." },
+  { id: "experience", num: "04", label: "Experience", title: "Where I've been building." },
+  { id: "education",  num: "05", label: "Education",  title: "Where I studied." },
+  { id: "contact",    num: "06", label: "Contact",    title: "Have a role, a product, or a hard problem? Let's talk." },
 ];
 
 /** Kicker label, e.g. `FEATURED PROJECTS` for the projects section. */
 export const SECTION_KICKERS: Record<string, string> = {
-  ai: "AI Platform & Agents",
   projects: "Featured Projects",
 };
 
