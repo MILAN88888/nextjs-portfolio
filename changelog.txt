@@ -1,5 +1,11 @@
  == Changelog ==
 
+ = 3.0.0 - 2026-09-08
+ * Fixed - Commit counts were undercounted because they were matched against one spelling of my name. Recounted across every spelling and address: Everest Forms is 492 commits, not 440, and User Registration is 268, not 99.
+ * Changed - Proven by work now shows the six strongest verified figures, including all 171 commits of my own plugin.
+ * Changed - Rebuilt the project card. The header itself opens the card, with the chevron in the corner, and My part reads as a labelled block instead of a small grey aside.
+ * Fixed - Opening a card no longer stretches the cards beside it, and every closed card is the same height.
+
  = 2.9.0 - 2026-09-08
  * Changed - The card toggle is a chevron with no label, and every project card has one, so the grid reads as one set rather than some cards folding and others not.
  * Changed - Each card now opens with a single short line, with the rest of the description and my part behind the toggle, and the title, figure and summary blocks reserve the same height so every chevron lines up.

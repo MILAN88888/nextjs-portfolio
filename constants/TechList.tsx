@@ -96,14 +96,19 @@ export const TECH_LIST: TechGroup[] = [
  */
 export const PROOF_POINTS: Stat[] = [
   {
+    value: "492",
+    label: "commits in Everest Forms",
+    note: "Across the free and pro plugins, including the AI form builder",
+  },
+  {
     value: "303 of 331",
     label: "commits in SmartSMTP",
     note: "I built it from its early versions through its first public releases",
   },
   {
-    value: "~440",
-    label: "commits in Everest Forms",
-    note: "Across the free and pro plugins, including the AI form builder",
+    value: "268",
+    label: "commits in User Registration",
+    note: "Core and pro, most of it on the payment side",
   },
   {
     value: "4",
@@ -116,13 +121,8 @@ export const PROOF_POINTS: Stat[] = [
     note: "A faked gateway on free memberships, and an unsafe unserialize on old PHP",
   },
   {
-    value: "158",
-    label: "commits in Customize My Account",
-    note: "Colour palettes, navigation layouts, live previews and the 2.0.1 release",
-  },
-  {
-    value: "20+",
-    label: "User Registration add-ons",
-    note: "Two-factor auth, invite codes, conditional logic and marketing integrations",
+    value: "171 of 171",
+    label: "commits in my own plugin",
+    note: "Custom Code Snippets Manager, start to finish",
   },
 ];

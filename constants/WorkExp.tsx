@@ -21,7 +21,7 @@ export const WORK_EXP: Job[] = [
           "Built the AI form builder end to end: the back end service in Python and FastAPI, the prompt setup, and the WordPress side that calls it, so no API key ships inside the plugin",
           "Added the divider field and multiple-select support, styled the lookup field, and added range slider and single-item options to calculations",
           "Blocked an unsafe unserialize call on old PHP versions",
-          "Around 440 commits across the free and pro plugins",
+          "492 commits across the free and pro plugins",
         ],
       },
       {
@@ -31,7 +31,7 @@ export const WORK_EXP: Job[] = [
           "Fixed Stripe charging the wrong currency when a plan had no local price, and stopped Mollie retries charging twice",
           "Added signature checks and a retry flow to Authorize.Net webhooks",
           "Closed a hole where a faked gateway could send a free membership down the paid order path",
-          "Built the content drip module and the membership upgrade flow, and shipped smaller work across about 20 add-ons",
+          "Built the content drip module and the membership upgrade flow, and shipped smaller work across 26 add-ons",
         ],
       },
       {
@@ -52,7 +52,7 @@ export const WORK_EXP: Job[] = [
       {
         product: "WooCommerce extensions",
         items: [
-          "Customize My Account Page: the colour palette manager, navigation layout and menu position controls, live previews for every control, and the 2.0.1 release. 158 commits",
+          "Customize My Account Page: the colour palette manager, navigation layout and menu position controls, live previews for every control, and the 2.0.1 release. 162 commits",
           "Registration Form Fields: the file upload field end to end, at checkout, in the dashboard and for multiple files, plus the phone field, smart tags and PHP 8 fixes",
         ],
       },

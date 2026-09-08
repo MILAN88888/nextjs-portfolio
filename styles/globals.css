@@ -112,7 +112,7 @@ body {
 }
 
 /* One consistent focus ring for everything interactive. */
-:where(a, button, [tabindex]):focus-visible {
+:where(a, button, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
