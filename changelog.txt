@@ -1,5 +1,8 @@
  == Changelog ==
 
+ = 3.4.1 - 2026-09-08
+ * Removed - The About paragraph about work outside the day job: the commercial plugin, the self-hosting, and how I use AI assistants.
+
  = 3.4.0 - 2026-09-08
  * Removed - A project I decided not to list, along with its figure in the skills section, its paragraph in About and its place in the product count.
 
