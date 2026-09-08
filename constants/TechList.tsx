@@ -70,6 +70,7 @@ export const TECH_LIST: TechGroup[] = [
       "Linux servers",
       "Nginx",
       "TLS and DNS",
+      "Subdomains",
       "Tailscale",
       "Proxy setup",
       "Modem and mobile IPs",

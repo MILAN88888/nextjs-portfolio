@@ -57,7 +57,11 @@ export const Experience = () => (
                 <div className="mt-6 space-y-6">
                   {job.groups.map(group => (
                     <div key={group.product}>
-                      <h4 className="font-mono text-xs uppercase tracking-[0.16em] text-ink">
+                      <h4 className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.16em] text-ink">
+                        <span
+                          className="h-1 w-1 rounded-full bg-accent"
+                          aria-hidden="true"
+                        />
                         {group.product}
                       </h4>
                       <Bullets items={group.items} />

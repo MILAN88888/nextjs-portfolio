@@ -120,11 +120,10 @@ export const SiteHeader = () => {
                 href={`#${section.id}`}
                 onClick={closeMenu}
                 aria-current={activeId === section.id ? "true" : undefined}
-                className={`flex items-center gap-3 rounded-sm px-2 py-2.5 text-sm transition-colors ${
+                className={`block rounded-sm px-2 py-2.5 text-sm transition-colors ${
                   activeId === section.id ? "text-accent" : "text-ink-muted"
                 }`}
               >
-                <span className="font-mono text-xs text-ink-faint">{section.num}</span>
                 {section.navLabel ?? section.label}
               </a>
             </li>

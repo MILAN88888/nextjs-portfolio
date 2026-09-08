@@ -12,7 +12,9 @@ export const About = () => (
         ))}
       </Reveal>
 
-      <Reveal delay={120}>
+      {/* Sticky on a wide screen, so the facts stay beside whichever paragraph
+          you are reading. `top` clears the sticky header. */}
+      <Reveal delay={120} className="lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start">
         <Card>
           <dl className="divide-y divide-line">
             {ABOUT_FACTS.map(fact => (

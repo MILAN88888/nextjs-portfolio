@@ -1,24 +1,18 @@
 import type { SectionMeta } from "./types";
 
 /**
- * Single source of truth for the page's sections: drives the header nav,
- * the scroll-spy, and every `01 — ABOUT` section heading. Adding a section
- * here and rendering it in app/page.tsx is all that's required — the nav
- * follows automatically.
+ * Single source of truth for the page's sections: drives the header nav, the
+ * scroll-spy and each section's heading. One plain label per section — no
+ * numbering, and no second sentence underneath it.
  */
 export const SECTIONS: SectionMeta[] = [
-  { id: "about",      num: "01", label: "About",      title: "Hi, I'm Milan." },
-  { id: "projects",   num: "02", label: "Projects",   title: "Things I've built" },
-  { id: "skills",     num: "03", label: "Skills",     title: "What I can show for it" },
-  { id: "experience", num: "04", label: "Experience", title: "Where I've worked" },
-  { id: "education",  num: "05", label: "Education",  title: "Where I studied" },
-  { id: "contact",    num: "06", label: "Contact",    title: "Get in touch" },
+  { id: "about",      label: "About" },
+  { id: "projects",   label: "Projects" },
+  { id: "skills",     label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "education",  label: "Education" },
+  { id: "contact",    label: "Contact" },
 ];
-
-/** Kicker label, e.g. `FEATURED PROJECTS` for the projects section. */
-export const SECTION_KICKERS: Record<string, string> = {
-  projects: "Featured Projects",
-};
 
 export const getSection = (id: string): SectionMeta => {
   const section = SECTIONS.find(s => s.id === id);

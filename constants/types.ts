@@ -54,13 +54,10 @@ export interface SocialLink {
 
 export interface SectionMeta {
   id: string;
-  /** Display number for the `01 — ABOUT` heading. */
-  num: string;
+  /** The section's only heading, and its nav label. */
   label: string;
   /** Shorter label for the header nav, where horizontal room runs out. */
   navLabel?: string;
-  /** Heading shown above the section body. */
-  title: string;
 }
 
 /** A number worth putting in front of a reader, with the context that makes it mean something. */

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { getSection, SECTION_KICKERS } from "@/constants";
+import { getSection } from "@/constants";
 import { Reveal } from "./Reveal";
 import { Container } from "./Container";
 
@@ -11,8 +11,7 @@ interface SectionProps {
 }
 
 export const Section = ({ id, children, className = "" }: SectionProps) => {
-  const { num, label, title } = getSection(id);
-  const kicker = SECTION_KICKERS[id] ?? label;
+  const { label } = getSection(id);
 
   return (
     <section
@@ -22,15 +21,14 @@ export const Section = ({ id, children, className = "" }: SectionProps) => {
     >
       <Container>
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-            {num} &mdash; {kicker}
-          </p>
+          {/* A short accent rule in place of the old numbered kicker. */}
+          <span className="block h-px w-10 bg-accent" aria-hidden="true" />
 
           <h2
             id={`${id}-heading`}
-            className="mt-5 max-w-3xl font-display text-h2 font-semibold text-ink"
+            className="mt-6 font-display text-h2 font-semibold tracking-tight text-ink"
           >
-            {title}
+            {label}
           </h2>
         </Reveal>
 
