@@ -20,7 +20,7 @@ export const WORK_EXP: Job[] = [
         items: [
           "Built the AI form builder end to end: the back end service in Python and FastAPI, the prompt setup, and the WordPress side that calls it, so no API key ships inside the plugin",
           "Added the divider field and multiple-select support, styled the lookup field, and added range slider and single-item options to calculations",
-          "Blocked an unsafe unserialize call on old PHP versions",
+          "17 security fixes here: an unsafe unserialize call on old PHP, nonce verification when several forms share a page, sanitisation and escaping, entry permissions and file-upload capability checks",
           "492 commits across the free and pro plugins",
         ],
       },
@@ -30,7 +30,7 @@ export const WORK_EXP: Job[] = [
           "Moved PayPal onto its REST API with webhook handling, and added checks on the IPN receiver address and amount",
           "Fixed Stripe charging the wrong currency when a plan had no local price, and stopped Mollie retries charging twice",
           "Added signature checks and a retry flow to Authorize.Net webhooks",
-          "Closed a hole where a faked gateway could send a free membership down the paid order path",
+          "Patched unauthenticated privilege escalation and user deletion, arbitrary shortcode execution through user-controlled smart tags, a PayPal flaw that let a pending payment be marked completed without paying, a forged gateway on free memberships, and an open redirect after login",
           "Built the content drip module and the membership upgrade flow, and shipped smaller work across 26 add-ons",
         ],
       },
@@ -39,13 +39,13 @@ export const WORK_EXP: Job[] = [
         items: [
           "Built most of the plugin, from its early versions through its first public releases",
           "The main and fallback connections, provider setup, test mail, attachment handling, the delivery log, and the hand-off from User Registration",
-          "303 of its 331 commits are mine",
+          "Fixed a stored XSS in the mail log viewer, with server-side sanitisation and a sandboxed iframe. 303 of its 331 commits are mine",
         ],
       },
       {
         product: "BlockArt and Magazine Blocks",
         items: [
-          "Fixed a security hole in the counter block, and made the colour picker offer the theme's own palette",
+          "Fixed a vulnerability in the counter block, unescaped output and an insecure nonce, and made the colour picker offer the theme's own palette",
           "Block features in both the free and pro plugins, capability checks on editor actions, and I cut the 1.8 release",
         ],
       },
@@ -59,6 +59,7 @@ export const WORK_EXP: Job[] = [
       {
         product: "Across the suite",
         items: [
+          "40 security and hardening fixes in total, across nine of the plugins, including triage of the findings from a Snyk report and from an external review of a release",
           "Cut releases for the paired free and pro plugins: changelogs, version bumps and keeping both shippable from one change",
           "Use Claude Code with Playwright over MCP to check a fix in a real WordPress install, with my own skills holding the coding standards and the debug routine",
         ],

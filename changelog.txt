@@ -1,5 +1,10 @@
  == Changelog ==
 
+ = 3.1.0 - 2026-09-08
+ * Fixed - The security count said 2. An audit of every repo found 40 security and hardening fixes across nine plugins, and the page now names the serious ones: privilege escalation, arbitrary shortcode execution, a PayPal status bypass, stored XSS.
+ * Added - A paragraph in About about the security side of the work, and security lines in the Everest Forms, User Registration, SmartSMTP and block library entries.
+ * Changed - The payment gateway note now says the work spans both Everest Forms and User Registration. The count of four is correct; Razorpay and Square only matched image filenames.
+
  = 3.0.0 - 2026-09-08
  * Fixed - Commit counts were undercounted because they were matched against one spelling of my name. Recounted across every spelling and address: Everest Forms is 492 commits, not 440, and User Registration is 268, not 99.
  * Changed - Proven by work now shows the six strongest verified figures, including all 171 commits of my own plugin.

@@ -28,7 +28,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "50,000+ installs, rated 96/100 by 828 people",
     description:
       "Registration, login and paid memberships for WordPress: a builder for sign-up fields and roles, content restriction, membership plans, and payments through Stripe, PayPal, Mollie, Authorize.Net or bank transfer.\n\nMost of my work here is on the money path. Every gateway has its own webhooks, retries and quirks, and when one fails quietly somebody has paid and not been given what they paid for, or has been charged twice. That is the part I look after.",
-    role: "Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net. I also built the content drip module and the membership upgrade flow, and closed a hole where a faked gateway could send a free membership down the paid order path. 268 commits across core and pro",
+    role: "Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net. I also built the content drip module and the membership upgrade flow, On the security side I patched unauthenticated privilege escalation and user deletion, arbitrary shortcode execution through user-controlled smart tags, a PayPal flaw that let an attacker mark a pending payment as completed without paying, a forged gateway on free memberships, and an open redirect after login. 268 commits across core and pro",
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
@@ -39,7 +39,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "90,000 installs · 98/100 rating",
     description:
       "A drag-and-drop form builder with payments, quizzes and add-ons.\n\nA whole pro tier of add-ons hangs off it, and forms people built years ago still have to open and submit correctly, so a lot of the work is in not breaking them.\n\nIts newest feature builds a whole form from a sentence describing what you need. That part runs through a service I designed and built: the plugin sends the request to us, we check the site's licence and its limits, ask the model, and make sure the answer is a valid form before the plugin touches it. No API key is ever shipped inside the plugin.",
-    role: "The AI form builder end to end: the gateway in Python and FastAPI with Postgres and Redis on Docker, the prompt setup, and the WordPress side that calls it. Before that, the divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and blocking an unsafe unserialize call on old PHP. 492 commits across the free and pro plugins",
+    role: "The AI form builder end to end: the gateway in Python and FastAPI with Postgres and Redis on Docker, the prompt setup, and the WordPress side that calls it. Before that, the divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and 17 security fixes: blocking an unsafe unserialize call on old PHP, nonce verification across forms on one page, sanitisation and escaping, entry permissions and file-upload capability checks. 492 commits across the free and pro plugins",
     stack: ["WordPress", "PHP", "React", "Python", "FastAPI", "Docker"],
     repoUrl: "https://github.com/wpeverest/everest-forms",
     liveUrl: "https://wordpress.org/plugins/everest-forms/",
@@ -51,7 +51,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "2,000 installs · 303 of 331 commits",
     description:
       "Email sending for WordPress that tells you when it fails.\n\nOne main SMTP connection with a backup behind it, setup for the common providers, a test email you can send before anything is configured, and a log of what actually went out.",
-    role: "I built most of this one, from the early versions through its first public releases: the main and fallback connections, provider setup, test mail, attachment handling, the delivery log, and the hand-off from User Registration",
+    role: "I built most of this one, from the early versions through its first public releases: the main and fallback connections, provider setup, test mail, attachment handling, the delivery log, the hand-off from User Registration, and a stored XSS fix in the mail log viewer",
     stack: ["WordPress", "PHP", "React", "Email"],
     liveUrl: "https://wordpress.org/plugins/smart-smtp/",
   },
@@ -71,7 +71,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "10,000+ installs · 98/100 rating",
     description:
       "A library of Gutenberg blocks with ready-made sections and templates.\n\nEvery setting has to keep rendering the same way on pages built long before the current version.",
-    role: "Fixed a security hole in the counter block, and made the colour picker offer the theme's own palette",
+    role: "Fixed a vulnerability in the counter block, and made the colour picker offer the theme's own palette",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/blockart-blocks/",
   },
@@ -81,7 +81,7 @@ export const PROJECT_LIST: Project[] = [
     metric: "6,000 installs · 98/100 rating",
     description:
       "Blocks for news and magazine sites: post grids, sliders, tickers and an ad system.\n\nAll of them pull posts through WP_Query behind the editor, so the block settings and the query have to stay in step.",
-    role: "Block features in both the free and pro plugins, capability checks on editor actions, and I cut the 1.8 release. 81 commits across the two",
+    role: "Block features in both the free and pro plugins, fixes for unescaped output and an insecure nonce, capability checks on editor actions, and I cut the 1.8 release. 81 commits across the two",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/magazine-blocks/",
   },

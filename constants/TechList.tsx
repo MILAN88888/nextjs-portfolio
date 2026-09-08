@@ -111,14 +111,14 @@ export const PROOF_POINTS: Stat[] = [
     note: "Core and pro, most of it on the payment side",
   },
   {
-    value: "4",
-    label: "payment gateways",
-    note: "PayPal, Stripe, Mollie and Authorize.Net, all on the money path",
+    value: "40",
+    label: "security and hardening fixes",
+    note: "Across nine plugins: privilege escalation, arbitrary shortcode execution, a PayPal status bypass, stored XSS",
   },
   {
-    value: "2",
-    label: "security fixes in production",
-    note: "A faked gateway on free memberships, and an unsafe unserialize on old PHP",
+    value: "4",
+    label: "payment gateways",
+    note: "PayPal, Stripe, Authorize.Net and Mollie, in both Everest Forms and User Registration",
   },
   {
     value: "171 of 171",
