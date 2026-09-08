@@ -1,5 +1,11 @@
  == Changelog ==
 
+ = 2.7.0 - 2026-09-08
+ * Added - Proven by work: six figures in the Skills section, each traceable to the commit history of the plugin it names.
+ * Changed - Experience is now grouped by product, so each of the seven products says what I did in it.
+ * Changed - Skills heading is now "What I can show for it".
+ * Added - A line in About saying what I am looking for.
+
  = 2.6.0 - 2026-09-08
  * Changed - The AI gateway is no longer a project of its own. It is described inside the Everest Forms card, as my part in that plugin's AI form builder, which is what it actually is.
  * Changed - Everest Forms is now the featured project, with the AI feature explained in plain terms.

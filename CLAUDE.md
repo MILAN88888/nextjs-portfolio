@@ -93,6 +93,16 @@ Milan's review of the first pass was that it "look like complete ai generated", 
 
 The shape to keep: plain heading, three or four short first-person paragraphs — where I am now, how I got here, what I moved on to, what I do away from work — concrete nouns, varied sentence length, no rhetoric. Milan's own drafts are the register to match; when he supplies copy, tighten it rather than restyling it.
 
+### Section patterns
+
+Two of these came from studying salim.com.np (a former ThemeGrill colleague's portfolio, and the closest comparable to Milan's own career), adapted with Milan's own verifiable numbers:
+
+- **Experience is grouped by product, not a flat bullet list.** `Job.groups` holds `{ product, items[] }`; `Job.highlights` stays for a role that was one job on one thing (Idea Foundation). Seven products in one list buries what each was, and a reviewer scans product-then-detail far faster. `Experience.tsx` renders both shapes, sharing a `Bullets` part.
+- **Skills lead with `PROOF_POINTS` before `TECH_LIST`.** Six figures, each from `git log` in the plugin it names (`303 of 331` in SmartSMTP, `~440` in Everest Forms, `158` in Customize My Account, 4 payment gateways, 2 production security fixes, 20+ add-ons). A tag cloud is a self-assessment; these can be checked. If a number changes, recount it — never round it up.
+- The section heading is **What I can show for it**, which is the promise those cards make. Don't put a proof figure in `PROOF_POINTS` that isn't traceable to a repo.
+
+Deliberately **not** copied from that site: a speaking/community section, testimonials, separate case study pages and a blog. Each needs material Milan does not have yet or that cannot be invented — talks he has given, quotes real colleagues actually said. Add them only when the material exists.
+
 ### Component layers
 
 - **`components/ui/`** — primitives, imported via `@/components/ui`. `Section` (kicker + heading + anchor), `Container`, `Card`, `Tag`, `Stat`, `Button`, `IconLink`, `TextLink`, `Reveal`. Reach for these before writing new markup.

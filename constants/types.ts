@@ -25,7 +25,10 @@ export interface Job {
   /** Free text — "Present", "Earlier" — not a strict date. */
   period: string;
   summary: string;
-  highlights: string[];
+  /** Flat bullets. Use for a role that was one job on one thing. */
+  highlights?: string[];
+  /** Bullets grouped by product. Use when the role spanned several products. */
+  groups?: { product: string; items: string[] }[];
   links?: { title: string; url: string }[];
 }
 

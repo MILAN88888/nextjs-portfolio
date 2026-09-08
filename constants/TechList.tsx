@@ -1,4 +1,4 @@
-import type { TechGroup } from "./types";
+import type { Stat, TechGroup } from "./types";
 
 /**
  * Grouped by the kind of work, and written the way I would say it out loud.
@@ -87,5 +87,42 @@ export const TECH_LIST: TechGroup[] = [
       "Performance",
       "Writing docs",
     ],
+  },
+];
+
+/**
+ * Skills with the receipts attached. Every figure comes from `git log` in the
+ * plugin it names, so it can be checked; nothing here is a self-assessment.
+ */
+export const PROOF_POINTS: Stat[] = [
+  {
+    value: "303 of 331",
+    label: "commits in SmartSMTP",
+    note: "I built it from its early versions through its first public releases",
+  },
+  {
+    value: "~440",
+    label: "commits in Everest Forms",
+    note: "Across the free and pro plugins, including the AI form builder",
+  },
+  {
+    value: "4",
+    label: "payment gateways",
+    note: "PayPal, Stripe, Mollie and Authorize.Net, all on the money path",
+  },
+  {
+    value: "2",
+    label: "security fixes in production",
+    note: "A faked gateway on free memberships, and an unsafe unserialize on old PHP",
+  },
+  {
+    value: "158",
+    label: "commits in Customize My Account",
+    note: "Colour palettes, navigation layouts, live previews and the 2.0.1 release",
+  },
+  {
+    value: "20+",
+    label: "User Registration add-ons",
+    note: "Two-factor auth, invite codes, conditional logic and marketing integrations",
   },
 ];

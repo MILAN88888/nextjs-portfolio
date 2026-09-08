@@ -2,6 +2,19 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { Section, Tag, Reveal } from "@/components/ui";
 import { WORK_EXP } from "@/constants";
 
+const Bullets = ({ items }: { items: string[] }) => (
+  <ul className="mt-3 space-y-2">
+    {items.map(item => (
+      <li
+        key={item.slice(0, 32)}
+        className="relative pl-5 text-sm leading-relaxed text-ink-muted before:absolute before:left-0 before:top-[0.62em] before:h-1 before:w-1 before:rounded-full before:bg-ink-faint before:content-['']"
+      >
+        {item}
+      </li>
+    ))}
+  </ul>
+);
+
 export const Experience = () => (
   <Section id="experience">
     <ol className="space-y-12">
@@ -36,21 +49,25 @@ export const Experience = () => (
                 <span className="font-mono text-xs text-ink-faint">{job.period}</span>
               </div>
 
-              <p className="mt-3 text-ink-muted">{job.summary}</p>
+              <p className="mt-3 max-w-3xl text-ink-muted">{job.summary}</p>
 
-              <ul className="mt-4 space-y-2">
-                {job.highlights.map(highlight => (
-                  <li
-                    key={highlight.slice(0, 32)}
-                    className="relative pl-5 text-sm leading-relaxed text-ink-muted before:absolute before:left-0 before:top-[0.62em] before:h-1 before:w-1 before:rounded-full before:bg-ink-faint before:content-['']"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+              {job.highlights && <Bullets items={job.highlights} />}
+
+              {job.groups && (
+                <div className="mt-6 space-y-6">
+                  {job.groups.map(group => (
+                    <div key={group.product}>
+                      <h4 className="font-mono text-xs uppercase tracking-[0.16em] text-ink">
+                        {group.product}
+                      </h4>
+                      <Bullets items={group.items} />
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {job.links && job.links.length > 0 && (
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-6 flex flex-wrap gap-2">
                   {job.links.map(link => (
                     <li key={link.url}>
                       <a

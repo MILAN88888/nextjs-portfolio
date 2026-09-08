@@ -3,6 +3,6 @@ export { PROFILE, HERO_STATS, BIO, ABOUT_FACTS, EXPERIENCE_YEARS } from "./Profi
 export { SECTIONS, SECTION_KICKERS, getSection } from "./Sections";
 export { SOCIAL_MEDIA } from "./SocialMedia";
 export { PROJECT_LIST } from "./ProjectList";
-export { TECH_LIST } from "./TechList";
+export { TECH_LIST, PROOF_POINTS } from "./TechList";
 export { WORK_EXP } from "./WorkExp";
 export { EDU_EXP } from "./EduExp";
