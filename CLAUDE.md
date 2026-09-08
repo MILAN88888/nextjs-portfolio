@@ -64,18 +64,6 @@ Components render; `constants/` supplies. `constants/index.tsx` is the barrel (`
   The desktop nav appears at `lg`, not `md`. Six labels plus the wordmark and header actions measure 675px, and a 768px viewport only offers 704px inside the container — 29px of slack is not enough to trust across font loading, so the hamburger holds until `lg`. Adding a section means shortening labels with `navLabel`, not lowering that breakpoint.
 - `ProjectList.tsx`, `WorkExp.tsx`, `EduExp.tsx`, `TechList.tsx`, `SocialMedia.tsx` — the content lists. `Job.period` and `School.period` are free text (`"Jan 2023 — Present"`), not parsed dates. There is **one entry per employer**: the ThemeGrill internship is a sentence inside the engineer role, not a second job.
 - `EXPERIENCE_YEARS` in `Profile.tsx` is **derived** from `CAREER_START` (15 July 2022) at build time, not hardcoded — the previous design carried a stale "3+ years" for three years. Don't replace it with a literal.
-### Voice
-
-Milan's review of the first pass was that it "look like complete ai generated", and he was right. The tells, all of which had crept into every section:
-
-- **Aphorisms as headings.** "Product engineering, with the platform underneath." Section titles are now plain: `Hi, I'm Milan.`, `Things I've built`, `What I work with`, `Where I've worked`, `Get in touch`.
-- **Paragraphs that land on a punchline.** Every bio paragraph used to end on a closing line ("the engineering calls stay mine", "doesn't delegate", "instead of a proposal"). One per page is a voice; five is a machine.
-- **Em-dash flourishes.** The rewritten About contains none. Use commas and full stops.
-- **Antithesis constructions** — "the difference between a feature and a vulnerability", "a shipped feature instead of a proposal", "X, not Y". They read clever and identical.
-- **No human detail.** The About now closes on self-hosting, Tailscale, his own plugin and how he actually uses AI assistants, because every developer portfolio worth copying (Brittany Chiang, Lee Robinson) gives one paragraph to something that is not the job.
-
-The shape to keep: plain heading, three or four short first-person paragraphs — where I am now, how I got here, what I moved on to, what I do away from work — concrete nouns, varied sentence length, no rhetoric. Milan's own drafts are the register to match; when he supplies copy, tighten it rather than restyling it.
-
 - **The hero intro and the About bio must not overlap.** The intro is the elevator pitch — years, install base, languages, the gateway, the infrastructure under it. About says what the pitch cannot: the constraints of shipping to sites he will never see, what he owns outright, where the week actually goes. If a sentence could sit in either, it belongs in one of them only.
 - `HERO_STATS` is the hero proof strip: install base, products shipped, average rating, years shipping. **Every figure needs a `note` that makes it checkable** (which install base, weighted how) — a bare number with no baseline is the thing hiring reviewers discount first. Keep the four labels short enough to hold one line at `lg`; they sit in a four-column grid and a wrapped label misaligns the notes beneath it. The rating is review-count weighted across the four rated plugins (98/375, 96/828, 98/16, 98/9 → 97 across 1,228), so recompute it, don't nudge it.
 - `PROFILE.installBase` is the single source for the combined WordPress.org install figure — currently `150,000+` (Everest Forms 90,000, User Registration 50,000, BlockArt 10,000, Magazine Blocks 6,000, SmartSMTP 2,000, Customize My Account 400). It is quoted in the hero, the bio and the experience summary, so re-check it against the plugin API before changing any of them:
@@ -90,6 +78,18 @@ The shape to keep: plain heading, three or four short first-person paragraphs �
 - **The AI gateway is one featured project, not a theme running through the page.** It earns one clause in the hero subtitle, one bio paragraph, one experience bullet, and its own featured card; the depth lives in that card's `highlights`. There is deliberately **no AI figure in `HERO_STATS`** and no separate AI section — both existed and both over-weighted a single system. If a copy change adds a second mention anywhere, cut it.
 - **Employer framing:** the work is Milan's, the employer is context. `ThemeGrill` appears only in the two experience entries, `PROFILE.company` and the About facts — never in the hero, the bio or the case study heading.
 - Skills group **capabilities, not tool badges** — "LLM gateway design", "Rate & budget control", not a list of model names. Listing AI products as skills reads as unverified.
+
+### Voice
+
+Milan's review of the first pass was that it "look like complete ai generated", and he was right. The tells, all of which had crept into every section:
+
+- **Aphorisms as headings.** "Product engineering, with the platform underneath." Section titles are now plain: `Hi, I'm Milan.`, `Things I've built`, `What I work with`, `Where I've worked`, `Get in touch`.
+- **Paragraphs that land on a punchline.** Every bio paragraph used to end on a closing line ("the engineering calls stay mine", "doesn't delegate", "instead of a proposal"). One per page is a voice; five is a machine.
+- **Em-dash flourishes.** The rewritten About contains none. Use commas and full stops.
+- **Antithesis constructions** — "the difference between a feature and a vulnerability", "a shipped feature instead of a proposal", "X, not Y". They read clever and identical.
+- **No human detail.** The About now closes on self-hosting, Tailscale, his own plugin and how he actually uses AI assistants, because every developer portfolio worth copying (Brittany Chiang, Lee Robinson) gives one paragraph to something that is not the job.
+
+The shape to keep: plain heading, three or four short first-person paragraphs — where I am now, how I got here, what I moved on to, what I do away from work — concrete nouns, varied sentence length, no rhetoric. Milan's own drafts are the register to match; when he supplies copy, tighten it rather than restyling it.
 
 ### Component layers
 
@@ -130,4 +130,4 @@ Beyond `build` and `lint`, the checks that actually catch regressions here:
 - **Test with reduced motion on.** Confirm all `.reveal` elements report `opacity: 1` without scrolling.
 - **Tab through the page.** First Tab must reveal the skip link; every visible link and button needs a ring.
 
-`changelog.txt` follows `= X.Y.Z - YYYY-MM-DD` / `* entry`; bump `version` in `package.json` alongside it. Both now read `2.0.0` (2026-09-04, the redesign plus the AI platform repositioning) after sitting out of step for two years — keep them in step.
+`changelog.txt` follows `= X.Y.Z - YYYY-MM-DD` / `* entry`; bump `version` in `package.json` alongside it. They sat out of step for two years (0.1.0 against a 1.0.0 changelog); keep them matched, newest entry first.
