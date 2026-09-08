@@ -14,6 +14,11 @@ import type { Project } from "./types";
  * `role` is written from the commit history, not from memory, and in plain
  * words: name the field, the bug or the module, and skip the adjectives. Most
  * of these are team products, so say what my part was and nothing more.
+ *
+ * Every grid card's `description` opens with one short sentence, then a blank
+ * line. That first line is all a closed card shows, which is what keeps the
+ * cards the same height; everything after it, and the whole of `role`, sits
+ * behind the toggle.
  */
 export const PROJECT_LIST: Project[] = [
   {
@@ -33,7 +38,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Everest Forms",
     metric: "90,000 installs, rated 98/100 by 375 people",
     description:
-      "A drag-and-drop form builder for WordPress, with payments, quizzes and a pro tier of add-ons. Forms people built years ago still have to open and submit correctly, so a lot of the work is in not breaking them.\n\nIts newest feature builds a whole form from a sentence describing what you need. That part runs through a gateway I designed and built. The plugin sends the request to our own service, which checks the site's licence, applies a rate and spending limit, asks the model, and makes sure the answer is a valid form before the plugin touches it. Keeping the model behind our own service means no API key is ever shipped inside the plugin, and we can change model or provider without releasing an update to 90,000 sites.",
+      "A drag-and-drop form builder with payments, quizzes and add-ons.\n\nA whole pro tier of add-ons hangs off it, and forms people built years ago still have to open and submit correctly, so a lot of the work is in not breaking them.\n\nIts newest feature builds a whole form from a sentence describing what you need. That part runs through a service I designed and built: the plugin sends the request to us, we check the site's licence and its limits, ask the model, and make sure the answer is a valid form before the plugin touches it. No API key is ever shipped inside the plugin.",
     role: "The AI form builder end to end: the gateway in Python and FastAPI with Postgres and Redis on Docker, the prompt setup, and the WordPress side that calls it. Before that, the divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and blocking an unsafe unserialize call on old PHP. Around 440 commits across the free and pro plugins",
     stack: ["WordPress", "PHP", "React", "Python", "FastAPI", "Docker"],
     repoUrl: "https://github.com/wpeverest/everest-forms",
@@ -45,7 +50,7 @@ export const PROJECT_LIST: Project[] = [
     title: "SmartSMTP",
     metric: "2,000 installs, and 303 of its 331 commits are mine",
     description:
-      "Email sending for WordPress that tells you when it fails. One main SMTP connection with a backup behind it, setup for the common providers, a test email you can send before anything is configured, and a log of what actually went out.",
+      "Email sending for WordPress that tells you when it fails.\n\nOne main SMTP connection with a backup behind it, setup for the common providers, a test email you can send before anything is configured, and a log of what actually went out.",
     role: "I built most of this one, from the early versions through its first public releases: the main and fallback connections, provider setup, test mail, attachment handling, the delivery log, and the hand-off from User Registration",
     stack: ["WordPress", "PHP", "React", "Email"],
     liveUrl: "https://wordpress.org/plugins/smart-smtp/",
@@ -55,7 +60,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Custom Code Snippets Manager",
     metric: "My own plugin, built on my own time",
     description:
-      "For running small pieces of PHP, JavaScript, CSS or HTML on a site without editing theme files. It has a proper code editor, checks the syntax on both the server and in the browser, lets you choose where each snippet runs, and imports and exports as JSON. If a PHP snippet throws a fatal error it is caught and switched off, so one bad snippet cannot take the site down.",
+      "Runs PHP, JavaScript, CSS or HTML snippets without editing theme files.\n\nIt runs on any site without touching a theme file. There is a proper code editor, it checks the syntax on both the server and in the browser, lets you choose where each snippet runs, and imports and exports as JSON. If a PHP snippet throws a fatal error it is caught and switched off, so one bad snippet cannot take the site down.",
     role: "All of it: the idea, the structure, the admin screens, the safety model and the build setup",
     stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
     note: "Not released yet, waiting on the plugin directory",
@@ -65,7 +70,7 @@ export const PROJECT_LIST: Project[] = [
     title: "BlockArt Blocks",
     metric: "10,000+ installs, rated 98/100 by 16 people",
     description:
-      "A library of Gutenberg blocks with ready-made sections and templates. Every setting has to keep rendering the same way on pages built long before the current version.",
+      "A library of Gutenberg blocks with ready-made sections and templates.\n\nEvery setting has to keep rendering the same way on pages built long before the current version.",
     role: "Fixed a security hole in the counter block, and made the colour picker offer the theme's own palette",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/blockart-blocks/",
@@ -75,7 +80,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Magazine Blocks",
     metric: "6,000 installs, rated 98/100 by 9 people",
     description:
-      "Blocks for news and magazine sites: post grids, sliders, tickers and an ad system, all pulling posts behind the editor.",
+      "Blocks for news and magazine sites: post grids, sliders, tickers and an ad system.\n\nAll of them pull posts through WP_Query behind the editor, so the block settings and the query have to stay in step.",
     role: "Block features in both the free and pro plugins, capability checks on editor actions, and I cut the 1.8 release. 79 commits across the two",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/magazine-blocks/",
@@ -85,7 +90,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Registration Form Fields for WooCommerce",
     metric: "Paid extension, sold on WooCommerce.com",
     description:
-      "A drag-and-drop builder for the WooCommerce registration form: custom fields, validation and admin management, running on stores I never get to see.",
+      "A drag-and-drop builder for the WooCommerce registration form.\n\nCustom fields, validation and admin management, running on stores I never get to see.",
     role: "Built the file upload field end to end, at checkout, in the dashboard user screen and for multiple files, plus the phone field, the first and last name smart tags, PHP 8 fixes and repairs to the email templates",
     stack: ["WooCommerce", "PHP", "React", "Paid"],
     liveUrl: "https://woocommerce.com/products/registration-form-fields/",
@@ -96,7 +101,7 @@ export const PROJECT_LIST: Project[] = [
     title: "Customize My Account Page for WooCommerce",
     metric: "Paid on WooCommerce.com, free edition on WordPress.org",
     description:
-      "Lets a store owner rebuild the WooCommerce My Account area without touching a theme: custom endpoints, tabs and groups, different navigation layouts, and a customiser that shows each change as you make it.",
+      "Rebuilds the WooCommerce My Account area without touching a theme.\n\nA store owner gets custom endpoints, tabs and groups, different navigation layouts, and a customiser that shows each change as you make it.",
     role: "The colour palette manager, the navigation layout and menu position controls, live previews for every control, support for the older style engine, a warning before you leave with unsaved changes, and the 2.0.1 release. 158 commits",
     stack: ["WooCommerce", "PHP", "React", "Paid"],
     liveUrl: "https://woocommerce.com/products/customize-my-account-page-for-woocommerce/",
@@ -107,7 +112,7 @@ export const PROJECT_LIST: Project[] = [
     title: "This site",
     metric: "Static Next.js, about 85 kB of JavaScript",
     description:
-      "One page, rendered as static HTML. Both themes come from a single set of CSS variables, no colour is written into a component, and all the text lives in one typed file so nothing drifts out of sync.",
+      "One page of static HTML, with two themes from a single set of CSS variables.\n\nNo colour is written into a component, there is no animation library, and all the text lives in one typed file so nothing drifts out of sync.",
     role: "The design, the tokens, the accessibility pass and the words",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     repoUrl: "https://github.com/MILAN88888/nextjs-portfolio",

@@ -3,9 +3,6 @@ import { Section, Card, Expandable, Tag, TextLink, Reveal } from "@/components/u
 import { PROFILE, PROJECT_LIST } from "@/constants";
 import type { Project } from "@/constants";
 
-/** Past this, a role line runs long enough in a grid card to be worth folding. */
-const ROLE_FOLD_LIMIT = 170;
-
 const Metric = ({ children }: { children: string }) => (
   <p className="mt-2 font-mono text-[0.69rem] leading-relaxed text-accent">{children}</p>
 );
@@ -92,39 +89,41 @@ const FeaturedProject = ({ project }: { project: Project }) => (
 );
 
 /**
- * Grid card. The first paragraph always shows; anything beyond it — further
- * paragraphs, or a long role line — folds behind "Show more" so the rows stay
- * scannable and every card starts at a readable length.
+ * Grid card. Every one shows the same three things closed — title, figure and a
+ * one-line summary — with the rest of the description and the whole of "My part"
+ * behind the chevron. The three blocks carry min-heights so a card with a
+ * two-line title lines up with a card that has one, and every toggle sits at the
+ * same height across the grid.
  */
 const GridProject = ({ project, index }: { project: Project; index: number }) => {
   const [lead, ...rest] = project.description.split("\n\n");
-  const longRole = (project.role?.length ?? 0) > ROLE_FOLD_LIMIT;
-  const folds = rest.length > 0 || longRole;
 
   return (
     <li className="flex">
       <Reveal delay={(index % 3) * 80} className="flex w-full">
         <Card interactive className="flex w-full flex-col p-5">
-          <h3 className="font-display text-base font-semibold text-ink">{project.title}</h3>
+          <h3 className="min-h-[3rem] font-display text-base font-semibold text-ink">
+            {project.title}
+          </h3>
 
-          {project.metric && <Metric>{project.metric}</Metric>}
+          {project.metric && (
+            <p className="min-h-[2.25rem] font-mono text-[0.69rem] leading-relaxed text-accent">
+              {project.metric}
+            </p>
+          )}
 
-          <div className="mt-3">
+          <div className="mt-1 min-h-[2.85rem]">
             <Prose>{lead}</Prose>
           </div>
 
-          {folds ? (
-            <div className="mt-4">
-              <Expandable label={project.title}>
-                {rest.map(para => (
-                  <Prose key={para.slice(0, 24)}>{para}</Prose>
-                ))}
-                {project.role && <MyPart>{project.role}</MyPart>}
-              </Expandable>
-            </div>
-          ) : (
-            project.role && <MyPart className="mt-4">{project.role}</MyPart>
-          )}
+          <div className="mt-4">
+            <Expandable label={project.title}>
+              {rest.map(para => (
+                <Prose key={para.slice(0, 24)}>{para}</Prose>
+              ))}
+              {project.role && <MyPart>{project.role}</MyPart>}
+            </Expandable>
+          </div>
 
           {/* Keeps the stack and links on the card's bottom edge. */}
           <div className="flex-1" />

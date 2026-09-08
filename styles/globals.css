@@ -184,7 +184,7 @@ body {
 }
 .disclosure > summary::-webkit-details-marker { display: none; }
 
-.disclosure > summary .disclosure-less   { display: none; }
+.disclosure > summary .disclosure-less        { display: none; }
 .disclosure[open] > summary .disclosure-more { display: none; }
 .disclosure[open] > summary .disclosure-less { display: inline; }
 

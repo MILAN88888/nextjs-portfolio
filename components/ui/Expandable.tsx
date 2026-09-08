@@ -3,22 +3,21 @@ import { FiChevronDown } from "react-icons/fi";
 
 interface ExpandableProps {
   children: ReactNode;
-  /** Names what is hidden, for anyone using a screen reader. */
+  /** Names what is behind the toggle, for anyone using a screen reader. */
   label: string;
 }
 
 /**
- * Show more / show less on a native `<details>`, so this needs no client
- * JavaScript and works with the fold closed if scripting fails. The label swap
- * and the chevron live in `.disclosure` in globals.css.
+ * An icon-only open/close toggle on a native `<details>`, so it needs no client
+ * JavaScript and the hidden text still ships in the HTML. The chevron rotation
+ * lives in `.disclosure` in globals.css.
  */
 export const Expandable = ({ children, label }: ExpandableProps) => (
   <details className="disclosure">
-    <summary className="inline-flex items-center gap-1.5 font-mono text-xs text-accent transition-opacity hover:opacity-80">
-      <span className="disclosure-more">Show more</span>
-      <span className="disclosure-less">Show less</span>
-      <span className="sr-only"> about {label}</span>
-      <FiChevronDown size={12} aria-hidden="true" className="disclosure-chevron" />
+    <summary className="inline-grid h-7 w-7 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:border-accent hover:text-accent">
+      <FiChevronDown size={14} aria-hidden="true" className="disclosure-chevron" />
+      <span className="sr-only disclosure-more">Show more about {label}</span>
+      <span className="sr-only disclosure-less">Show less about {label}</span>
     </summary>
 
     <div className="mt-4 space-y-4">{children}</div>
