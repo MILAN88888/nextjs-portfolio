@@ -62,9 +62,9 @@ export const HERO_STATS: Stat[] = [
     note: "Added up across the plugins I work on, counted by WordPress.org",
   },
   {
-    value: "7",
+    value: "9",
     label: "Products released",
-    note: "Form builders, memberships, block libraries and email, both free and paid",
+    note: "Form builders, memberships, block libraries, email, a proxy platform and a subdomain plugin",
   },
   {
     value: "97/100",
@@ -90,7 +90,8 @@ export const BIO: string[] = [
   "I started out writing PHP for small business sites, then spent a few months as a backend intern on a book exchange platform. I joined ThemeGrill in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, worked on blocks in BlockArt and Magazine Blocks, and spent most of my time on the payment side, where Stripe, PayPal, Mollie and Authorize.Net all have to keep working.",
   "The other half of that work is security. Forty or so of my fixes have been security ones, and the ones I remember are the payment flaw that let somebody mark an unpaid order as paid, an escalation that let an unauthenticated request delete users, shortcodes running from a field somebody typed their own name into, and a stored XSS sitting in a mail log. Money and accounts are the two things people cannot forgive you for getting wrong.",
   "Last year I moved further down the stack. I built the service behind Everest Forms' AI form builder, which meant getting properly comfortable with Python, and running Postgres, Redis and Docker in production rather than just reading about them. It has become the part of the job I like most.",
-  "Away from work I self-host most of the software I use, wire my machines together with Tailscale, run my own subdomains behind Nginx, and keep my own code snippets plugin going. I also lean on AI assistants a lot while I work. They are good company for the tedious parts, and I read everything they write before it goes anywhere.",
+  "Outside ThemeGrill I have been building Turbo Proxy HA since December 2025: proxy pools with health checks and failover, bandwidth quotas, rotation, a customer portal, and mobile carrier emulation on proxy servers deployed over SSH. 467 of its 472 commits are mine, and it is the largest thing I have built on my own. I also contributed a run of features to Turbo Subdomains, a commercial plugin, and I keep my own snippets plugin going.",
+  "The rest of my own time goes on the machines underneath. I self-host most of the software I use, wire them together with Tailscale, and run my own subdomains behind Nginx. I also lean on AI assistants a lot while I work. They are good company for the tedious parts, and I read everything they write before it goes anywhere.",
   "Right now I am looking for backend, platform or full-stack work on a product that has real users. Remote suits me, and I am happy to work across time zones.",
 ];
 
@@ -100,6 +101,7 @@ export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Currently",  value: "Software Engineer at ThemeGrill Pvt Ltd" },
   { label: "Focus",      value: "WordPress products · block editor · backend platform" },
   { label: "Core stack", value: "PHP · Python · TypeScript · React · Docker" },
+  { label: "Also building", value: "Turbo Proxy HA, a proxy platform" },
   { label: "Based in",   value: `Nepal · remote-friendly, ${PROFILE.timezone}` },
   { label: "Open to",    value: "Backend, AI platform and full-stack roles" },
 ];

@@ -3,8 +3,9 @@ import type { Project } from "./types";
 /**
  * User Registration & Membership is the one `featured` entry. Everest Forms has
  * more installs, but the payment work here is the deepest thing on the page, and
- * it is what I want read first. Everest Forms follows, then roughly by size,
- * with the two I own outright (SmartSMTP and the snippet plugin) kept high.
+ * it is what I want read first. Turbo Proxy HA follows, because it is the largest
+ * thing I have built on my own account, then the plugins roughly by size, with
+ * the ones I own outright kept high.
  *
  * The gateway is described here, as my part in a public Everest Forms feature,
  * rather than as a project of its own. It is my employer's system: the
@@ -28,10 +29,20 @@ export const PROJECT_LIST: Project[] = [
     metric: "50,000+ installs, rated 96/100 by 828 people",
     description:
       "Registration, login and paid memberships for WordPress: a builder for sign-up fields and roles, content restriction, membership plans, and payments through Stripe, PayPal, Mollie, Authorize.Net or bank transfer.\n\nMost of my work here is on the money path. Every gateway has its own webhooks, retries and quirks, and when one fails quietly somebody has paid and not been given what they paid for, or has been charged twice. That is the part I look after.",
-    role: "Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net. I also built the content drip module and the membership upgrade flow, On the security side I patched unauthenticated privilege escalation and user deletion, arbitrary shortcode execution through user-controlled smart tags, a PayPal flaw that let an attacker mark a pending payment as completed without paying, a forged gateway on free memberships, and an open redirect after login. 268 commits across core and pro",
+    role: "Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net. I also built the content drip module and the membership upgrade flow. On the security side I patched unauthenticated privilege escalation and user deletion, arbitrary shortcode execution through user-controlled smart tags, a PayPal flaw that let an attacker mark a pending payment as completed without paying, a forged gateway on free memberships, and an open redirect after login. 268 commits across core and pro",
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
+  },
+  {
+    id: "turbo-proxy",
+    title: "Turbo Proxy HA",
+    metric: "467 of its 472 commits are mine",
+    description:
+      "A platform for running a proxy network, built outside my day job since December 2025.\n\nProxy pools with health checks and failover, bandwidth quotas through a token bucket, IP rotation, and automatic provisioning from upstream providers. Customers get their own portal with usage history and CSV export; admins get audit logs, service tiers and 30-odd Prometheus metrics streaming live over a websocket. It deploys G3Proxy instances over SSH and can emulate a mobile carrier, signal strength and device profile, which is what makes the proxies behave like real phones.",
+    role: "Almost all of it: the FastAPI back end, both React front ends, MySQL and Redis, the Docker stack behind Nginx, JWT auth, the Prometheus and Grafana monitoring, the SSH deployment of proxy servers, and the quality probe scheduler that scores each proxy",
+    stack: ["Python", "FastAPI", "React", "MySQL", "Redis", "Docker"],
+    note: "Private, commercial product",
   },
   {
     id: "everest-forms",
@@ -64,6 +75,17 @@ export const PROJECT_LIST: Project[] = [
     role: "All of it: the idea, the structure, the admin screens, the safety model and the build setup",
     stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
     note: "Not yet in the plugin directory",
+  },
+  {
+    id: "turbo-subdomains",
+    title: "Turbo Subdomains",
+    metric: "Commercial WordPress plugin, 18 commits mine",
+    description:
+      "A plugin for running content campaigns across a large set of subdomains.\n\nI came in for a run of features in early 2026: live search through a self-hosted SearXNG instance, AI featured images that print the article title onto the image and embed IPTC metadata, bulk category editing and campaign exports moved into background jobs, CSV export for selected subdomains, iframe post scheduling, and a database refactor that added the indexes the campaign tables were missing.",
+    role: "The search integration, the AI image pipeline, the background job and export work, and the database indexing refactor",
+    stack: ["WordPress", "PHP", "AI", "SearXNG"],
+    liveUrl: "https://turbosubdomains.com/",
+    note: "Private repo, commercial plugin",
   },
   {
     id: "blockart",

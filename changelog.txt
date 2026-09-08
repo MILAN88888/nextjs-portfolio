@@ -1,5 +1,11 @@
  == Changelog ==
 
+ = 3.3.0 - 2026-09-08
+ * Added - Turbo Proxy HA, the proxy platform I have been building since December 2025. 467 of its 472 commits are mine, and it is now the first card after the featured one.
+ * Added - Turbo Subdomains, with the features I contributed: SearXNG search, AI featured images with IPTC metadata, background exports and the database indexing refactor.
+ * Changed - Proven by work leads with the Turbo Proxy commit share; products released goes from seven to nine; About says what I build outside the day job.
+ * Added - Proxy orchestration, Prometheus and Grafana, SSH automation, websockets and JWT auth to the skills.
+
  = 3.2.0 - 2026-09-08
  * Removed - The numbered section labels and the second heading under each one. Every section is now just its name: About, Projects, Skills, Experience, Education, Contact, above a short accent rule.
  * Added - Subdomains to the servers and networking skills, and to the line about what I run at home.
