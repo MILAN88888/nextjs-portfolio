@@ -79,12 +79,17 @@ export const HERO_STATS: Stat[] = [
 ];
 
 /** About section body copy. */
+/**
+ * Four short paragraphs, first person, plain sentences: who I am now, how I got
+ * here, what I moved on to, and what I do away from work. Deliberately not
+ * written to impress — no aphorisms, no em-dash flourishes, no paragraph that
+ * ends on a punchline. See the voice notes in CLAUDE.md before editing.
+ */
 export const BIO: string[] = [
-  "Most of what I write goes out to sites I will never see. That is the whole job, really: a change has to hold up on PHP versions I would not choose, under themes I have never opened, on installs nobody is ever going to migrate. It makes you conservative in useful ways — small surface area, obvious code, and a plan for the version that is already out there.",
-  "I like owning a thing end to end. SmartSMTP is the clearest example: I built it out through its first releases, so the connection model, the provider setup, the test-mail flow and the delivery log are all decisions I had to make and then live with. Custom Code Snippets Manager, the plugin I maintain on my own account, taught me the same lesson from the other side — it runs code a user typed, so the interesting part was never the editor, it was what happens when their PHP throws.",
-  "The rest of my week is spread across a plugin suite: membership upgrades and content drip, payment add-ons for Stripe, Mollie and Authorize.Net where a missed webhook signature or an unretried renewal is somebody's money, and React blocks in BlockArt and Magazine Blocks where a missing capability check is the difference between a feature and a vulnerability.",
-  "Underneath all of it I run my own infrastructure — Docker, Postgres and Redis, Nginx reverse proxies, TLS and DNS, Tailscale between machines, and routing through modem and mobile IPs when a job needs a real path out. Being able to stand that up myself is what let the AI gateway be a shipped feature instead of a proposal.",
-  "And I work with agents rather than around them: Claude Code driving Playwright through MCP to prove a fix in a live WordPress install, with my own skills encoding the standards and the triage steps. They are quick at the parts that were never interesting. What to build, and whether the answer is actually right, doesn't delegate.",
+  "I'm a software engineer based in Nepal. I work at ThemeGrill on WordPress plugins, the kind of thing people install once and then forget about. That means most of what I write has to keep working for years, for people I will never meet, on sites I cannot see.",
+  "I started out writing PHP for small business sites, then spent a few months as a backend intern on a book exchange platform. I joined ThemeGrill in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, worked on blocks in BlockArt and Magazine Blocks, and looked after the payment add-ons for Stripe, Mollie and Authorize.Net.",
+  "Last year I moved further down the stack. I designed and built the AI gateway our plugins call for their AI features, which meant getting properly comfortable with Python, and running Postgres, Redis and Docker in production rather than just reading about them. It has become the part of the job I like most.",
+  "Away from work I self-host most of the software I use, wire my machines together with Tailscale, and keep my own code snippets plugin going. I also lean on AI assistants a lot while I work. They are good company for the tedious parts, and I read everything they write before it goes anywhere.",
 ];
 
 /** Fact card beside the About copy. */
