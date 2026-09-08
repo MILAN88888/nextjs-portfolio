@@ -8,15 +8,16 @@ export const WORK_EXP: Job[] = [
     companyUrl: "https://themegrill.com",
     period: "Jan 2023 — Present",
     summary:
-      "Joined as a plugin development intern, fixing issues on a plugin already in production, and moved onto the product teams from there. Now across seven WordPress products with a combined 150,000+ active installations, and the AI platform they call.",
+      "I joined as a plugin intern, fixing issues on a plugin that was already live, and moved onto the product teams from there. I now work across seven WordPress products with about 150,000 sites between them, plus the AI platform behind their AI features.",
     highlights: [
-      "Ship PHP and React features in Everest Forms and User Registration & Membership: builder field types, membership upgrades, the content-drip module and admin interfaces",
-      "Built SmartSMTP out through its first releases — the connection and fallback model, provider setup, test mail, delivery logging — and it remains the product I know end to end",
-      "Own the payment add-ons: Authorize.Net webhook signature verification and payment retries, Mollie renewal handling, Stripe payment records for standard registrations",
-      "Build and fix Gutenberg blocks in BlockArt and Magazine Blocks across free and pro, including a vulnerability in the counter block and capability checks on editor-side actions",
-      "Designed and built the AI gateway behind these products' AI features: FastAPI in front of a LiteLLM router, on Docker with Postgres and Redis, enforcing per-site licence, rate and spend limits",
-      "Ship features and fixes across 20+ User Registration add-ons — two-factor auth, invite codes, file uploads, conditional logic, marketing integrations — and cut releases across paired free and pro trees",
-      "Work agentically: Claude Code with Playwright over MCP to verify a fix in a live WordPress install, and my own skills encoding coding standards and debug triage",
+      "Look after the payment side of User Registration & Membership: PayPal on its REST API with webhooks, Stripe currency and payment record fixes, Mollie renewals that used to charge twice, and signature checks on Authorize.Net webhooks",
+      "Built SmartSMTP from its early versions through its first public releases, and still know it end to end",
+      "Ship features in Everest Forms and User Registration: form fields, the content drip module, membership upgrades and admin screens",
+      "Work on Gutenberg blocks in BlockArt and Magazine Blocks, including a security fix in the counter block and capability checks on editor actions",
+      "Designed and built the AI gateway our plugins call, on FastAPI, LiteLLM, Postgres and Redis, with a licence check, a rate limit and a spending cap on every request",
+      "Fix security issues when they turn up, like a faked gateway that could push a free membership down the paid order path, and an unsafe unserialize call on old PHP versions",
+      "Ship smaller work across 20 or so User Registration add-ons, and cut releases for the paired free and pro plugins",
+      "Use Claude Code with Playwright over MCP to check a fix in a real WordPress install, with my own skills holding the coding standards and the debug routine",
     ],
     links: [
       { title: "Everest Forms",     url: "https://wordpress.org/plugins/everest-forms/" },
@@ -32,10 +33,10 @@ export const WORK_EXP: Job[] = [
     company: "Idea Foundation",
     companyUrl: "http://www.ideafoundation.co.in",
     period: "Jul 2022 — Oct 2022",
-    summary: "Backend developer on Oxole, an online book-exchange platform.",
+    summary: "Backend work on Oxole, a site where students swapped textbooks.",
     highlights: [
-      "Built user registration, book listings, search, exchange requests and profiles",
-      "Worked in MVC with core PHP, jQuery and Ajax, Twig templates and hand-written SQL",
+      "Built sign-up, book listings, search, exchange requests and profile pages",
+      "Plain PHP in an MVC layout, with jQuery and Ajax, Twig templates and SQL I wrote by hand",
     ],
   },
 ];

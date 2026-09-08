@@ -1,118 +1,118 @@
 import type { Project } from "./types";
 
 /**
- * The gateway leads as the one `featured` entry, then the two flagship plugins,
- * then the two products that are mine — SmartSMTP, which I built out, and the
- * snippet plugin I maintain on my own account. Install counts and ratings are
- * checkable on WordPress.org.
+ * The gateway leads as the one `featured` entry. User Registration follows even
+ * though Everest Forms has more installs, because the membership payment work is
+ * the deepest thing here. After that, roughly by size, with the two I own
+ * outright (SmartSMTP and the snippet plugin) kept high.
  *
- * `role` is written from the commit history, not from memory: what I actually
- * built, named specifically enough that a reviewer could go and look. Most of
- * these are team products, and presenting one as solo work loses their trust.
+ * `role` is written from the commit history, not from memory, and in plain
+ * words: name the field, the bug or the module, and skip the adjectives. Most
+ * of these are team products, so say what my part was and nothing more.
  */
 export const PROJECT_LIST: Project[] = [
   {
     id: "ai-gateway",
-    title: "Multi-tenant AI gateway",
+    title: "AI gateway for WordPress plugins",
     featured: true,
-    metric: "Serves AI form generation to a 90,000-install plugin",
+    metric: "Powers AI form building in a plugin on 90,000 sites",
     description:
-      "A provider key shipped inside a plugin leaks the first time somebody downloads the folder, and it puts every site on one unbounded budget. So the plugins call a gateway instead — FastAPI in front of a LiteLLM router, on Docker with Postgres and Redis. A site proves it owns its domain before it is issued a token; that token is stored only as a hash and expires if it goes unused; and every request clears licence, rate and spend limits before a model sees it. What comes back is checked against the product's own field schema before WordPress touches it, and because plugins ask for an alias rather than a model name, changing provider is a config change on the server instead of a release to tens of thousands of sites.",
-    role: "My design and my code at both ends — the gateway, the per-product prompt modules, and the WordPress side that stores credentials and turns model JSON into a working form",
+      "Our plugins needed AI features, and an API key inside a plugin is not an option: anyone who downloads the plugin can read it, and every site would spend from the same account. So the plugins ask a gateway instead. It is FastAPI in front of LiteLLM, with Postgres and Redis, all on Docker. A site has to prove it owns its domain before it gets a token, tokens are stored hashed and expire when nobody uses them, and each request is checked against that site's licence, rate limit and spending cap before it reaches a model. What comes back is checked against the plugin's own field format before WordPress does anything with it. The plugins ask for a nickname rather than a specific model, so we can switch model or provider on the server without shipping an update to thousands of sites.",
+    role: "I designed it and wrote it, on both sides: the gateway, the prompt setup for each product, and the WordPress code that keeps the token and turns the model's answer into a working form",
     stack: ["Python", "FastAPI", "LiteLLM", "PostgreSQL", "Redis", "Docker", "PHP"],
-    note: "Closed source — built for my employer; the feature it powers ships in Everest Forms",
-  },
-  {
-    id: "everest-forms",
-    title: "Everest Forms",
-    metric: "90,000 active installs · 98/100 from 375 reviews",
-    description:
-      "A form builder for WordPress: drag-and-drop fields, payment and quiz forms, and an add-on API a whole pro tier hangs off. The React builder talks to a PHP field API that has to keep accepting forms built years ago.",
-    role: "Field types — the divider field, lookup field styling, range slider and single-item support in calculations — admin features across free and pro, and the AI form generation integration end to end",
-    stack: ["WordPress", "PHP", "React", "AI"],
-    repoUrl: "https://github.com/wpeverest/everest-forms",
-    liveUrl: "https://wordpress.org/plugins/everest-forms/",
+    note: "Closed source, built at work. The feature it powers is public, in Everest Forms",
   },
   {
     id: "user-registration",
     title: "User Registration & Membership",
-    metric: "50,000+ active installs · 96/100 from 828 reviews",
+    metric: "50,000+ installs, rated 96/100 by 828 people",
     description:
-      "Registration, login and membership for WordPress: a form builder for custom fields and roles, content restriction, tiered plans, and a payment system with Stripe, PayPal and bank transfer — plus the whole account email lifecycle.",
-    role: "Membership upgrade flows, the content-drip module, LMS compatibility in content restriction, and the payment add-ons — Authorize.Net webhook signature verification, Mollie renewal retries, Stripe payment details",
+      "Registration, login and paid memberships for WordPress: a builder for sign-up fields and roles, content restriction, membership plans, and payments through Stripe, PayPal, Mollie, Authorize.Net and bank transfer.",
+    role: "Mostly the payment side: PayPal moved onto its REST API with webhooks and stricter IPN checks, a Stripe bug that charged the wrong currency, Mollie retries that charged twice, and signature checks on Authorize.Net webhooks. I also built the content drip module and the membership upgrade flow, and closed a hole where a faked gateway could send a free membership down the paid order path",
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
   },
   {
+    id: "everest-forms",
+    title: "Everest Forms",
+    metric: "90,000 installs, rated 98/100 by 375 people",
+    description:
+      "A drag-and-drop form builder with payments, quizzes and a pro tier of add-ons. Forms people built years ago still have to open and submit correctly, so most of the care goes into not breaking them.",
+    role: "The divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and the AI form building feature. I also blocked an unsafe unserialize call on old PHP versions. Around 440 commits across the free and pro plugins",
+    stack: ["WordPress", "PHP", "React", "AI"],
+    repoUrl: "https://github.com/wpeverest/everest-forms",
+    liveUrl: "https://wordpress.org/plugins/everest-forms/",
+  },
+  {
     id: "smart-smtp",
     title: "SmartSMTP",
-    metric: "2,000 active installs · over 90% of its commits are mine",
+    metric: "2,000 installs, and 303 of its 331 commits are mine",
     description:
-      "Transactional email for WordPress that fails loudly instead of silently. A primary connection with a fallback behind it, provider setup for the common mailers, a test-mail flow that works before anything is configured, and a delivery log a site owner can actually read.",
-    role: "Built it out through its first releases: the connection and fallback model, provider setup, test mail, attachment handling, delivery logging and the User Registration hand-off",
+      "Email sending for WordPress that tells you when it fails. One main SMTP connection with a backup behind it, setup for the common providers, a test email you can send before anything is configured, and a log of what actually went out.",
+    role: "I built most of this one, from the early versions through its first public releases: the main and fallback connections, provider setup, test mail, attachment handling, the delivery log, and the hand-off from User Registration",
     stack: ["WordPress", "PHP", "React", "Email"],
     liveUrl: "https://wordpress.org/plugins/smart-smtp/",
   },
   {
     id: "snippets-manager",
     title: "Custom Code Snippets Manager",
-    metric: "My own plugin — designed and built solo",
+    metric: "My own plugin, built on my own time",
     description:
-      "Run PHP, JavaScript, CSS and HTML snippets in WordPress without touching a theme file: CodeMirror editor, syntax checked on the server and in the browser, per-snippet scopes, JSON import and export. A fatal from a user's PHP is caught and that snippet deactivated, so a bad snippet can't take the site down.",
-    role: "Everything: architecture, admin interface, the safety model and the build pipeline",
+      "For running small pieces of PHP, JavaScript, CSS or HTML on a site without editing theme files. It has a proper code editor, checks the syntax on both the server and in the browser, lets you choose where each snippet runs, and imports and exports as JSON. If a PHP snippet throws a fatal error it is caught and switched off, so one bad snippet cannot take the site down.",
+    role: "All of it: the idea, the structure, the admin screens, the safety model and the build setup",
     stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
-    note: "Pre-release — not yet in the plugin directory",
+    note: "Not released yet, waiting on the plugin directory",
   },
   {
     id: "blockart",
     title: "BlockArt Blocks",
-    metric: "10,000+ active installs · 98/100 from 16 reviews",
+    metric: "10,000+ installs, rated 98/100 by 16 people",
     description:
-      "A Gutenberg block library with a section and template library on top — blocks whose settings have to keep rendering identically on pages built years before the current version.",
-    role: "Fixed a vulnerability in the counter block, and added theme-palette support to the colour picker",
+      "A library of Gutenberg blocks with ready-made sections and templates. Every setting has to keep rendering the same way on pages built long before the current version.",
+    role: "Fixed a security hole in the counter block, and made the colour picker offer the theme's own palette",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/blockart-blocks/",
   },
   {
     id: "magazine-blocks",
     title: "Magazine Blocks",
-    metric: "6,000 active installs · 98/100 from 9 reviews",
+    metric: "6,000 installs, rated 98/100 by 9 people",
     description:
-      "A magazine and news site builder: post grids, sliders, tickers and an advertisement system, all as blocks driven by WP_Query behind the editor.",
-    role: "Block features across free and pro, editor capability checks, and cutting the 1.8 release",
+      "Blocks for news and magazine sites: post grids, sliders, tickers and an ad system, all pulling posts behind the editor.",
+    role: "Block features in both the free and pro plugins, capability checks on editor actions, and I cut the 1.8 release. 79 commits across the two",
     stack: ["WordPress", "React", "Gutenberg", "PHP"],
     liveUrl: "https://wordpress.org/plugins/magazine-blocks/",
   },
   {
     id: "registration-form-fields",
     title: "Registration Form Fields for WooCommerce",
-    metric: "Commercial extension, sold on WooCommerce.com",
+    metric: "Paid extension, sold on WooCommerce.com",
     description:
-      "A drag-and-drop builder for the WooCommerce registration form — custom fields, validation and admin-side management, on stores it has never seen.",
-    role: "Built the file-upload field end to end (checkout, dashboard and multi-file), the phone-field component and first/last-name smart tags, plus PHP 8 compatibility and the email-template fixes",
-    stack: ["WooCommerce", "PHP", "React", "Commercial"],
+      "A drag-and-drop builder for the WooCommerce registration form: custom fields, validation and admin management, running on stores I never get to see.",
+    role: "Built the file upload field end to end, at checkout, in the dashboard user screen and for multiple files, plus the phone field, the first and last name smart tags, PHP 8 fixes and repairs to the email templates",
+    stack: ["WooCommerce", "PHP", "React", "Paid"],
     liveUrl: "https://woocommerce.com/products/registration-form-fields/",
     internal: true,
   },
   {
     id: "customize-my-account",
     title: "Customize My Account Page for WooCommerce",
-    metric: "Commercial on WooCommerce.com · free edition on WordPress.org",
+    metric: "Paid on WooCommerce.com, free edition on WordPress.org",
     description:
-      "Rebuilds the WooCommerce My Account area without a child theme: custom endpoints, tabs and groups, navigation layouts, and a customizer that previews every control as you change it.",
-    role: "The colour-palette manager (create, save, reorder, delete), navigation layout and menu-position controls, live previews for every control, legacy-style support, unsaved-change tracking, and the 2.0.1 release",
-    stack: ["WooCommerce", "PHP", "React", "Commercial"],
+      "Lets a store owner rebuild the WooCommerce My Account area without touching a theme: custom endpoints, tabs and groups, different navigation layouts, and a customiser that shows each change as you make it.",
+    role: "The colour palette manager, the navigation layout and menu position controls, live previews for every control, support for the older style engine, a warning before you leave with unsaved changes, and the 2.0.1 release. 158 commits",
+    stack: ["WooCommerce", "PHP", "React", "Paid"],
     liveUrl: "https://woocommerce.com/products/customize-my-account-page-for-woocommerce/",
     internal: true,
   },
   {
     id: "personal-portfolio",
     title: "This site",
-    metric: "Static Next.js, ~85 kB of JS on first load",
+    metric: "Static Next.js, about 85 kB of JavaScript",
     description:
-      "One statically rendered page on a design system of CSS custom properties: two themes from one token set, no colour hardcoded in a component, no animation library, and every word of content in a typed constants layer.",
-    role: "Design, tokens, accessibility pass and content",
+      "One page, rendered as static HTML. Both themes come from a single set of CSS variables, no colour is written into a component, and all the text lives in one typed file so nothing drifts out of sync.",
+    role: "The design, the tokens, the accessibility pass and the words",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     repoUrl: "https://github.com/MILAN88888/nextjs-portfolio",
     liveUrl: "https://milanc.com.np/",

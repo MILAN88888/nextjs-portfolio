@@ -8,6 +8,6 @@ export const EDU_EXP: School[] = [
     institutionUrl: "https://sambhramit.com/",
     period: "Aug 2016 — Dec 2020",
     summary:
-      "Visvesvaraya Technological University, Bangalore. Where the PHP and databases work that became my career started.",
+      "Visvesvaraya Technological University, Bangalore. This is where I first wrote PHP and learned databases, which turned into the job I have now.",
   },
 ];

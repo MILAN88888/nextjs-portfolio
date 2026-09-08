@@ -1,5 +1,11 @@
  == Changelog ==
 
+ = 2.5.0 - 2026-09-08
+ * Changed - Every project description and "My part" rewritten in plain words, from the commit history rather than memory.
+ * Added - The payment work in User Registration & Membership: PayPal on REST with webhooks, the Stripe currency bug, Mollie double charges, Authorize.Net signature checks.
+ * Added - The two security fixes that were never mentioned: the faked gateway on free memberships, and the unsafe unserialize on old PHP.
+ * Changed - Skills, hero, stats, education and metadata reworded to say the same things more simply.
+
  = 2.4.0 - 2026-09-08
  * Changed - About rewritten in plain first person: a "Hi, I'm Milan." heading, four short paragraphs, and one about life away from work.
  * Changed - Section headings are plain rather than aphorisms: Things I've built, What I work with, Where I've worked, Get in touch.

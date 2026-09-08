@@ -13,9 +13,9 @@ export const PROFILE = {
   focus: "AI platform & WordPress product engineering",
   /** Sits directly under the name in the hero. */
   subtitle:
-    "I build WordPress products used on 150,000+ sites — plugins, Gutenberg blocks, and the backend platform behind their AI features.",
+    "I build WordPress plugins and blocks that run on more than 150,000 sites, and the backend behind their AI features.",
   intro:
-    "Four years building WordPress products that run on more than 150,000 live sites: PHP plugin architecture, React in the block editor, Python on the back end. I designed and deployed the AI gateway behind their AI features, and I run the self-hosted Linux and Docker infrastructure it sits on.",
+    "I have spent four years building WordPress products, mostly PHP and React, with Python on the back end. Last year I designed and built the AI gateway our plugins use, and I run the Linux and Docker servers it sits on.",
   availabilityNote: "Open to backend, platform & AI work",
   /** Longer form, for Contact and the About facts. */
   openTo: "backend, AI platform and full-stack work",
@@ -59,21 +59,21 @@ export const HERO_STATS: Stat[] = [
   {
     value: PROFILE.installBase,
     label: "Active installs",
-    note: "Combined WordPress.org install base of the plugins I ship features in",
+    note: "Added up across the plugins I work on, counted by WordPress.org",
   },
   {
     value: "7",
-    label: "Products shipped",
-    note: "Form builders, membership, block libraries and email delivery — free, pro and commercial",
+    label: "Products released",
+    note: "Form builders, memberships, block libraries and email, both free and paid",
   },
   {
     value: "97/100",
     label: "Average rating",
-    note: "Weighted across 1,228 WordPress.org reviews of the plugins I work on",
+    note: "Across 1,228 reviews on WordPress.org, weighted by how many each plugin has",
   },
   {
     value: `${EXPERIENCE_YEARS}+ yrs`,
-    label: "Years shipping",
+    label: "Years working",
     note: "PHP, Python and TypeScript, since July 2022",
   },
 ];
@@ -87,7 +87,7 @@ export const HERO_STATS: Stat[] = [
  */
 export const BIO: string[] = [
   "I'm a software engineer based in Nepal. I work at ThemeGrill on WordPress plugins, the kind of thing people install once and then forget about. That means most of what I write has to keep working for years, for people I will never meet, on sites I cannot see.",
-  "I started out writing PHP for small business sites, then spent a few months as a backend intern on a book exchange platform. I joined ThemeGrill in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, worked on blocks in BlockArt and Magazine Blocks, and looked after the payment add-ons for Stripe, Mollie and Authorize.Net.",
+  "I started out writing PHP for small business sites, then spent a few months as a backend intern on a book exchange platform. I joined ThemeGrill in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, worked on blocks in BlockArt and Magazine Blocks, and spent most of my time on the payment side, where Stripe, PayPal, Mollie and Authorize.Net all have to keep working.",
   "Last year I moved further down the stack. I designed and built the AI gateway our plugins call for their AI features, which meant getting properly comfortable with Python, and running Postgres, Redis and Docker in production rather than just reading about them. It has become the part of the job I like most.",
   "Away from work I self-host most of the software I use, wire my machines together with Tailscale, and keep my own code snippets plugin going. I also lean on AI assistants a lot while I work. They are good company for the tedious parts, and I read everything they write before it goes anywhere.",
 ];

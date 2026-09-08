@@ -1,25 +1,23 @@
 import type { TechGroup } from "./types";
 
 /**
- * Grouped by what the work actually is, not by language family. The AI group
- * lists what I build and operate — model names on their own are a badge, and
- * badges read as unverified.
+ * Grouped by the kind of work, and written the way I would say it out loud.
+ * Named skills only, no model names as badges: what I can build and run.
  */
 export const TECH_LIST: TechGroup[] = [
   {
-    category: "AI platform & agentic engineering",
+    category: "AI and agents",
     items: [
-      "LLM gateway design",
-      "LiteLLM routing",
+      "AI gateway design",
+      "LiteLLM",
       "OpenAI API",
-      "System prompt design",
-      "Response schema validation",
-      "Per-tenant tokens",
-      "Rate & budget control",
-      "Cost measurement",
+      "Prompt design",
+      "Checking model output",
+      "Per-site tokens",
+      "Rate and cost limits",
       "Claude Code",
       "MCP servers",
-      "Agent skills & hooks",
+      "Agent skills",
     ],
   },
   {
@@ -38,20 +36,18 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
-    category: "WordPress product engineering",
+    category: "WordPress",
     items: [
-      "Plugin architecture",
+      "Plugin structure",
       "WooCommerce",
       "Gutenberg blocks",
-      "Block editor (React)",
-      "Free/pro tree sync",
-      "Release management",
       "WP REST API",
-      "Hooks & filters",
+      "Hooks and filters",
+      "Payment gateways",
       "Backwards compatibility",
-      "WPCS / PHPCS",
-      "i18n",
-      "Licensing & updates",
+      "Coding standards (PHPCS)",
+      "Translations",
+      "Free and paid releases",
     ],
   },
   {
@@ -63,33 +59,33 @@ export const TECH_LIST: TechGroup[] = [
       "Next.js",
       "Tailwind CSS",
       "jQuery",
-      "HTML & CSS",
+      "HTML and CSS",
       "Accessibility",
     ],
   },
   {
-    category: "Infrastructure & networking",
+    category: "Servers and networking",
     items: [
-      "Docker & Compose",
-      "Linux VPS",
-      "Nginx reverse proxy",
-      "TLS & DNS",
+      "Docker",
+      "Linux servers",
+      "Nginx",
+      "TLS and DNS",
       "Tailscale",
       "Proxy setup",
-      "Modem & mobile IP routing",
+      "Modem and mobile IPs",
       "GitHub Actions",
       "Shell",
     ],
   },
   {
-    category: "Practice",
+    category: "How I work",
     items: [
       "Debugging",
       "Code review",
-      "Playwright E2E",
-      "Security review",
-      "Performance budgets",
-      "Technical writing",
+      "Playwright tests",
+      "Security fixes",
+      "Performance",
+      "Writing docs",
     ],
   },
 ];
