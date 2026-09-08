@@ -1,5 +1,10 @@
  == Changelog ==
 
+ = 2.6.0 - 2026-09-08
+ * Changed - The AI gateway is no longer a project of its own. It is described inside the Everest Forms card, as my part in that plugin's AI form builder, which is what it actually is.
+ * Changed - Everest Forms is now the featured project, with the AI feature explained in plain terms.
+ * Removed - Internal details of my employer's gateway: token mechanics, limits, capacity and costs. What stays is the architecture at the level the shipped feature already implies.
+
  = 2.5.0 - 2026-09-08
  * Changed - Every project description and "My part" rewritten in plain words, from the commit history rather than memory.
  * Added - The payment work in User Registration & Membership: PayPal on REST with webhooks, the Stripe currency bug, Mollie double charges, Authorize.Net signature checks.

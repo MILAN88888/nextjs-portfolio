@@ -13,9 +13,9 @@ export const PROFILE = {
   focus: "AI platform & WordPress product engineering",
   /** Sits directly under the name in the hero. */
   subtitle:
-    "I build WordPress plugins and blocks that run on more than 150,000 sites, and the backend behind their AI features.",
+    "I build WordPress plugins and blocks that run on more than 150,000 sites, and the back end behind their AI features.",
   intro:
-    "I have spent four years building WordPress products, mostly PHP and React, with Python on the back end. Last year I designed and built the AI gateway our plugins use, and I run the Linux and Docker servers it sits on.",
+    "I have spent four years building WordPress products, mostly PHP and React, with Python on the back end. Last year I built the back end behind Everest Forms' AI form builder, and I run the Linux and Docker servers it sits on.",
   availabilityNote: "Open to backend, platform & AI work",
   /** Longer form, for Contact and the About facts. */
   openTo: "backend, AI platform and full-stack work",
@@ -88,7 +88,7 @@ export const HERO_STATS: Stat[] = [
 export const BIO: string[] = [
   "I'm a software engineer based in Nepal. I work at ThemeGrill on WordPress plugins, the kind of thing people install once and then forget about. That means most of what I write has to keep working for years, for people I will never meet, on sites I cannot see.",
   "I started out writing PHP for small business sites, then spent a few months as a backend intern on a book exchange platform. I joined ThemeGrill in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, worked on blocks in BlockArt and Magazine Blocks, and spent most of my time on the payment side, where Stripe, PayPal, Mollie and Authorize.Net all have to keep working.",
-  "Last year I moved further down the stack. I designed and built the AI gateway our plugins call for their AI features, which meant getting properly comfortable with Python, and running Postgres, Redis and Docker in production rather than just reading about them. It has become the part of the job I like most.",
+  "Last year I moved further down the stack. I built the service behind Everest Forms' AI form builder, which meant getting properly comfortable with Python, and running Postgres, Redis and Docker in production rather than just reading about them. It has become the part of the job I like most.",
   "Away from work I self-host most of the software I use, wire my machines together with Tailscale, and keep my own code snippets plugin going. I also lean on AI assistants a lot while I work. They are good company for the tedious parts, and I read everything they write before it goes anywhere.",
 ];
 

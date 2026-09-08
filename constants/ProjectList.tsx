@@ -1,10 +1,16 @@
 import type { Project } from "./types";
 
 /**
- * The gateway leads as the one `featured` entry. User Registration follows even
- * though Everest Forms has more installs, because the membership payment work is
- * the deepest thing here. After that, roughly by size, with the two I own
- * outright (SmartSMTP and the snippet plugin) kept high.
+ * Everest Forms is the one `featured` entry: biggest install base, and the
+ * product whose AI feature I built the back end for. User Registration follows,
+ * because the membership payment work is the deepest thing here. After that,
+ * roughly by size, with the two I own outright (SmartSMTP and the snippet
+ * plugin) kept high.
+ *
+ * The gateway is described here, as my part in a public Everest Forms feature,
+ * rather than as a project of its own. It is my employer's system: the
+ * architecture is fine to describe at this level, the code and the internals are
+ * not. Do not add token mechanics, thresholds, costs or the repo.
  *
  * `role` is written from the commit history, not from memory, and in plain
  * words: name the field, the bug or the module, and skip the adjectives. Most
@@ -12,15 +18,17 @@ import type { Project } from "./types";
  */
 export const PROJECT_LIST: Project[] = [
   {
-    id: "ai-gateway",
-    title: "AI gateway for WordPress plugins",
+    id: "everest-forms",
+    title: "Everest Forms",
     featured: true,
-    metric: "Powers AI form building in a plugin on 90,000 sites",
+    metric: "90,000 installs, rated 98/100 by 375 people",
     description:
-      "Our plugins needed AI features, and an API key inside a plugin is not an option: anyone who downloads the plugin can read it, and every site would spend from the same account. So the plugins ask a gateway instead. It is FastAPI in front of LiteLLM, with Postgres and Redis, all on Docker. A site has to prove it owns its domain before it gets a token, tokens are stored hashed and expire when nobody uses them, and each request is checked against that site's licence, rate limit and spending cap before it reaches a model. What comes back is checked against the plugin's own field format before WordPress does anything with it. The plugins ask for a nickname rather than a specific model, so we can switch model or provider on the server without shipping an update to thousands of sites.",
-    role: "I designed it and wrote it, on both sides: the gateway, the prompt setup for each product, and the WordPress code that keeps the token and turns the model's answer into a working form",
-    stack: ["Python", "FastAPI", "LiteLLM", "PostgreSQL", "Redis", "Docker", "PHP"],
-    note: "Closed source, built at work. The feature it powers is public, in Everest Forms",
+      "A drag-and-drop form builder for WordPress, with payments, quizzes and a pro tier of add-ons. Forms people built years ago still have to open and submit correctly, so a lot of the work is in not breaking them.\n\nIts newest feature builds a whole form from a sentence describing what you need. That part runs through a gateway I designed and built. The plugin sends the request to our own service, which checks the site's licence, applies a rate and spending limit, asks the model, and makes sure the answer is a valid form before the plugin touches it. Keeping the model behind our own service means no API key is ever shipped inside the plugin, and we can change model or provider without releasing an update to 90,000 sites.",
+    role: "The AI form builder end to end: the gateway in Python and FastAPI with Postgres and Redis on Docker, the prompt setup, and the WordPress side that calls it. Before that, the divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and blocking an unsafe unserialize call on old PHP. Around 440 commits across the free and pro plugins",
+    stack: ["WordPress", "PHP", "React", "Python", "FastAPI", "Docker"],
+    repoUrl: "https://github.com/wpeverest/everest-forms",
+    liveUrl: "https://wordpress.org/plugins/everest-forms/",
+    note: "The plugin is open source. The gateway behind the AI feature is my employer's and stays closed",
   },
   {
     id: "user-registration",
@@ -32,17 +40,6 @@ export const PROJECT_LIST: Project[] = [
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
-  },
-  {
-    id: "everest-forms",
-    title: "Everest Forms",
-    metric: "90,000 installs, rated 98/100 by 375 people",
-    description:
-      "A drag-and-drop form builder with payments, quizzes and a pro tier of add-ons. Forms people built years ago still have to open and submit correctly, so most of the care goes into not breaking them.",
-    role: "The divider field and multiple-select support, styling for the lookup field, range slider and single-item options in calculations, and the AI form building feature. I also blocked an unsafe unserialize call on old PHP versions. Around 440 commits across the free and pro plugins",
-    stack: ["WordPress", "PHP", "React", "AI"],
-    repoUrl: "https://github.com/wpeverest/everest-forms",
-    liveUrl: "https://wordpress.org/plugins/everest-forms/",
   },
   {
     id: "smart-smtp",

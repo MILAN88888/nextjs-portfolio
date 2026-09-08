@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PROFILE } from "@/constants/Profile";
 
 const description =
-  "Milan Chaudhary, a software engineer in Nepal. I build WordPress plugins and blocks that run on more than 150,000 sites, and the backend behind their AI features.";
+  "Milan Chaudhary, a software engineer in Nepal. I build WordPress plugins and blocks that run on more than 150,000 sites, and the back end behind their AI features.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(PROFILE.siteUrl),

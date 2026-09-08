@@ -65,9 +65,14 @@ const FeaturedProject = ({ project }: { project: Project }) => (
 
         {project.metric && <Metric>{project.metric}</Metric>}
 
-        <p className="mt-4 max-w-[68ch] leading-relaxed text-ink-muted">
-          {project.description}
-        </p>
+        {/* The featured description carries a blank line, so render it as paragraphs. */}
+        <div className="mt-4 max-w-[68ch] space-y-4">
+          {project.description.split("\n\n").map(para => (
+            <p key={para.slice(0, 24)} className="leading-relaxed text-ink-muted">
+              {para}
+            </p>
+          ))}
+        </div>
 
         {project.role && <MyPart className="mt-5 max-w-[68ch]">{project.role}</MyPart>}
 

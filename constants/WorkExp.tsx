@@ -8,13 +8,13 @@ export const WORK_EXP: Job[] = [
     companyUrl: "https://themegrill.com",
     period: "Jan 2023 — Present",
     summary:
-      "I joined as a plugin intern, fixing issues on a plugin that was already live, and moved onto the product teams from there. I now work across seven WordPress products with about 150,000 sites between them, plus the AI platform behind their AI features.",
+      "I joined as a plugin intern, fixing issues on a plugin that was already live, and moved onto the product teams from there. I now work across seven WordPress products with about 150,000 sites between them, plus the back end behind Everest Forms' AI form builder.",
     highlights: [
       "Look after the payment side of User Registration & Membership: PayPal on its REST API with webhooks, Stripe currency and payment record fixes, Mollie renewals that used to charge twice, and signature checks on Authorize.Net webhooks",
       "Built SmartSMTP from its early versions through its first public releases, and still know it end to end",
       "Ship features in Everest Forms and User Registration: form fields, the content drip module, membership upgrades and admin screens",
       "Work on Gutenberg blocks in BlockArt and Magazine Blocks, including a security fix in the counter block and capability checks on editor actions",
-      "Designed and built the AI gateway our plugins call, on FastAPI, LiteLLM, Postgres and Redis, with a licence check, a rate limit and a spending cap on every request",
+      "Built the service behind Everest Forms' AI form builder, on FastAPI with Postgres and Redis, so no API key ships inside the plugin and every request is checked against the site's licence and limits",
       "Fix security issues when they turn up, like a faked gateway that could push a free membership down the paid order path, and an unsafe unserialize call on old PHP versions",
       "Ship smaller work across 20 or so User Registration add-ons, and cut releases for the paired free and pro plugins",
       "Use Claude Code with Playwright over MCP to check a fix in a real WordPress install, with my own skills holding the coding standards and the debug routine",
