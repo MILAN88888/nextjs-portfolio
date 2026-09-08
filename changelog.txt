@@ -1,5 +1,9 @@
  == Changelog ==
 
+ = 2.8.0 - 2026-09-08
+ * Changed - User Registration & Membership is now the featured project, ahead of Everest Forms, because the payment work is the deepest thing here.
+ * Added - Show more and show less on cards whose content runs long, as a native details element with no client JavaScript.
+
  = 2.7.0 - 2026-09-08
  * Added - Proven by work: six figures in the Skills section, each traceable to the commit history of the plugin it names.
  * Changed - Experience is now grouped by product, so each of the seven products says what I did in it.

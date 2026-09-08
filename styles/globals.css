@@ -173,6 +173,25 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   DISCLOSURE — "Show more" on a card whose content runs long
+   ══════════════════════════════════════════════════════════════ */
+
+/* Native <details>, so the label swap needs no client JavaScript and the
+   component stays a server component. Colours stay in Tailwind classes. */
+.disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+}
+.disclosure > summary::-webkit-details-marker { display: none; }
+
+.disclosure > summary .disclosure-less   { display: none; }
+.disclosure[open] > summary .disclosure-more { display: none; }
+.disclosure[open] > summary .disclosure-less { display: inline; }
+
+.disclosure-chevron { transition: transform .2s ease; }
+.disclosure[open] .disclosure-chevron { transform: rotate(180deg); }
+
+/* ══════════════════════════════════════════════════════════════
    MOTION — scroll reveal
    ══════════════════════════════════════════════════════════════ */
 

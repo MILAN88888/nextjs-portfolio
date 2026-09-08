@@ -1,11 +1,10 @@
 import type { Project } from "./types";
 
 /**
- * Everest Forms is the one `featured` entry: biggest install base, and the
- * product whose AI feature I built the back end for. User Registration follows,
- * because the membership payment work is the deepest thing here. After that,
- * roughly by size, with the two I own outright (SmartSMTP and the snippet
- * plugin) kept high.
+ * User Registration & Membership is the one `featured` entry. Everest Forms has
+ * more installs, but the payment work here is the deepest thing on the page, and
+ * it is what I want read first. Everest Forms follows, then roughly by size,
+ * with the two I own outright (SmartSMTP and the snippet plugin) kept high.
  *
  * The gateway is described here, as my part in a public Everest Forms feature,
  * rather than as a project of its own. It is my employer's system: the
@@ -18,9 +17,20 @@ import type { Project } from "./types";
  */
 export const PROJECT_LIST: Project[] = [
   {
+    id: "user-registration",
+    title: "User Registration & Membership",
+    featured: true,
+    metric: "50,000+ installs, rated 96/100 by 828 people",
+    description:
+      "Registration, login and paid memberships for WordPress: a builder for sign-up fields and roles, content restriction, membership plans, and payments through Stripe, PayPal, Mollie, Authorize.Net or bank transfer.\n\nMost of my work here is on the money path. Every gateway has its own webhooks, retries and quirks, and when one fails quietly somebody has paid and not been given what they paid for, or has been charged twice. That is the part I look after.",
+    role: "Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net. I also built the content drip module and the membership upgrade flow, and closed a hole where a faked gateway could send a free membership down the paid order path",
+    stack: ["WordPress", "PHP", "React", "Payments"],
+    repoUrl: "https://github.com/wpeverest/user-registration",
+    liveUrl: "https://wordpress.org/plugins/user-registration/",
+  },
+  {
     id: "everest-forms",
     title: "Everest Forms",
-    featured: true,
     metric: "90,000 installs, rated 98/100 by 375 people",
     description:
       "A drag-and-drop form builder for WordPress, with payments, quizzes and a pro tier of add-ons. Forms people built years ago still have to open and submit correctly, so a lot of the work is in not breaking them.\n\nIts newest feature builds a whole form from a sentence describing what you need. That part runs through a gateway I designed and built. The plugin sends the request to our own service, which checks the site's licence, applies a rate and spending limit, asks the model, and makes sure the answer is a valid form before the plugin touches it. Keeping the model behind our own service means no API key is ever shipped inside the plugin, and we can change model or provider without releasing an update to 90,000 sites.",
@@ -29,17 +39,6 @@ export const PROJECT_LIST: Project[] = [
     repoUrl: "https://github.com/wpeverest/everest-forms",
     liveUrl: "https://wordpress.org/plugins/everest-forms/",
     note: "The plugin is open source. The gateway behind the AI feature is my employer's and stays closed",
-  },
-  {
-    id: "user-registration",
-    title: "User Registration & Membership",
-    metric: "50,000+ installs, rated 96/100 by 828 people",
-    description:
-      "Registration, login and paid memberships for WordPress: a builder for sign-up fields and roles, content restriction, membership plans, and payments through Stripe, PayPal, Mollie, Authorize.Net and bank transfer.",
-    role: "Mostly the payment side: PayPal moved onto its REST API with webhooks and stricter IPN checks, a Stripe bug that charged the wrong currency, Mollie retries that charged twice, and signature checks on Authorize.Net webhooks. I also built the content drip module and the membership upgrade flow, and closed a hole where a faked gateway could send a free membership down the paid order path",
-    stack: ["WordPress", "PHP", "React", "Payments"],
-    repoUrl: "https://github.com/wpeverest/user-registration",
-    liveUrl: "https://wordpress.org/plugins/user-registration/",
   },
   {
     id: "smart-smtp",

@@ -1,10 +1,17 @@
 import { FiArrowUpRight, FiCode, FiExternalLink, FiLock } from "react-icons/fi";
-import { Section, Card, Tag, TextLink, Reveal } from "@/components/ui";
+import { Section, Card, Expandable, Tag, TextLink, Reveal } from "@/components/ui";
 import { PROFILE, PROJECT_LIST } from "@/constants";
 import type { Project } from "@/constants";
 
+/** Past this, a role line runs long enough in a grid card to be worth folding. */
+const ROLE_FOLD_LIMIT = 170;
+
 const Metric = ({ children }: { children: string }) => (
   <p className="mt-2 font-mono text-[0.69rem] leading-relaxed text-accent">{children}</p>
+);
+
+const Prose = ({ children }: { children: string }) => (
+  <p className="text-sm leading-relaxed text-ink-muted">{children}</p>
 );
 
 const MyPart = ({ children, className = "" }: { children: string; className?: string }) => (
@@ -56,7 +63,7 @@ const Links = ({ project }: { project: Project }) => (
   </div>
 );
 
-/** Full-width card, prose rather than a bullet list. */
+/** Full width, everything open: this is the card meant to be read first. */
 const FeaturedProject = ({ project }: { project: Project }) => (
   <li className="flex sm:col-span-2 lg:col-span-3">
     <Reveal className="flex w-full">
@@ -65,7 +72,6 @@ const FeaturedProject = ({ project }: { project: Project }) => (
 
         {project.metric && <Metric>{project.metric}</Metric>}
 
-        {/* The featured description carries a blank line, so render it as paragraphs. */}
         <div className="mt-4 max-w-[68ch] space-y-4">
           {project.description.split("\n\n").map(para => (
             <p key={para.slice(0, 24)} className="leading-relaxed text-ink-muted">
@@ -85,29 +91,56 @@ const FeaturedProject = ({ project }: { project: Project }) => (
   </li>
 );
 
-const GridProject = ({ project, index }: { project: Project; index: number }) => (
-  <li className="flex">
-    <Reveal delay={(index % 3) * 80} className="flex w-full">
-      <Card interactive className="flex w-full flex-col p-5">
-        <h3 className="font-display text-base font-semibold text-ink">{project.title}</h3>
+/**
+ * Grid card. The first paragraph always shows; anything beyond it — further
+ * paragraphs, or a long role line — folds behind "Show more" so the rows stay
+ * scannable and every card starts at a readable length.
+ */
+const GridProject = ({ project, index }: { project: Project; index: number }) => {
+  const [lead, ...rest] = project.description.split("\n\n");
+  const longRole = (project.role?.length ?? 0) > ROLE_FOLD_LIMIT;
+  const folds = rest.length > 0 || longRole;
 
-        {project.metric && <Metric>{project.metric}</Metric>}
+  return (
+    <li className="flex">
+      <Reveal delay={(index % 3) * 80} className="flex w-full">
+        <Card interactive className="flex w-full flex-col p-5">
+          <h3 className="font-display text-base font-semibold text-ink">{project.title}</h3>
 
-        <p className="mt-3 text-sm leading-relaxed text-ink-muted">{project.description}</p>
+          {project.metric && <Metric>{project.metric}</Metric>}
 
-        {project.role && <MyPart className="mt-4 flex-1">{project.role}</MyPart>}
+          <div className="mt-3">
+            <Prose>{lead}</Prose>
+          </div>
 
-        <div className="mt-5">
-          <StackTags stack={project.stack} />
-        </div>
+          {folds ? (
+            <div className="mt-4">
+              <Expandable label={project.title}>
+                {rest.map(para => (
+                  <Prose key={para.slice(0, 24)}>{para}</Prose>
+                ))}
+                {project.role && <MyPart>{project.role}</MyPart>}
+              </Expandable>
+            </div>
+          ) : (
+            project.role && <MyPart className="mt-4">{project.role}</MyPart>
+          )}
 
-        <div className="mt-5 border-t border-line pt-4">
-          <Links project={project} />
-        </div>
-      </Card>
-    </Reveal>
-  </li>
-);
+          {/* Keeps the stack and links on the card's bottom edge. */}
+          <div className="flex-1" />
+
+          <div className="mt-5">
+            <StackTags stack={project.stack} />
+          </div>
+
+          <div className="mt-5 border-t border-line pt-4">
+            <Links project={project} />
+          </div>
+        </Card>
+      </Reveal>
+    </li>
+  );
+};
 
 export const Projects = () => (
   <Section id="projects">

@@ -1,6 +1,7 @@
 export { Section } from "./Section";
 export { Container } from "./Container";
 export { Card } from "./Card";
+export { Expandable } from "./Expandable";
 export { Stat } from "./Stat";
 export { Tag } from "./Tag";
 export { Button } from "./Button";
