@@ -3,9 +3,11 @@ import type { Project } from "./types";
 /**
  * User Registration & Membership is the one `featured` entry. Everest Forms has
  * more installs, but the payment work here is the deepest thing on the page, and
- * it is what I want read first. Turbo Proxy HA follows, because it is the largest
- * thing I have built on my own account, then the plugins roughly by size, with
- * the ones I own outright kept high.
+ * it is what I want read first. After that, roughly by size, with the ones I own
+ * outright kept high.
+ *
+ * Milan has other work that is deliberately not listed here. Don't add a project
+ * to this file unless he has asked for it by name.
  *
  * The gateway is described here, as my part in a public Everest Forms feature,
  * rather than as a project of its own. It is my employer's system: the
@@ -33,16 +35,6 @@ export const PROJECT_LIST: Project[] = [
     stack: ["WordPress", "PHP", "React", "Payments"],
     repoUrl: "https://github.com/wpeverest/user-registration",
     liveUrl: "https://wordpress.org/plugins/user-registration/",
-  },
-  {
-    id: "turbo-proxy",
-    title: "Turbo Proxy HA",
-    metric: "467 of its 472 commits are mine",
-    description:
-      "A platform for running a proxy network, built outside my day job since December 2025.\n\nProxy pools with health checks and failover, bandwidth quotas through a token bucket, IP rotation, and automatic provisioning from upstream providers. Customers get their own portal with usage history and CSV export; admins get audit logs, service tiers and 30-odd Prometheus metrics streaming live over a websocket. It deploys G3Proxy instances over SSH and can emulate a mobile carrier, signal strength and device profile, which is what makes the proxies behave like real phones.",
-    role: "Almost all of it: the FastAPI back end, both React front ends, MySQL and Redis, the Docker stack behind Nginx, JWT auth, the Prometheus and Grafana monitoring, the SSH deployment of proxy servers, and the quality probe scheduler that scores each proxy",
-    stack: ["Python", "FastAPI", "React", "MySQL", "Redis", "Docker"],
-    note: "Private, commercial product",
   },
   {
     id: "everest-forms",

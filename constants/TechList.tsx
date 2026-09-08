@@ -127,8 +127,8 @@ export const PROOF_POINTS: Stat[] = [
     note: "PayPal, Stripe, Authorize.Net and Mollie, in both Everest Forms and User Registration",
   },
   {
-    value: "467 of 472",
-    label: "commits in Turbo Proxy HA",
-    note: "A proxy platform I built outside the day job: pools, quotas, rotation, monitoring",
+    value: "171 of 171",
+    label: "commits in my own plugin",
+    note: "Custom Code Snippets Manager, start to finish",
   },
 ];

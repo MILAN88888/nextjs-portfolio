@@ -1,9 +1,11 @@
  == Changelog ==
 
+ = 3.4.0 - 2026-09-08
+ * Removed - A project I decided not to list, along with its figure in the skills section, its paragraph in About and its place in the product count.
+
  = 3.3.0 - 2026-09-08
- * Added - Turbo Proxy HA, the proxy platform I have been building since December 2025. 467 of its 472 commits are mine, and it is now the first card after the featured one.
  * Added - Turbo Subdomains, with the features I contributed: SearXNG search, AI featured images with IPTC metadata, background exports and the database indexing refactor.
- * Changed - Proven by work leads with the Turbo Proxy commit share; products released goes from seven to nine; About says what I build outside the day job.
+ * Changed - About says what I build outside the day job, and the product count includes it.
  * Added - Proxy orchestration, Prometheus and Grafana, SSH automation, websockets and JWT auth to the skills.
 
  = 3.2.0 - 2026-09-08
