@@ -12,7 +12,7 @@ export const TextLink = ({ href, children, className = "" }: TextLinkProps) => (
     href={href}
     target="_blank"
     rel="noreferrer noopener"
-    className={`inline-flex items-center gap-1.5 font-mono text-xs text-ink-muted transition-colors duration-200 hover:text-accent ${className}`}
+    className={`inline-flex items-center gap-1.5 font-mono text-small text-ink-muted transition-colors duration-200 hover:text-accent ${className}`}
   >
     {children}
   </a>

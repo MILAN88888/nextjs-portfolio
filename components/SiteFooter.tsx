@@ -3,7 +3,7 @@ import { PROFILE, SOCIAL_MEDIA } from "@/constants";
 export const SiteFooter = () => (
   <footer className="border-t border-line">
     <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row md:px-8">
-      <p className="text-center text-sm text-ink-faint sm:text-left">
+      <p className="text-center text-small text-ink-faint sm:text-left">
         &copy; {new Date().getFullYear()} {PROFILE.name}
         <span className="mx-2 text-line-strong" aria-hidden="true">
           /
@@ -18,7 +18,7 @@ export const SiteFooter = () => (
               href={social.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm text-ink-muted transition-colors duration-200 hover:text-accent"
+              className="text-small text-ink-muted transition-colors duration-200 hover:text-accent"
             >
               {social.label}
             </a>

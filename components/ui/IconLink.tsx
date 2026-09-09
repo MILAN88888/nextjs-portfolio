@@ -17,7 +17,7 @@ export const IconLink = ({ href, label, children, className = "" }: IconLinkProp
       href={href}
       aria-label={label}
       {...(isExternal && { target: "_blank", rel: "noreferrer noopener" })}
-      className={`inline-grid h-9 w-9 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:border-accent hover:text-accent ${className}`}
+      className={`inline-grid h-10 w-10 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:border-accent hover:text-accent ${className}`}
     >
       {children}
     </a>

@@ -1,5 +1,29 @@
  == Changelog ==
 
+= 5.0.0 - 2026-09-09
+* Changed - New palette, taken from nextonesolutions.com: one strong blue (#0069f1 in light, lifted for dark) in place of the amber, and cool blue-grey neutrals in place of the warm ones. Backgrounds, text, borders, shadows and the hero wash all moved with it.
+* Changed - Re-verified contrast on the new palette. Floor is 4.70:1 in both themes, and nothing on the page is below 4.5:1.
+* Changed - themeColor in the metadata follows the new page background.
+* Note - Only the colour half of that reference was kept. A full structural pass at it was built and rejected: the layout, the left-aligned section headings, the single-column hero, the translucent header and the one-line footer are all unchanged.
+
+= 4.1.0 - 2026-09-09
+* Added - Icons, from one registry. `IconName` in constants/types.ts names them semantically, components/ui/Icon.tsx maps each to its Feather glyph, and content files carry the name rather than the component so react-icons stays out of the metadata routes.
+* Changed - The About cards are the whole point of the section now: an icon, a short label and one line each, sitting directly under the heading with the paragraphs below a divider. They were a paragraph a card, which nobody reads.
+* Changed - Cut the text. The bio is four short paragraphs instead of five long ones, the hero's four figures carry one-line notes, the six proof cards do too, and the Skills and Contact intros are a sentence each.
+* Added - An icon on every hero figure, every Skills proof card and every skills group heading.
+* Changed - The card labels follow the copy I supplied: Scale & reach, AI backend, Payment systems, Security hardening, DevOps & infrastructure, Blocks & the editor.
+
+= 4.0.0 - 2026-09-09
+* Changed - Light is now the default theme. The page is written to be read on a light background and no longer follows the operating system's dark setting; the header toggle still switches it and remembers the choice.
+* Changed - Everything is bigger. Body copy is 17px on a phone and 18px on a desktop, the smallest prose on the page is 15px, and the whole fluid scale moved up with it. Nothing renders at Tailwind's flat 14px or 12px any more.
+* Added - Named body sizes in the Tailwind config: text-lead, text-body, text-small and text-label, so a component picks a size from the scale instead of guessing one.
+* Changed - The hero leads with what I do and where: a full-stack engineer line, an install and AI line, three sentences, then two buttons with GitHub, LinkedIn and email as icons. Four buttons in a row read as a toolbar.
+* Added - Six cards in About for the headline work: scale, the AI back end, payments, security, servers, and blocks and the editor.
+* Changed - Sections alternate between the page background and the subtle one instead of being divided by a hairline border, which all but vanished on a light page.
+* Removed - The hairline grid behind the hero, and the --grid-cell token with it. It was noise behind the one block of text that has to be read first, and the accent wash over it is softer now.
+* Changed - Retuned the reserved heights in the project cards for the larger type, and reserved the links row too. Nine closed cards measure the same height again, and opening one still leaves its neighbours alone.
+* Changed - Corrected the install figures quoted in the copy against the plugin API: Everest Forms is 90,000 and User Registration 50,000.
+
  = 3.4.1 - 2026-09-08
  * Removed - The About paragraph about work outside the day job: the commercial plugin, the self-hosting, and how I use AI assistants.
 

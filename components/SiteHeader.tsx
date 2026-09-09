@@ -53,7 +53,7 @@ export const SiteHeader = () => {
         <a
           href="#top"
           onClick={closeMenu}
-          className="font-mono text-sm font-medium text-ink"
+          className="font-mono text-body font-medium text-ink"
         >
           {PROFILE.handle}
           <span className="text-accent">.</span>
@@ -68,7 +68,7 @@ export const SiteHeader = () => {
                   <a
                     href={`#${section.id}`}
                     aria-current={isActive ? "true" : undefined}
-                    className={`rounded-full px-3 py-2 text-sm transition-colors duration-200 ${
+                    className={`rounded-full px-3 py-2 text-small transition-colors duration-200 ${
                       isActive
                         ? "text-accent"
                         : "text-ink-muted hover:text-ink"
@@ -87,9 +87,9 @@ export const SiteHeader = () => {
             href={PROFILE.githubUrl}
             target="_blank"
             rel="noreferrer noopener"
-            className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-ink transition-colors duration-200 hover:border-line-strong hover:bg-surface-hover sm:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-small text-ink transition-colors duration-200 hover:border-line-strong hover:bg-surface-hover sm:inline-flex"
           >
-            <FiGithub size={14} aria-hidden="true" /> GitHub
+            <FiGithub size={15} aria-hidden="true" /> GitHub
           </a>
 
           <ThemeToggle />
@@ -100,7 +100,7 @@ export const SiteHeader = () => {
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="inline-grid h-9 w-9 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:text-ink lg:hidden"
+            className="inline-grid h-10 w-10 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:text-ink lg:hidden"
           >
             {menuOpen ? <FiX size={16} /> : <FiMenu size={16} />}
           </button>
@@ -120,7 +120,7 @@ export const SiteHeader = () => {
                 href={`#${section.id}`}
                 onClick={closeMenu}
                 aria-current={activeId === section.id ? "true" : undefined}
-                className={`block rounded-sm px-2 py-2.5 text-sm transition-colors ${
+                className={`block rounded-sm px-2 py-3 text-body transition-colors ${
                   activeId === section.id ? "text-accent" : "text-ink-muted"
                 }`}
               >

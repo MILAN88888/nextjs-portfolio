@@ -5,10 +5,9 @@ import { PROFILE } from "@/constants";
 export const Contact = () => (
   <Section id="contact">
     <Reveal>
-      <p className="max-w-2xl leading-relaxed text-ink-muted">
-        I&rsquo;m open to {PROFILE.openTo}, either a full role or something
-        smaller. Email is the fastest way to reach me and I usually answer
-        within a day.
+      <p className="max-w-prose text-lead text-ink-muted">
+        Open to {PROFILE.openTo}. Email is the fastest way to reach me, and I
+        usually answer within a day.
       </p>
     </Reveal>
 
@@ -30,7 +29,7 @@ export const Contact = () => (
     </Reveal>
 
     <Reveal delay={140}>
-      <p className="mt-8 text-sm text-ink-muted">
+      <p className="mt-8 text-small text-ink-muted">
         {PROFILE.fullLocation} · {PROFILE.timezone} · remote-friendly ·{" "}
         <a
           href={`tel:${PROFILE.phone.replace(/[^\d+]/g, "")}`}

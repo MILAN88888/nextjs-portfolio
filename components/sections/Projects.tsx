@@ -4,22 +4,22 @@ import { PROFILE, PROJECT_LIST } from "@/constants";
 import type { Project } from "@/constants";
 
 const Metric = ({ children, className = "" }: { children: string; className?: string }) => (
-  <p className={`font-mono text-[0.69rem] leading-relaxed text-accent ${className}`}>
+  <p className={`font-mono text-small text-accent ${className}`}>
     {children}
   </p>
 );
 
 const Prose = ({ children }: { children: string }) => (
-  <p className="text-sm leading-relaxed text-ink-muted">{children}</p>
+  <p className="text-small text-ink-muted">{children}</p>
 );
 
 /** Labelled block rather than an inline aside, so it survives being read quickly. */
 const MyPart = ({ children }: { children: string }) => (
   <div>
-    <p className="font-mono text-[0.69rem] uppercase tracking-[0.16em] text-ink-faint">
+    <p className="font-mono text-label uppercase tracking-[0.16em] text-ink-faint">
       My part
     </p>
-    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{children}</p>
+    <p className="mt-2 text-small text-ink-muted">{children}</p>
   </div>
 );
 
@@ -33,8 +33,10 @@ const StackTags = ({ stack }: { stack: string[] }) => (
   </ul>
 );
 
+/** The row keeps its line even when a project has neither a repo nor a live URL,
+    so a card without links is the same height as one with them. */
 const Links = ({ project }: { project: Project }) => (
-  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+  <div className="flex min-h-[1.6rem] flex-wrap items-center gap-x-4 gap-y-2">
     {project.repoUrl && (
       <TextLink href={project.repoUrl}>
         <FiCode size={13} aria-hidden="true" />
@@ -52,7 +54,7 @@ const Links = ({ project }: { project: Project }) => (
     )}
 
     {project.internal && (
-      <span className="inline-flex items-center gap-1.5 font-mono text-xs text-ink-faint">
+      <span className="inline-flex items-center gap-1.5 font-mono text-small text-ink-faint">
         <FiLock size={12} aria-hidden="true" />
         Closed source
       </span>
@@ -63,7 +65,7 @@ const Links = ({ project }: { project: Project }) => (
 
 /** Own line, with the line reserved even when empty, so every footer matches. */
 const Note = ({ children }: { children?: string }) => (
-  <p className="mt-2 min-h-[1.15rem] font-mono text-xs leading-relaxed text-ink-faint">
+  <p className="mt-2 min-h-[1.3rem] font-mono text-label text-ink-faint">
     {children}
   </p>
 );
@@ -73,13 +75,13 @@ const FeaturedProject = ({ project }: { project: Project }) => (
   <li className="sm:col-span-2 lg:col-span-3">
     <Reveal>
       <Card className="p-5 md:p-6">
-        <h3 className="font-display text-h4 font-semibold text-ink">{project.title}</h3>
+        <h3 className="font-display text-h3 font-semibold text-ink">{project.title}</h3>
 
         {project.metric && <Metric className="mt-2">{project.metric}</Metric>}
 
         <div className="mt-4 max-w-[68ch] space-y-4">
           {project.description.split("\n\n").map(para => (
-            <p key={para.slice(0, 24)} className="leading-relaxed text-ink-muted">
+            <p key={para.slice(0, 24)} className="text-body text-ink-muted">
               {para}
             </p>
           ))}
@@ -97,7 +99,7 @@ const FeaturedProject = ({ project }: { project: Project }) => (
           <div className="flex flex-wrap items-center gap-x-4">
             <Links project={project} />
             {project.note && (
-              <span className="font-mono text-xs leading-relaxed text-ink-faint">
+              <span className="font-mono text-label text-ink-faint">
                 {project.note}
               </span>
             )}
@@ -125,20 +127,20 @@ const GridProject = ({ project, index }: { project: Project; index: number }) =>
       <Reveal delay={(index % 3) * 80}>
         {/* One floor for every closed card, so the grid is even however the
             tags and notes wrap. An open card grows past it. */}
-        <Card interactive className="min-h-[21rem] p-5">
+        <Card interactive className="min-h-[25rem] p-6">
           <Expandable
             label={project.title}
             header={
               <>
-                <h3 className="min-h-[3rem] font-display text-base font-semibold text-ink">
+                <h3 className="min-h-[3.9rem] font-display text-body font-semibold text-ink">
                   {project.title}
                 </h3>
 
                 {project.metric && (
-                  <Metric className="min-h-[2.25rem]">{project.metric}</Metric>
+                  <Metric className="min-h-[3.25rem]">{project.metric}</Metric>
                 )}
 
-                <div className="mt-1 min-h-[2.85rem]">
+                <div className="mt-1 min-h-[4.9rem]">
                   <Prose>{lead}</Prose>
                 </div>
               </>
@@ -151,7 +153,7 @@ const GridProject = ({ project, index }: { project: Project; index: number }) =>
             {project.role && <MyPart>{project.role}</MyPart>}
           </Expandable>
 
-          <div className="mt-6">
+          <div className="mt-6 min-h-[4.1rem]">
             <StackTags stack={project.stack.slice(0, 4)} />
           </div>
 
@@ -182,7 +184,7 @@ export const Projects = () => (
         href={PROFILE.reposUrl}
         target="_blank"
         rel="noreferrer noopener"
-        className="mt-10 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
+        className="mt-10 inline-flex items-center gap-1.5 text-body font-medium text-accent transition-opacity hover:opacity-80"
       >
         Browse all repositories
         <FiArrowUpRight size={14} aria-hidden="true" />

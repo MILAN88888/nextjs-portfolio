@@ -6,6 +6,7 @@ import type { Stat, TechGroup } from "./types";
  */
 export const TECH_LIST: TechGroup[] = [
   {
+    icon: "ai",
     category: "AI and agents",
     items: [
       "AI gateway design",
@@ -21,6 +22,7 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
+    icon: "database",
     category: "Backend",
     items: [
       "PHP",
@@ -38,6 +40,7 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
+    icon: "wordpress",
     category: "WordPress",
     items: [
       "Plugin structure",
@@ -53,6 +56,7 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
+    icon: "frontend",
     category: "Frontend",
     items: [
       "TypeScript",
@@ -66,6 +70,7 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
+    icon: "servers",
     category: "Servers and networking",
     items: [
       "Docker",
@@ -84,6 +89,7 @@ export const TECH_LIST: TechGroup[] = [
     ],
   },
   {
+    icon: "toolbox",
     category: "How I work",
     items: [
       "Debugging",
@@ -102,31 +108,37 @@ export const TECH_LIST: TechGroup[] = [
  */
 export const PROOF_POINTS: Stat[] = [
   {
+    icon: "commits",
     value: "492",
     label: "commits in Everest Forms",
-    note: "Across the free and pro plugins, including the AI form builder",
+    note: "Free and pro, including the AI form builder",
   },
   {
+    icon: "commits",
     value: "303 of 331",
     label: "commits in SmartSMTP",
-    note: "I built it from its early versions through its first public releases",
+    note: "Built it from early versions to its first releases",
   },
   {
+    icon: "commits",
     value: "268",
     label: "commits in User Registration",
-    note: "Core and pro, most of it on the payment side",
+    note: "Core and pro, most of it on payments",
   },
   {
+    icon: "security",
     value: "40",
     label: "security and hardening fixes",
-    note: "Across nine plugins: privilege escalation, arbitrary shortcode execution, a PayPal status bypass, stored XSS",
+    note: "Across nine plugins, from privilege escalation to stored XSS",
   },
   {
+    icon: "payments",
     value: "4",
     label: "payment gateways",
-    note: "PayPal, Stripe, Authorize.Net and Mollie, in both Everest Forms and User Registration",
+    note: "PayPal, Stripe, Authorize.Net and Mollie",
   },
   {
+    icon: "code",
     value: "171 of 171",
     label: "commits in my own plugin",
     note: "Custom Code Snippets Manager, start to finish",

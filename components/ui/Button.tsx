@@ -20,8 +20,8 @@ const VARIANTS = {
 } as const;
 
 const SIZES = {
-  md: "px-5 py-2.5 text-sm",
-  sm: "px-4 py-2 text-xs",
+  md: "px-5 py-3 text-small",
+  sm: "px-4 py-2 text-label",
 } as const;
 
 /** Anything that isn't an in-app route: protocol links, hashes, downloads. */

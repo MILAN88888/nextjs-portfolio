@@ -20,11 +20,11 @@ export const ThemeToggle = () => {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} theme` : "Switch theme"}
-      className="inline-grid h-9 w-9 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:border-line-strong hover:text-ink"
+      className="inline-grid h-10 w-10 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 hover:border-line-strong hover:text-ink"
     >
       {/* Fixed-size placeholder keeps layout stable before hydration. */}
-      <span className="grid h-4 w-4 place-items-center" aria-hidden="true">
-        {mounted && (isDark ? <FiSun size={15} /> : <FiMoon size={15} />)}
+      <span className="grid h-[17px] w-[17px] place-items-center" aria-hidden="true">
+        {mounted && (isDark ? <FiSun size={17} /> : <FiMoon size={17} />)}
       </span>
     </button>
   );

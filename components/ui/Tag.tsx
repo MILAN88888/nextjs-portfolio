@@ -11,8 +11,8 @@ interface TagProps {
 }
 
 const VARIANTS = {
-  mono: "rounded-full border border-line px-2.5 py-1 font-mono text-[0.69rem] text-ink-muted",
-  solid: "rounded-sm border border-line bg-surface-raised px-3 py-1.5 text-sm text-ink",
+  mono: "rounded-full border border-line px-3 py-1 font-mono text-label text-ink-muted",
+  solid: "rounded border border-line bg-surface-raised px-3 py-1.5 text-small text-ink",
 } as const;
 
 export const Tag = ({ children, variant = "mono", className = "" }: TagProps) => (

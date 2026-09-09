@@ -42,6 +42,7 @@ export interface School {
 }
 
 export interface TechGroup {
+  icon: IconName;
   category: string;
   items: string[];
 }
@@ -60,9 +61,45 @@ export interface SectionMeta {
   navLabel?: string;
 }
 
+/**
+ * The icons the UI knows how to draw, named for what they mean rather than for
+ * the glyph. `components/ui/Icon.tsx` maps each one onto a Feather icon; this
+ * union is the vocabulary, so `constants/` stays free of JSX and `react-icons`
+ * never reaches `app/metadata.ts`'s module graph.
+ */
+export type IconName =
+  | "installs"
+  | "products"
+  | "rating"
+  | "clock"
+  | "globe"
+  | "ai"
+  | "payments"
+  | "security"
+  | "servers"
+  | "blocks"
+  | "commits"
+  | "database"
+  | "code"
+  | "wordpress"
+  | "frontend"
+  | "toolbox";
+
+/**
+ * One piece of headline work in the About section. One short line of body — the
+ * cards are there to be scanned, not read, so a second sentence goes in the
+ * bio or the project card instead.
+ */
+export interface Achievement {
+  icon: IconName;
+  label: string;
+  body: string;
+}
+
 /** A number worth putting in front of a reader, with the context that makes it mean something. */
 export interface Stat {
   value: string;
   label: string;
   note?: string;
+  icon?: IconName;
 }

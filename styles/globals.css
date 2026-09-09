@@ -8,28 +8,32 @@
    text and background: `--text-*` is ink, `--bg/--surface` is paint.
    ══════════════════════════════════════════════════════════════ */
 
+/* Dark theme is `:root`; light overrides below. The palette is the one from
+   the reference Milan picked (nextonesolutions.com): one strong blue, and cool
+   blue-grey neutrals in place of the old warm ones. Only the colours were taken
+   from that site — the layout stayed as it was. */
 :root {
   /* ── Surfaces ── */
-  --bg:             oklch(16% .012 260);
-  --bg-subtle:      oklch(19% .013 260);
-  --surface:        oklch(20% .014 260);
-  --surface-hover:  oklch(24% .014 260);
-  --surface-raised: oklch(26% .016 260);
+  --bg:             oklch(18% .025 260);
+  --bg-subtle:      oklch(21% .028 260);
+  --surface:        oklch(22.5% .030 260);
+  --surface-hover:  oklch(26% .032 260);
+  --surface-raised: oklch(28% .034 260);
 
   /* ── Lines ── */
-  --border:         oklch(100% 0 0 / .12);
-  --border-strong:  oklch(100% 0 0 / .24);
+  --border:         oklch(100% 0 0 / .13);
+  --border-strong:  oklch(100% 0 0 / .26);
 
   /* ── Ink ── */
-  --text:           oklch(95% .008 90);
-  --text-muted:     oklch(72% .015 258);
-  --text-faint:     oklch(64% .015 258);
+  --text:           oklch(96% .008 250);
+  --text-muted:     oklch(75% .018 255);
+  --text-faint:     oklch(66% .020 255);
 
-  /* ── Accent (amber) ── */
-  --accent:         oklch(83% .17 88);
-  --accent-fg:      oklch(19% .02 80);
-  --accent-subtle:  color-mix(in oklab, oklch(83% .17 88) 14%, transparent);
-  --ring:           oklch(83% .17 88);
+  /* ── Accent (blue) ── */
+  --accent:         oklch(72% .165 255);
+  --accent-fg:      oklch(20% .06 265);
+  --accent-subtle:  color-mix(in oklab, oklch(72% .165 255) 16%, transparent);
+  --ring:           oklch(72% .165 255);
 
   /* ── Elevation ── */
   --shadow-sm:   0 1px 2px oklch(0% 0 0 / .4);
@@ -41,45 +45,50 @@
   --radius:     10px;
   --radius-lg:  14px;
 
-  /* ── Fluid type scale ── */
-  --step--2: clamp(0.69rem, 0.68rem + 0.06vw, 0.72rem);
-  --step--1: clamp(0.83rem, 0.81rem + 0.10vw, 0.89rem);
-  --step-0:  clamp(1.00rem, 0.97rem + 0.14vw, 1.09rem);
-  --step-1:  clamp(1.20rem, 1.15rem + 0.25vw, 1.36rem);
-  --step-2:  clamp(1.44rem, 1.36rem + 0.40vw, 1.70rem);
-  --step-3:  clamp(1.73rem, 1.61rem + 0.60vw, 2.13rem);
-  --step-4:  clamp(2.07rem, 1.89rem + 0.90vw, 2.66rem);
-  --step-5:  clamp(2.49rem, 2.22rem + 1.35vw, 3.32rem);
-  --step-6:  clamp(2.25rem, 1.35rem + 4.40vw, 4.50rem);
+  /* ── Fluid type scale ──
+     Body sits at --step-0: 17px on a phone, 18px on a desktop. Everything
+     small on the page is --step--1 (15px) at the smallest; nothing renders
+     below --step--2 (13px), which is only for mono labels. The old scale
+     started at 16px and leaned on Tailwind's text-sm/text-xs for most copy,
+     which is what made the page hard to read. */
+  --step--2: clamp(0.81rem, 0.80rem + 0.06vw, 0.85rem);
+  --step--1: clamp(0.94rem, 0.92rem + 0.09vw, 0.98rem);
+  --step-0:  clamp(1.06rem, 1.03rem + 0.16vw, 1.13rem);
+  --step-1:  clamp(1.25rem, 1.20rem + 0.25vw, 1.40rem);
+  --step-2:  clamp(1.50rem, 1.42rem + 0.40vw, 1.75rem);
+  --step-3:  clamp(1.80rem, 1.66rem + 0.70vw, 2.25rem);
+  --step-4:  clamp(2.10rem, 1.90rem + 1.00vw, 2.75rem);
+  --step-5:  clamp(2.50rem, 2.20rem + 1.50vw, 3.40rem);
+  --step-6:  clamp(2.40rem, 1.70rem + 3.50vw, 4.00rem);
 
   /* ── Layout ── */
-  --header-h: 67px;
-  --grid-cell: 72px;
+  --header-h: 68px;
 }
 
 [data-theme="light"] {
-  --bg:             oklch(98% .004 90);
-  --bg-subtle:      oklch(96% .006 90);
+  --bg:             oklch(99% .004 250);
+  --bg-subtle:      oklch(97.2% .014 250);
   --surface:        oklch(100% 0 0);
-  --surface-hover:  oklch(96.5% .006 90);
-  --surface-raised: oklch(94.5% .008 90);
+  --surface-hover:  oklch(98% .010 250);
+  --surface-raised: oklch(96% .016 250);
 
-  --border:         oklch(22% .012 260 / .14);
-  --border-strong:  oklch(22% .012 260 / .28);
+  --border:         oklch(45% .030 250 / .17);
+  --border-strong:  oklch(45% .030 250 / .32);
 
-  --text:           oklch(22% .012 260);
-  --text-muted:     oklch(45% .015 258);
-  --text-faint:     oklch(52% .015 258);
+  --text:           oklch(17% .015 255);
+  --text-muted:     oklch(46% .020 255);
+  --text-faint:     oklch(53% .020 255);
 
-  /* Amber has to darken considerably to stay legible on white. */
-  --accent:         oklch(52% .13 70);
-  --accent-fg:      oklch(99% .003 90);
-  --accent-subtle:  color-mix(in oklab, oklch(52% .13 70) 10%, transparent);
-  --ring:           oklch(52% .13 70);
+  /* The reference's own blue, #0069f1. It clears 4.5:1 on white and on both
+     light panels, so it can carry links and kickers as well as the button. */
+  --accent:         oklch(53.5% .215 258);
+  --accent-fg:      oklch(100% 0 0);
+  --accent-subtle:  color-mix(in oklab, oklch(53.5% .215 258) 9%, transparent);
+  --ring:           oklch(53.5% .215 258);
 
-  --shadow-sm:   0 1px 2px oklch(0% 0 0 / .05);
-  --shadow:      0 8px 24px -12px oklch(0% 0 0 / .12);
-  --shadow-lift: 0 24px 60px -28px oklch(0% 0 0 / .18);
+  --shadow-sm:   0 1px 2px oklch(45% .03 250 / .06);
+  --shadow:      0 10px 30px -14px oklch(45% .06 250 / .16);
+  --shadow-lift: 0 26px 64px -30px oklch(45% .06 250 / .24);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -100,7 +109,7 @@ body {
   color: var(--text);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--step-0);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis-weight: none;
@@ -145,23 +154,17 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }
 
 /* ══════════════════════════════════════════════════════════════
-   HERO AMBIENCE — amber glow over a hairline grid
+   HERO AMBIENCE — one soft accent wash, nothing else
+   The hairline grid that used to sit under this was noise behind the
+   one block of text that has to be read first, so it is gone.
    ══════════════════════════════════════════════════════════════ */
 
 .hero-glow {
   background: radial-gradient(
-    120% 90% at 12% 0%,
-    color-mix(in oklab, var(--accent) 16%, transparent) 0%,
-    transparent 60%
+    110% 80% at 15% 0%,
+    color-mix(in oklab, var(--accent) 12%, transparent) 0%,
+    transparent 62%
   );
-}
-
-.hairline-grid {
-  background-image:
-    linear-gradient(to right, var(--border) 1px, transparent 1px),
-    linear-gradient(var(--border) 1px, transparent 1px);
-  background-size: var(--grid-cell) var(--grid-cell);
-  opacity: 0.4;
 }
 
 /* Translucent sticky header. Alpha on an oklch() custom property needs

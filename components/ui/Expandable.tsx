@@ -19,8 +19,8 @@ export const Expandable = ({ header, children, label }: ExpandableProps) => (
     <summary className="group/sum flex items-start justify-between gap-4">
       <div className="min-w-0">{header}</div>
 
-      <span className="mt-1 inline-grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 group-hover/sum:border-accent group-hover/sum:text-accent">
-        <FiChevronDown size={14} aria-hidden="true" className="disclosure-chevron" />
+      <span className="mt-1 inline-grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line text-ink-muted transition-colors duration-200 group-hover/sum:border-accent group-hover/sum:text-accent">
+        <FiChevronDown size={16} aria-hidden="true" className="disclosure-chevron" />
       </span>
 
       <span className="sr-only disclosure-more">Show more about {label}</span>
