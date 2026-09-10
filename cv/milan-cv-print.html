@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Milan Chaudhary — Software Engineer</title>
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.27;
+    color: #14181f;
+  }
+  a { color: #0b4fd0; text-decoration: none; }
+
+  /* ── Header ── */
+  h1 {
+    margin: 0;
+    font-size: 20pt;
+    letter-spacing: .01em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .role { margin: 2.5pt 0 0; font-size: 10pt; font-weight: 700; color: #0b4fd0; }
+  .meta { margin: 2.6pt 0 0; font-size: 8.3pt; color: #3d4551; }
+  .meta span { white-space: nowrap; }
+  .sep { color: #9aa3b0; padding: 0 3.5pt; }
+
+  /* ── Sections ── */
+  h2 {
+    margin: 7pt 0 3pt;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: #0b4fd0;
+    border-bottom: .7pt solid #c3ccd8;
+    padding-bottom: 2pt;
+  }
+  p { margin: 0; }
+  .summary { margin: 0; text-align: justify; }
+
+  /* ── Roles ── */
+  .job { margin-top: 5pt; }
+  .job:first-of-type { margin-top: 0; }
+  .jobhead { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .jobtitle { font-size: 9.6pt; font-weight: 700; }
+  .jobtitle .at { font-weight: 400; color: #3d4551; }
+  .dates { font-size: 8.2pt; color: #3d4551; white-space: nowrap; }
+  .jobnote { margin-top: 1.5pt; color: #3d4551; }
+
+  .prod { margin-top: 3.2pt; font-weight: 700; font-size: 8.8pt; }
+  .prod .installs { font-weight: 400; color: #3d4551; }
+
+  ul { margin: 1.5pt 0 0; padding-left: 10.5pt; }
+  li { margin: 0 0 0.9pt; }
+  li::marker { color: #7f8b9c; }
+
+  /* ── Skills table ── */
+  .skills { margin: 0; }
+  .skills div { display: flex; gap: 7pt; margin-bottom: 2.2pt; }
+  .skills dt { flex: 0 0 74pt; font-weight: 700; color: #14181f; }
+  .skills dd { margin: 0; flex: 1; color: #262d38; }
+
+  .tight { margin-top: 3pt; }
+  .edu-line { display: flex; justify-content: space-between; gap: 8pt; }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Milan Chaudhary</h1>
+    <p class="role">Software Engineer &mdash; PHP, React, Python</p>
+    <p class="meta">
+      <span>chaudharymilan996@gmail.com</span><span class="sep">|</span>
+      <span>+977 9807445408</span><span class="sep">|</span>
+      <span><a href="https://www.linkedin.com/in/milan-c">linkedin.com/in/milan-c</a></span><span class="sep">|</span>
+      <span><a href="https://github.com/MILAN88888">github.com/MILAN88888</a></span><span class="sep">|</span>
+      <span><a href="https://milanc.com.np">milanc.com.np</a></span><span class="sep">|</span>
+      <span>Nepal &middot; UTC+5:45 &middot; open to remote</span>
+    </p>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Full-stack engineer with four years building WordPress plugins and the Python services behind them.
+    Shipped features now run on about 150,000 active installs. Deepest work is on the payment path and
+    security: four gateways across two products, and 40 security and hardening fixes across nine plugins.
+    Built and deployed the Python service behind Everest Forms&rsquo; AI form builder, and runs the Linux
+    and Docker hosts under it.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="jobhead">
+      <span class="jobtitle">Software Engineer (PHP, React, Python) <span class="at">&mdash; ThemeGrill Pvt Ltd, Kathmandu (hybrid)</span></span>
+      <span class="dates">Jan 2023 &ndash; Present</span>
+    </div>
+    <p class="jobnote">
+      Seven WordPress products with about 150,000 active installs between them. Joined as a plugin intern on a
+      live plugin, then moved onto the product teams.
+    </p>
+
+    <p class="prod">Everest Forms <span class="installs">&middot; 90,000 installs &middot; 492 commits across free and pro</span></p>
+    <ul>
+      <li>Built the AI form builder end to end: the Python and FastAPI service, the prompt setup, and the WordPress side that calls it, so no API key ships inside the plugin.</li>
+      <li>Divider field, multiple-select support, lookup field styling, and range slider and single-item options in calculations.</li>
+      <li>17 security fixes, from an unsafe unserialize() call on old PHP to nonce verification when several forms share a page, entry permissions and file-upload capability checks.</li>
+    </ul>
+
+    <p class="prod">User Registration &amp; Membership <span class="installs">&middot; 50,000 installs &middot; 268 commits across core and pro</span></p>
+    <ul>
+      <li>Moved PayPal onto its REST API with webhooks and stricter IPN checks, fixed Stripe charging the wrong currency when a plan had no local price, stopped Mollie retries charging twice, and added signature checks and a retry flow to Authorize.Net.</li>
+      <li>Patched unauthenticated privilege escalation and user deletion, arbitrary shortcode execution through user-controlled smart tags, and a PayPal flaw that let a pending payment be marked completed without payment.</li>
+      <li>Built the content drip module and the membership upgrade flow, plus work across 26 add-ons.</li>
+    </ul>
+
+    <p class="prod">SmartSMTP <span class="installs">&middot; 303 of its 331 commits</span></p>
+    <ul>
+      <li>Built most of the plugin, from early versions through its first public releases: main and fallback connections, provider setup, test mail, attachment handling and the delivery log. Fixed a stored XSS in the mail log viewer.</li>
+    </ul>
+
+    <p class="prod">BlockArt, Magazine Blocks and WooCommerce extensions <span class="installs">&middot; 162 commits in Customize My Account</span></p>
+    <ul>
+      <li>Gutenberg blocks in React across free and pro, capability checks on editor actions, and the Customize My Account colour palette manager, navigation layout and live previews.</li>
+      <li>Across the suite: 40 security and hardening fixes in nine plugins, including Snyk triage, and cutting the paired free and pro releases.</li>
+      <li>Verified fixes in a real WordPress install by driving Playwright over MCP with Claude Code, with custom agent skills holding the coding standards and the debug routine.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="jobhead">
+      <span class="jobtitle">PHP Developer, Internship <span class="at">&mdash; Idea Foundation, remote</span></span>
+      <span class="dates">Jul 2022 &ndash; Oct 2022</span>
+    </div>
+    <ul>
+      <li>Backend work on Oxole, a site where students swapped textbooks: sign-up, book listings, search, exchange requests and profile pages. Plain PHP in an MVC layout with jQuery, Ajax, Twig templates and hand-written SQL.</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <div><dt>Languages</dt><dd>PHP, Python, JavaScript (ES6), TypeScript, SQL</dd></div>
+    <div><dt>Frontend</dt><dd>React, Gutenberg blocks, Next.js, Tailwind CSS, jQuery, accessibility</dd></div>
+    <div><dt>Backend</dt><dd>FastAPI, REST APIs, WordPress plugin architecture, WooCommerce, Laravel, Slim</dd></div>
+    <div><dt>Data</dt><dd>PostgreSQL, MySQL, Redis</dd></div>
+    <div><dt>Infrastructure</dt><dd>Docker, Linux, Nginx, Prometheus, Grafana, GitHub Actions, Git</dd></div>
+    <div><dt>Practice</dt><dd>Payment gateway integration, application security, PHPCS coding standards, Playwright, code review, release management for paired free and pro plugins</dd></div>
+  </dl>
+
+  <h2>Education</h2>
+  <div class="edu-line">
+    <span><strong>B.E. Computer Science and Engineering</strong> &mdash; Sambhram Institute of Technology, Bengaluru</span>
+    <span class="dates">Aug 2016 &ndash; Dec 2020</span>
+  </div>
+  <p class="jobnote">Visvesvaraya Technological University</p>
+
+  <h2>Projects and other work</h2>
+  <ul class="tight">
+    <li><strong>Custom Code Snippets Manager</strong> &mdash; own WordPress plugin for running PHP, JavaScript, CSS or HTML snippets without editing theme files. Designed and built solo, 171 of 171 commits. Pre-release.</li>
+    <li><strong>milanc.com.np</strong> &mdash; static Next.js portfolio carrying the commit counts and install figures behind everything above.</li>
+  </ul>
+
+  <h2>Languages &amp; certifications</h2>
+  <p>Nepali &middot; Hindi &middot; English</p>
+
+  <div class="edu-line">
+    <span><strong>WordCamp Kathmandu 2023</strong> &mdash; Contributor Day participant</span>
+    <span class="dates">Sep 2023</span>
+  </div>
+
+</body>
+</html>

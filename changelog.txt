@@ -1,5 +1,12 @@
  == Changelog ==
 
+= 5.1.0 - 2026-09-10
+* Changed - Replaced the CV the download buttons serve. The old one was generated in Word in January 2025, carried someone else's name in its Author metadata, dated the ThemeGrill role to Jan 2022 (a year early, overlapping the internship), and predated the Python work, the payment gateways, the security fixes and every install figure.
+* Fixed - Section headings in the CV no longer carry letter-spacing. Text extraction was turning the tracking into real spaces, so SUMMARY came out as "S U M M A RY" and EDUCATION as "E D U C AT I O N", and an ATS looking for those sections found neither.
+* Fixed - All contact details sit on one line in the CV. On two lines, parsers were dropping the LinkedIn URL.
+* Added - cv/ holds the HTML the CV is generated from, plus a .docx for editing by hand. Outside public/, so neither is served.
+* Note - The file keeps the name milan-cv.pdf so the shared URL still works and no stale copy stays reachable.
+
 = 5.0.0 - 2026-09-09
 * Changed - New palette, taken from nextonesolutions.com: one strong blue (#0069f1 in light, lifted for dark) in place of the amber, and cool blue-grey neutrals in place of the warm ones. Backgrounds, text, borders, shadows and the hero wash all moved with it.
 * Changed - Re-verified contrast on the new palette. Floor is 4.70:1 in both themes, and nothing on the page is below 4.5:1.

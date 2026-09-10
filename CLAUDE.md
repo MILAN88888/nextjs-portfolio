@@ -177,4 +177,28 @@ Beyond `build` and `lint`, the checks that actually catch regressions here:
 - **Test with reduced motion on.** Confirm all `.reveal` elements report `opacity: 1` without scrolling.
 - **Tab through the page.** First Tab must reveal the skip link; every visible link and button needs a ring.
 
+## The CV
+
+`public/file/milan-cv.pdf` is what the hero and Contact download buttons serve, via `PROFILE.cvPath`. **Keep that filename.** The URL has been shared, and overwriting the file rather than adding a new one is what stops an outdated CV staying reachable at an old path.
+
+It is generated, not hand-made. The sources live in `cv/`, outside `public/` so they are not served:
+
+```bash
+# PDF — the version people download
+google-chrome --headless=new --no-pdf-header-footer \
+  --print-to-pdf=public/file/milan-cv.pdf cv/milan-cv-print.html
+# DOCX — for editing by hand in Word
+soffice --headless --convert-to docx:"MS Word 2007 XML" --outdir cv cv/milan-cv-docx.html
+```
+
+Two separate HTML sources on purpose: LibreOffice ignores flexbox, so `milan-cv-docx.html` linearises the job headers and skill rows that `milan-cv-print.html` lays out with flex. Both must stay one page — check with `pdfinfo`, and for the docx convert it to PDF first, because Word's metrics run longer than Chrome's.
+
+**Never put `letter-spacing` on a heading.** Text extraction turns tracking into real spaces, so `SUMMARY` came out of the PDF as `S U M M A RY` and `EDUCATION` as `E D U C AT I O N` — an ATS scanning for those sections found neither. Use weight and size for emphasis. Verify after any change:
+
+```bash
+pdftotext public/file/milan-cv.pdf - | grep -E '\b([A-Za-z] ){2,}[A-Za-z]\b'   # must be empty
+```
+
+Also verified each time: one page, LinkedIn present in the contact line (a second contact line gets dropped by parsers), and no first-person pronouns outside the plugin name *Customize My Account*. The CV's figures are the same ones the site carries, so recheck them the same way.
+
 `changelog.txt` follows `= X.Y.Z - YYYY-MM-DD` / `* entry`; bump `version` in `package.json` alongside it. They sat out of step for two years (0.1.0 against a 1.0.0 changelog); keep them matched, newest entry first.
