@@ -118,7 +118,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     icon: "security",
     label: "Security hardening",
-    body: "40 fixes across nine plugins, from unauthenticated privilege escalation to stored XSS.",
+    body: "52 fixes across nine plugins, from unauthenticated privilege escalation to SQL injection.",
   },
   {
     icon: "servers",

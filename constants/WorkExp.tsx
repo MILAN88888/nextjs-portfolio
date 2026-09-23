@@ -59,7 +59,7 @@ export const WORK_EXP: Job[] = [
       {
         product: "Across the suite",
         items: [
-          "40 security and hardening fixes in total, across nine of the plugins, including triage of the findings from a Snyk report and from an external review of a release",
+          "52 security and hardening fixes in total, across nine of the plugins, including triage of the findings from a Snyk report and from an external review of a release",
           "Cut releases for the paired free and pro plugins: changelogs, version bumps and keeping both shippable from one change",
           "Use Claude Code with Playwright over MCP to check a fix in a real WordPress install, with my own skills holding the coding standards and the debug routine",
         ],

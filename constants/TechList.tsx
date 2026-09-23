@@ -121,15 +121,15 @@ export const PROOF_POINTS: Stat[] = [
   },
   {
     icon: "commits",
-    value: "268",
+    value: "273",
     label: "commits in User Registration",
     note: "Core and pro, most of it on payments",
   },
   {
     icon: "security",
-    value: "40",
+    value: "52",
     label: "security and hardening fixes",
-    note: "Across nine plugins, from privilege escalation to stored XSS",
+    note: "Across nine plugins, from privilege escalation to SQL injection and stored XSS",
   },
   {
     icon: "payments",
