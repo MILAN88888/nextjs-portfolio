@@ -13,13 +13,15 @@ npm run lint    # next lint (eslint-config-next / core-web-vitals)
 
 Node >= 20 (`.nvmrc` pins 20). There is no test suite, so `npm run build` + `npm run lint` are the verification gate.
 
+**Dependencies are kept at zero `npm audit` findings.** `next` must stay at or above the latest patched 15.5.x (15.5.28 as of Oct 2026). `package.json` carries two `overrides`: `postcss` forced to the top-level version, because Next pins its own vulnerable copy, and `postcss-selector-parser` forced to 7.x, because Tailwind 3 asks for 6.x, which has no fixed release. When the override went in, the generated CSS came out byte-identical. Recheck that if Tailwind is upgraded.
+
 **Never run `npm run build` while `npm run dev` is running** — they share `.next/`, and the build replaces the chunks the dev server is serving, so the running page starts returning 500s for its own `webpack.js` and `layout.css` (which looks exactly like a hydration bug: every `.reveal` stays hidden). Stop dev first, or `rm -rf .next` and restart it afterwards.
 
 **`next/font` fetches DM Sans, Space Grotesk and JetBrains Mono from Google at build time**, so `npm run build` fails without network access. If a sandbox blocks `fonts.gstatic.com`, the build must run unsandboxed.
 
 ## Architecture
 
-Next.js 13.4 **App Router** portfolio for Milan Chaudhary (milanc.com.np). A **single static page** — `/` — assembled from section components. TypeScript strict, Tailwind, no backend, no client-side data fetching.
+Next.js 15.5 **App Router** portfolio (React 19) for Milan Chaudhary (milanc.com.np). A **single static page** — `/` — assembled from section components. TypeScript strict, Tailwind, no backend, no client-side data fetching.
 
 `app/page.tsx` is a thin server component that composes `components/sections/*` in order: `Hero`, `About`, `Projects`, `Skills`, `Experience`, `Education`, `Contact`. Almost everything is a server component; the only client components are `SiteHeader`, `ThemeToggle`, `ThemeContext`, `ui/Reveal` and `app/error.tsx` (which React requires to be one).
 
@@ -166,7 +168,7 @@ CSS only — there is no animation library. `ui/Reveal` is a client component th
 
 `/` is the only route. `/projects`, `/tech` and `/about` are **308 redirects declared in `next.config.js`** pointing at `/#projects`, `/#skills` and `/#about` — they're pre-redesign URLs kept alive. Prefer config redirects over a page that calls `redirect()`: the latter prerenders as a 200 with a client-side hop.
 
-`app/metadata.ts` holds the typed `Metadata` object plus `personJsonLd` (injected in the root layout). `app/sitemap.ts` and `app/robots.ts` are Next metadata routes that replaced the old `public/robots.txt` and `public/sitemap.xml` — don't reintroduce either static file, since it would shadow the route.
+`app/metadata.ts` holds the typed `Metadata` object, the `Viewport` object (`colorScheme` and `themeColor` must live there since Next 14, not in `metadata`) and `personJsonLd` (injected in the root layout). `app/sitemap.ts` and `app/robots.ts` are Next metadata routes that replaced the old `public/robots.txt` and `public/sitemap.xml` — don't reintroduce either static file, since it would shadow the route.
 
 `error.tsx`, `loading.tsx` and `not-found.tsx` render outside any `Section`, so each carries its own `mx-auto max-w-content px-5 md:px-8` width. `Container` would be the tidier choice if one of them is touched.
 

@@ -3,7 +3,7 @@ import { DM_Sans, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ThemeContext } from "@/components/ThemeContext";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { siteMetadata, personJsonLd } from "./metadata";
+import { siteMetadata, siteViewport, personJsonLd } from "./metadata";
 
 const sans = DM_Sans({
   subsets: ["latin"],
@@ -24,6 +24,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = siteMetadata;
+export const viewport = siteViewport;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,5 +1,10 @@
  == Changelog ==
 
+= 5.3.1 - 2026-10-26
+* Security - Upgraded Next.js from 13.4.19 to 15.5.28 and React from 18.2 to 19, clearing the open Dependabot alerts on next, including the critical image-optimiser RCEs and the middleware authorisation bypass. The page uses none of the affected features (no next/image, middleware or server actions), but the framework itself was still exposed.
+* Security - Refreshed the lockfile, which picked up fixed releases of brace-expansion, js-yaml, nanoid, browserslist, minimatch, picomatch, flatted, cross-spawn and the rest, and dropped zod entirely. Two overrides cover what a refresh could not: Next's pinned postcss, and Tailwind 3's postcss-selector-parser 6.x. npm audit now reports 0 vulnerabilities.
+* Changed - next-themes 0.2 to 0.4, eslint-config-next to 15.5.28, and React 19 types. colorScheme and themeColor moved from metadata into a viewport export, as Next 14 and later require.
+
 = 5.3.0 - 2026-10-26
 * Changed - The CV, rewritten after a recruiter-style review. Body text up from 8.5pt to 9.3pt and still one page, a headline that names the specialism (WordPress plugins, payments, application security), install counts in place of raw commit counts, a verb at the start of every bullet, and the suite-wide security and release work in its own group instead of under the block plugins.
 * Changed - ThemeGrill is now Jan 2023 to Oct 2026 everywhere. The bio, the experience summary and the About facts are past tense, and the JSON-LD no longer claims a current employer. The hero pill and the CV say available now.

@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import type { IconBaseProps } from "react-icons";
 import {
   FiCpu,
@@ -24,7 +25,7 @@ import type { IconName } from "@/constants";
  * in a second icon set, and don't import `react-icons` into `constants/`, which
  * is what keeps it out of the metadata routes' module graph.
  */
-const ICONS: Record<IconName, (props: IconBaseProps) => JSX.Element> = {
+const ICONS: Record<IconName, (props: IconBaseProps) => ReactElement> = {
   installs: FiDownloadCloud,
   products: FiPackage,
   rating: FiStar,

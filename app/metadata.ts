@@ -1,8 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { PROFILE } from "@/constants/Profile";
 
 const description =
   "Milan Chaudhary, a full-stack engineer in Nepal. I build WordPress plugins and Gutenberg blocks that run on more than 150,000 sites, and the Python services behind their AI features.";
+
+/** Next 14+ reads colour scheme and theme colour from `viewport`, not `metadata`. */
+export const siteViewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafcfe" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b121d" },
+  ],
+};
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(PROFILE.siteUrl),
@@ -33,11 +42,6 @@ export const siteMetadata: Metadata = {
     "ThemeGrill",
   ],
   icons: { icon: "/images/icon/milan.ico" },
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafcfe" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b121d" },
-  ],
   alternates: { canonical: "/" },
   robots: {
     index: true,
