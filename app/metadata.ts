@@ -96,7 +96,6 @@ export const personJsonLd = {
     "Next.js",
   ],
   email: `mailto:${PROFILE.email}`,
-  worksFor: { "@type": "Organization", name: PROFILE.company, url: PROFILE.companyUrl },
   address: { "@type": "PostalAddress", addressCountry: "NP", addressLocality: "Nawalparasi" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
@@ -106,6 +105,7 @@ export const personJsonLd = {
   sameAs: [
     "https://github.com/MILAN88888",
     "https://www.linkedin.com/in/milan-c",
+    PROFILE.wordpressUrl,
     "https://twitter.com/i_am_mkr",
   ],
 };

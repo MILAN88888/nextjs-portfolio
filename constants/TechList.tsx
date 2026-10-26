@@ -139,8 +139,8 @@ export const PROOF_POINTS: Stat[] = [
   },
   {
     icon: "code",
-    value: "171 of 171",
+    value: "188 of 188",
     label: "commits in my own plugin",
-    note: "Custom Code Snippets Manager, start to finish",
+    note: "SnippetCrate, start to finish",
   },
 ];

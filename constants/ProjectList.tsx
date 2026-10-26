@@ -60,12 +60,13 @@ export const PROJECT_LIST: Project[] = [
   },
   {
     id: "snippets-manager",
-    title: "Custom Code Snippets Manager",
-    metric: "My own plugin · 171 of 171 commits",
+    title: "SnippetCrate",
+    metric: "My own plugin · 188 of 188 commits",
     description:
       "Runs PHP, JavaScript, CSS or HTML snippets without editing theme files.\n\nIt runs on any site without touching a theme file. There is a proper code editor, it checks the syntax on both the server and in the browser, lets you choose where each snippet runs, and imports and exports as JSON. If a PHP snippet throws a fatal error it is caught and switched off, so one bad snippet cannot take the site down.",
     role: "All of it: the idea, the structure, the admin screens, the safety model and the build setup",
     stack: ["WordPress", "PHP", "TypeScript", "CodeMirror"],
+    repoUrl: "https://github.com/MILAN88888/snippetcrate",
     note: "Not yet in the plugin directory",
   },
   {

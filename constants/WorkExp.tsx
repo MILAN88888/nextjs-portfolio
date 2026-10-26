@@ -11,9 +11,9 @@ export const WORK_EXP: Job[] = [
     position: "Software Engineer",
     company: "ThemeGrill Pvt Ltd",
     companyUrl: "https://themegrill.com",
-    period: "Jan 2023 — Present",
+    period: "Jan 2023 — Oct 2026",
     summary:
-      "I joined as a plugin intern, fixing issues on a plugin that was already live, and moved onto the product teams from there. I now work across seven WordPress products with about 150,000 sites between them.",
+      "I joined the User Registration team as an intern, was contributing to the plugin within two weeks, and moved into the engineer role a month later. From there I worked across seven WordPress products with about 150,000 sites between them.",
     groups: [
       {
         product: "Everest Forms",

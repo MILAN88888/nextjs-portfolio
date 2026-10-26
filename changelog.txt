@@ -1,5 +1,12 @@
  == Changelog ==
 
+= 5.3.0 - 2026-10-26
+* Changed - The CV, rewritten after a recruiter-style review. Body text up from 8.5pt to 9.3pt and still one page, a headline that names the specialism (WordPress plugins, payments, application security), install counts in place of raw commit counts, a verb at the start of every bullet, and the suite-wide security and release work in its own group instead of under the block plugins.
+* Changed - ThemeGrill is now Jan 2023 to Oct 2026 everywhere. The bio, the experience summary and the About facts are past tense, and the JSON-LD no longer claims a current employer. The hero pill and the CV say available now.
+* Changed - Custom Code Snippets Manager is now SnippetCrate. Its repo is public, so the card links it, and the commit count is 188 of 188. Still not in the plugin directory, so still pre-release.
+* Added - PromptDeck, a Tauri desktop app, and the WordPress.org profile to the CV. The profile is also in the site's JSON-LD.
+* Removed - Prometheus and Grafana from the CV skills.
+
 = 5.2.0 - 2026-09-23
 * Changed - Recounted User Registration: 273 commits across core and pro, not 268. The old pro figure was read off a feature branch that had fallen ten commits behind develop.
 * Changed - Recounted the security work: 52 fixes across nine plugins, not 40, after the September 2026 batch. Everest Forms 17, User Registration 12, UR pro 11, Everest Forms pro 4, SmartSMTP 4, and one each in four more.

@@ -8,7 +8,7 @@ export const PROFILE = {
   name: "Milan Chaudhary",
   fullName: "Milan Kumar Chaudhary",
   handle: "milan",
-  /** Employment title. Matches the ThemeGrill entry in WorkExp, and feeds metadata. */
+  /** Professional title. Matches the last role in WorkExp, and feeds metadata. */
   role: "Software Engineer",
   /** Discipline line for metadata and the footer — narrower than the job title. */
   focus: "Full-stack WordPress and backend engineering",
@@ -17,8 +17,8 @@ export const PROFILE = {
   /** Second line, the two things worth knowing before the paragraph. */
   proofLine: "150,000+ active installs · AI integration and infrastructure",
   intro:
-    "I build WordPress plugins and Gutenberg blocks, and the Python services behind them. Four years of it now: PHP and React inside the plugins, Python, Postgres and Redis on the servers I run. Last year I built the service behind Everest Forms' AI form builder and put it into production.",
-  availabilityNote: "Open to remote full-stack, WordPress and backend roles",
+    "I build WordPress plugins and Gutenberg blocks, and the Python services behind them. Four years of it now: PHP and React inside the plugins, Python, Postgres and Redis on the servers behind them. Last year I built the service behind Everest Forms' AI form builder and put it into production.",
+  availabilityNote: "Available now for remote full-stack, WordPress and backend roles",
   /** Longer form, for Contact and the About facts. */
   openTo: "remote full-stack, WordPress engineering and backend or Python work",
   availableForWork: true,
@@ -26,8 +26,6 @@ export const PROFILE = {
   /** Combined WordPress.org active installs of the plugins I ship features in. */
   installBase: "150,000+",
 
-  company: "ThemeGrill Pvt Ltd",
-  companyUrl: "https://themegrill.com",
   location: "Nepal",
   fullLocation: "Sarawal-6, Nawalparasi, Nepal",
   timezone: "UTC+5:45",
@@ -38,6 +36,7 @@ export const PROFILE = {
   siteLabel: "milanc.com.np",
   githubUrl: "https://github.com/MILAN88888",
   linkedinUrl: "https://www.linkedin.com/in/milan-c",
+  wordpressUrl: "https://profiles.wordpress.org/wpmilan/",
   reposUrl: "https://github.com/MILAN88888?tab=repositories",
 } as const;
 
@@ -62,7 +61,7 @@ export const HERO_STATS: Stat[] = [
     icon: "installs",
     value: PROFILE.installBase,
     label: "Active installs",
-    note: "Across the plugins I work on, per WordPress.org",
+    note: "Across the plugins I worked on, per WordPress.org",
   },
   {
     icon: "products",
@@ -143,16 +142,16 @@ export const ACHIEVEMENTS: Achievement[] = [
  * reinstate a paragraph Milan has removed.
  */
 export const BIO: string[] = [
-  "I'm a full-stack engineer based in Nepal. I build WordPress plugins at ThemeGrill, the kind of thing people install once and then forget about, so most of what I write has to keep working for years on sites I will never see.",
-  "I joined in January 2023 as a plugin intern and stayed. Since then I have shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, and worked on blocks in BlockArt and Magazine Blocks.",
-  "Most of my time goes on the money path and the security side. Money and accounts are the two things people cannot forgive you for getting wrong.",
+  "I'm a full-stack engineer based in Nepal. I build WordPress plugins, the kind of thing people install once and then forget about, so most of what I write has to keep working for years on sites I will never see.",
+  "I started in January 2023 as an intern on the User Registration team and stayed until October 2026. In that time I shipped features in Everest Forms and User Registration, built SmartSMTP out through its first releases, and worked on blocks in BlockArt and Magazine Blocks.",
+  "Most of my time went on the money path and the security side. Money and accounts are the two things people cannot forgive you for getting wrong.",
   "Last year I moved further down the stack: Python, Postgres, Redis and Docker in production rather than just read about. That has become the part of the job I like most, and it is the work I am looking for next.",
 ];
 
 /** Fact card beside the About copy. */
 export const ABOUT_FACTS: { label: string; value: string }[] = [
   { label: "Experience", value: `${EXPERIENCE_YEARS}+ years, since July 2022` },
-  { label: "Currently",  value: "Software Engineer at ThemeGrill Pvt Ltd" },
+  { label: "Last role",  value: "Software Engineer at ThemeGrill, Jan 2023 to Oct 2026" },
   { label: "Focus",      value: "WordPress products · block editor · backend platform" },
   { label: "Core stack", value: "PHP · Python · TypeScript · React · Docker" },
   { label: "Based in",   value: `Nepal · remote-friendly, ${PROFILE.timezone}` },
